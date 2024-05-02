@@ -1,6 +1,7 @@
 # CharacterDocMaker
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.6.
+npx -p @angular/cli@8 ng
 
 ## Development server
 
