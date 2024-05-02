@@ -9,7 +9,7 @@ const DEFAULT_LANG = ELanguages.PL;
 const translations = new Map([[ELanguages.PL, plPl]]);
 
 @Pipe({
-  name: 'translations',
+  name: 'getTranslations',
   standalone: true,
 })
 export class TranslationsPipe implements PipeTransform {
