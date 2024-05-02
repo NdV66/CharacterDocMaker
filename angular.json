@@ -17,6 +17,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "stylePreprocessorOptions": {
+                "includePaths": ["src/assets/styles"]
+            },
             "outputPath": "dist/character-doc-maker",
             "index": "src/index.html",
             "browser": "src/main.ts",
