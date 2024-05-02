@@ -1,0 +1,108 @@
+@use "@angular/material" as mat;
+
+// @include mat.core();
+
+$primary-palette: (
+    50: #e9eafa,
+    100: #c7c9f2,
+    200: #a2a6e9,
+    300: #7b83e1,
+    400: #5e66d9,
+    500: #4149d1,
+    600: #3c41c6,
+    700: #3336ba,
+    800: #2a2aae,
+    900: #1a129b,
+    contrast: (
+        50: rgba(black, 0.87),
+        100: rgba(black, 0.87),
+        200: rgba(black, 0.87),
+        300: #fff,
+        400: #fff,
+        500: #fff,
+        600: #fff,
+        700: #fff,
+        800: #fff,
+        900: #fff
+    )
+);
+
+$secondary-palette: (
+    50: #d8faf8,
+    100: #9af1ed,
+    200: #34e7e4,
+    300: #00dbdb,
+    400: #00d1d4,
+    500: #00c7d1,
+    600: #00b6bf,
+    700: #00a1a4,
+    800: #008c8c,
+    900: #00685e,
+    contrast: (
+        50: rgba(black, 0.87),
+        100: rgba(black, 0.87),
+        200: rgba(black, 0.87),
+        300: #fff,
+        400: #fff,
+        500: #fff,
+        600: #fff,
+        700: #fff,
+        800: #fff,
+        900: #fff
+    )
+);
+
+$warning-palette: (
+    50: #fffde6,
+    100: #fff9c1,
+    200: #fff596,
+    300: #fff06b,
+    400: #feeb45,
+    500: #fce613,
+    600: #ffd818,
+    700: #ffbf0d,
+    800: #ffa601,
+    900: #fd7a00,
+    contrast: (
+        50: rgba(black, 0.87),
+        100: rgba(black, 0.87),
+        200: rgba(black, 0.87),
+        300: #fff,
+        400: #fff,
+        500: #fff,
+        600: #fff,
+        700: #fff,
+        800: #fff,
+        900: #fff
+    )
+);
+
+$character-doc-maker-primary: mat.define-palette($primary-palette, 600);
+$character-doc-maker-accent: mat.define-palette($secondary-palette, 200);
+$character-doc-maker-warn: mat.define-palette($warning-palette, 800);
+$app-typography: mat.define-typography-config(
+    $font-family: '"Ubuntu", sans-serif;',
+    $headline-1: mat.define-typography-level(112px, 112px, 900),
+    $headline-2: mat.define-typography-level(56px, 56px, 400),
+    $headline-3: mat.define-typography-level(45px, 48px, 400),
+    $headline-4: mat.define-typography-level(34px, 40px, 400),
+    $headline-5: mat.define-typography-level(24px, 32px, 400)
+);
+
+$theme: mat.define-light-theme(
+    (
+        color: (
+            primary: $character-doc-maker-primary,
+            accent: $character-doc-maker-accent,
+            warn: $character-doc-maker-warn
+        ),
+        density: 0,
+        typography: $app-typography
+    )
+);
+
+@include mat.all-component-themes($theme);
+@include mat.typography-hierarchy($theme);
+
+// $primary-default: mat.get-theme-color($theme, primary, default);
+// $type: mat.get-theme-type($theme);

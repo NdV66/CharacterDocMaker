@@ -1,4 +1,5 @@
-@use "colors";
+@use "themecolors";
 
 .app-navbar {
+    background-color: themecolors.$secondary-default;
 }
