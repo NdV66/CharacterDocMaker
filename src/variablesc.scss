@@ -1,0 +1,30 @@
+// COLORS
+$background: #3c40c6;
+$text: #fff;
+$accent: #34e7e4;
+$error: #ffa801;
+
+// FONTS
+@font-face {
+    font-family: "Chango";
+    src: url("./assets/fonts/Chango-Regular.ttf");
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: "Ubuntu";
+    src: url("./assets/fonts/Ubuntu-Regular.ttf");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Delicious";
+    src: url("./assets/fonts/DeliciousHandrawn-Regular.ttf");
+    font-weight: 400;
+}
+
+// .chango-regular {
+//     font-family: "Chango", sans-serif;
+//     font-weight: 400;
+//     font-style: normal;
+// }
