@@ -19,9 +19,7 @@
           "options": {
             "stylePreprocessorOptions": {
                 "includePaths": [
-                    "src/assets/styles",
-                    "src/assets/images",
-                    "src/assets/fonts"
+                    "src/assets/styles"
                 ]
             },
             "outputPath": "dist/character-doc-maker",
@@ -87,6 +85,11 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
+            "stylePreprocessorOptions": {
+                "includePaths": [
+                    "src/assets/styles"
+                ]
+            },
             "polyfills": [
               "zone.js",
               "zone.js/testing"

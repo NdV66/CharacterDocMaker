@@ -1,4 +1,5 @@
 export const TEXTS = {
+  lang: 'English',
   appName: 'Simple Character Doc',
 
   jumbotron: {
@@ -16,8 +17,8 @@ export const TEXTS = {
 
       fields: {
         greyScale: 'Grey scale',
-        Zoom: 'Zoom',
-        Brightness: 'Brightness',
+        zoom: 'Zoom',
+        brightness: 'Brightness',
       },
     },
     basicInfo: {
