@@ -1,0 +1,15 @@
+@use "variables";
+
+.main {
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    padding: 0 8%;
+    width: 100%;
+
+    @media screen and (max-width: variables.$small) {
+        padding: 12px;
+    }
+}

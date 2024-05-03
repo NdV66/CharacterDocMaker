@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { NavbarComponent } from './navbar/navbar.component';
+import { NavbarModule } from './navbar/navbar.module';
+import { JumbotronModule } from './jumbotron/jumbotron.module';
+import { AvatarPanelModule } from './avatar-panel/avatar-panel.module';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NavbarComponent],
+  imports: [RouterOutlet, NavbarModule, JumbotronModule, AvatarPanelModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })

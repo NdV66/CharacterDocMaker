@@ -1,0 +1,13 @@
+@use "variables";
+@use "colors";
+
+.title {
+    h2 {
+        font-family: "Chango";
+        font-size: variables.$title-font-size;
+    }
+
+    small {
+        font-size: variables.$basic-font-size;
+    }
+}

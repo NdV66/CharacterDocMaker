@@ -1,6 +1,8 @@
 @use "@angular/material" as mat;
 @use "theme";
+@use "colors";
 
 $primary-default: mat.get-theme-color(theme.$theme, primary, default);
 $secondary-default: mat.get-theme-color(theme.$theme, accent, default);
+$text-default: colors.$text;
 $type: mat.get-theme-type(theme.$theme);

@@ -81,12 +81,7 @@ $character-doc-maker-primary: mat.define-palette($primary-palette, 600);
 $character-doc-maker-accent: mat.define-palette($secondary-palette, 200);
 $character-doc-maker-warn: mat.define-palette($warning-palette, 800);
 $app-typography: mat.define-typography-config(
-    $font-family: '"Ubuntu", sans-serif;',
-    $headline-1: mat.define-typography-level(112px, 112px, 900),
-    $headline-2: mat.define-typography-level(56px, 56px, 400),
-    $headline-3: mat.define-typography-level(45px, 48px, 400),
-    $headline-4: mat.define-typography-level(34px, 40px, 400),
-    $headline-5: mat.define-typography-level(24px, 32px, 400)
+    $font-family: '"Ubuntu", sans-serif;'
 );
 
 $theme: mat.define-light-theme(

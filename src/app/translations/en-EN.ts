@@ -1,6 +1,6 @@
 export const TEXTS = {
   lang: 'English',
-  appName: 'Simple Character Doc',
+  appName: 'Simple Character PDF',
 
   jumbotron: {
     title: 'Hello there!',
@@ -10,7 +10,7 @@ export const TEXTS = {
 
   form: {
     avatar: {
-      title: 'Upload your avatar',
+      title: '1. Upload your avatar',
       subtitle: "We're so excited to see your new character!",
       note: 'Upload your image here!',
       upload: 'Edit',

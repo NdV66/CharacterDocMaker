@@ -1,0 +1,40 @@
+@use "variables";
+@use "colors";
+
+.jumbotron {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 56px 0;
+
+    @media screen and (min-width: variables.$small) {
+        padding: 108px 0;
+    }
+}
+
+.jumbotron-texts {
+    padding: 12px;
+
+    h1 {
+        font-family: "Chango";
+        font-size: variables.$basic-font-size * 2;
+    }
+
+    small {
+        font-size: variables.$basic-font-size;
+    }
+
+    @media screen and (min-width: variables.$small) {
+        border-left: 2px solid colors.$text;
+        padding-left: 40px;
+        margin-left: -40px;
+
+        h1 {
+            font-size: variables.$basic-font-size * 3;
+            padding-bottom: 16px;
+        }
+        small {
+            font-size: variables.$basic-font-size * 1.5;
+        }
+    }
+}
