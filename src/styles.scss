@@ -10,3 +10,8 @@ body {
     background-color: themecolors.$primary-default;
     color: themecolors.$text-default;
 }
+
+h1,
+h2 {
+    margin: 0;
+}

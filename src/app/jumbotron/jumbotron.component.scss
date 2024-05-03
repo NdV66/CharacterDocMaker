@@ -5,7 +5,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 56px 0;
+    padding: 64px 0;
+    padding-bottom: 80px;
+    position: relative;
+    width: 100%;
 
     @media screen and (min-width: variables.$small) {
         padding: 108px 0;
@@ -37,4 +40,11 @@
             font-size: variables.$basic-font-size * 1.5;
         }
     }
+}
+
+.jumbotron-note {
+    transform: rotate(-6deg);
+    position: absolute;
+    right: 4%;
+    bottom: 2%;
 }
