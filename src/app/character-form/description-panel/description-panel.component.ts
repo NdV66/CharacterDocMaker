@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { TranslationsPipe } from '../translations/translations.pipe';
-import { TitleComponent } from '../elements/title/title.component';
+import { TranslationsPipe } from '../../translations/translations.pipe';
+import { TitleComponent } from '../../elements/title/title.component';
 
 @Component({
   selector: 'app-description-panel',

@@ -1,13 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
-import { AvatarPanelComponent } from './avatar-panel/avatar-panel.component';
 import { JumbotronComponent } from './jumbotron/jumbotron.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { BasicInfoPanelComponent } from './basic-info-panel/basic-info-panel.component';
-import { DescriptionPanelComponent } from './description-panel/description-panel.component';
-import { DocumentThemePanelComponent } from './document-theme-panel/document-theme-panel.component';
+import { DocumentThemePanelComponent } from './character-form/document-theme-panel/document-theme-panel.component';
 import { FooterComponent } from './footer/footer.component';
+import { CharacterFormPanelComponent } from './character-form/character-form-panel.component';
 
 @Component({
   selector: 'app-root',
@@ -16,9 +14,7 @@ import { FooterComponent } from './footer/footer.component';
     RouterOutlet,
     NavbarComponent,
     JumbotronComponent,
-    AvatarPanelComponent,
-    BasicInfoPanelComponent,
-    DescriptionPanelComponent,
+    CharacterFormPanelComponent,
     DocumentThemePanelComponent,
     FooterComponent,
   ],
