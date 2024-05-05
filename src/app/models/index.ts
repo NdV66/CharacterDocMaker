@@ -1,2 +1,2 @@
-export * from './Character.model';
+export * from './Character.dto';
 export * from './Document.model';

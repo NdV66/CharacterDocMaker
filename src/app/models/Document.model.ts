@@ -1,4 +1,4 @@
-import { CharacterModel } from './Character.model';
+import { CharacterDTO } from './Character.dto';
 
 export enum TDocumentType {
   PDF = 'pdf',
@@ -6,7 +6,7 @@ export enum TDocumentType {
 
 export class Document {
   constructor(
-    private data: CharacterModel,
+    private data: CharacterDTO,
     private documentType: TDocumentType
   ) {}
 }

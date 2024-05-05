@@ -1,4 +1,4 @@
-export class CharacterModel {
+export class CharacterDTO {
   constructor(
     public avatar: string = '',
     public name: string = '',
