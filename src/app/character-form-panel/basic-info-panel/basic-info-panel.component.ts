@@ -2,12 +2,11 @@ import { Component } from '@angular/core';
 import { TranslationsPipe } from '../../translations/translations.pipe';
 import { TitleComponent } from '../../elements/title/title.component';
 import { BasicInfoPanelService } from './basic-info-panel.service';
-import { BasicInputComponent } from '../../elements/basic-input/basic-input.component';
 
 @Component({
   selector: 'app-basic-info-panel',
   standalone: true,
-  imports: [TranslationsPipe, TitleComponent, BasicInputComponent],
+  imports: [TranslationsPipe, TitleComponent],
   templateUrl: './basic-info-panel.component.html',
   styleUrl: './basic-info-panel.component.scss',
 })
