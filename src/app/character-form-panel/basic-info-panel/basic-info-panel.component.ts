@@ -2,23 +2,23 @@ import { Component } from '@angular/core';
 import { TranslationsPipe } from '../../translations/translations.pipe';
 import { TitleComponent } from '../../elements/title/title.component';
 import { BasicInfoPanelService } from './basic-info-panel.service';
-import { FormsModule } from '@angular/forms';
+import { BasicInputComponent } from '../../elements/basic-input/basic-input.component';
 
 @Component({
   selector: 'app-basic-info-panel',
   standalone: true,
-  imports: [TranslationsPipe, TitleComponent, FormsModule],
+  imports: [TranslationsPipe, TitleComponent, BasicInputComponent],
   templateUrl: './basic-info-panel.component.html',
   styleUrl: './basic-info-panel.component.scss',
 })
 export class BasicInfoPanelComponent {
-  public characterName = 'Irmo here';
+  characterName: string = '';
 
   constructor(private _basicInfoPanelService: BasicInfoPanelService) {}
 
-  public onChangeName(event: Event) {
-    this._basicInfoPanelService.name = 'irmo';
-    console.log('!!!', event);
+  onChangeName(event: string) {
+    this._basicInfoPanelService.name = event;
+    console.log('>>>> ', event);
   }
 
   ngOnInit(): void {

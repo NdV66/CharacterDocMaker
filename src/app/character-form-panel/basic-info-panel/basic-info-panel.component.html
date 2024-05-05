@@ -3,5 +3,5 @@
         subtitle="{{ 'form.basicInfo.subtitle' | getTranslations}}">
     </app-title>
 
-    <input type="text" [value]="characterName" (change)="onChangeName($event)" />
+    <app-basic-input (onValueChanged)="onChangeName($event)"></app-basic-input>
 </div>
