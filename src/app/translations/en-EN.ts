@@ -22,7 +22,7 @@ export const TEXTS = {
       },
     },
     basicInfo: {
-      title: 'Provide some info',
+      title: '2. Provide some info',
       subtitle: 'Who is your character? What about the name?',
       note: "It's so important to know these basic information!",
 
@@ -39,12 +39,12 @@ export const TEXTS = {
       },
     },
     background: {
-      title: 'Describe your background',
+      title: '3. Describe your background',
       subtitle: 'What would you like to share abut your character?',
       note: 'Oh, oh, a final stage! Remember to use an epic description!',
     },
     theme: {
-      title: 'Select your document theme',
+      title: '4. Select your document theme',
       subtitle: 'Which theme is your favorite one?',
       note: 'Which one do you prefer? A green, floral spring or maybe a simple paper notes? Decision is yours!',
 
