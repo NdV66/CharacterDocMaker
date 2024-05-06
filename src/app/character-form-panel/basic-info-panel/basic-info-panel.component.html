@@ -3,5 +3,10 @@
         subtitle="{{ 'form.basicInfo.subtitle' | getTranslations}}">
     </app-title>
 
+    <form #form="ngForm" (submit)="submit()">
+        <label for="text">A label</label>
+        <input type="text" id="text" name="formText" [(ngModel)]="model.name" />
 
+        <button type="submit">Submit me</button>
+    </form>
 </div>
