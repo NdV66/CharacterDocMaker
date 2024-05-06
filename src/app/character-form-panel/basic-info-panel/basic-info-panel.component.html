@@ -4,6 +4,14 @@
     </app-title>
 
     <fieldset ngModelGroup="app-character-form-panel">
-        <input type="text" name="model.name" [(ngModel)]="model.name">
+        <mat-form-field appearance="outline">
+            <mat-label>{{'form.basicInfo.fields.name.label' | getTranslations}}</mat-label>
+            <input matInput type="text" name="model.name" [(ngModel)]="model.name">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>{{'form.basicInfo.fields.age.label' | getTranslations}}</mat-label>
+            <input matInput type="text" name="model.age" [(ngModel)]="model.age">
+        </mat-form-field>
     </fieldset>
 </div>

@@ -27,12 +27,30 @@ export const TEXTS = {
       note: "It's so important to know these basic information!",
 
       fields: {
-        name: 'What is they name?',
-        age: 'How old are they?',
-        race: 'What is they race?',
-        place: 'What are they come from?',
-        todo1: 'TO DO 1',
-        todo2: 'TO DO 2',
+        name: {
+          label: 'What is they name?',
+          hint: 'Choose a name that makes dragons jealous!',
+        },
+        age: {
+          label: 'How old are they?',
+          hint: 'Hint',
+        },
+        race: {
+          label: 'What is they race?',
+          hint: 'Hint',
+        },
+        place: {
+          label: 'What are they come from?',
+          hint: 'xxx',
+        },
+        todo1: {
+          label: 'What are they come from?',
+          hint: 'xxx1',
+        },
+        todo2: {
+          label: 'What are they come from?',
+          hint: 'xxx2',
+        },
       },
       errors: {
         error1: 'todo error 1',
