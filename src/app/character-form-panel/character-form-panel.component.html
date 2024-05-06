@@ -1,3 +1,8 @@
 <app-avatar-panel></app-avatar-panel>
-<app-basic-info-panel></app-basic-info-panel>
+
+<form (submit)="onSubmit()" #characterForm="ngForm">
+    <app-basic-info-panel [model]="basicCharacterInfo"></app-basic-info-panel>
+    <button type="submit">ok</button>
+</form>
+
 <app-description-panel></app-description-panel>
