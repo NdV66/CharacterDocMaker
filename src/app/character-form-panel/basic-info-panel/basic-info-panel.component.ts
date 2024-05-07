@@ -6,6 +6,7 @@ import { CharacterBasicInfoDTO } from '../../models';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { NgForOf } from '@angular/common';
 
 @Component({
   selector: 'app-basic-info-panel',
@@ -17,6 +18,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
+    NgForOf,
   ],
   viewProviders: [{ provide: ControlContainer, useExisting: NgForm }],
   templateUrl: './basic-info-panel.component.html',
@@ -24,4 +26,26 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 })
 export class BasicInfoPanelComponent {
   @Input() model = new CharacterBasicInfoDTO();
+
+  fields = [
+    {
+      translateKey: 'form.basicInfo.fields.name.label',
+      name: 'name',
+      model: this.model.name,
+    },
+    {
+      translateKey: 'form.basicInfo.fields.age.label',
+      name: 'age',
+      model: this.model.age,
+    },
+    {
+      translateKey: 'form.basicInfo.fields.race.label',
+      name: 'race',
+      model: this.model.race,
+    },
+  ];
+
+  itemIdentity(index: any) {
+    return index;
+  }
 }

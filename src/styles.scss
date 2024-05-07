@@ -1,4 +1,5 @@
 @use "themecolors";
+@use "variables";
 
 html,
 body {
@@ -9,6 +10,7 @@ body {
     margin: 0;
     background-color: themecolors.$primary-default;
     color: themecolors.$text-default;
+    font-size: variables.$basic-font-size;
 }
 
 h1,
