@@ -1,3 +1,6 @@
+@use "variables";
+
 .app-navbar {
-    font-size: 1rem;
+    font-size: variables.$basic-font-size;
+    padding: variables.$base * 2;
 }

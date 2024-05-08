@@ -1,5 +1,5 @@
-@use "themecolors";
 @use "variables";
+@use "colors";
 
 html,
 body {
@@ -8,9 +8,10 @@ body {
 
 body {
     margin: 0;
-    background-color: themecolors.$primary-default;
-    color: themecolors.$text-default;
+    background-color: colors.$background;
+    color: colors.$text;
     font-size: variables.$basic-font-size;
+    font-family: '"Ubuntu", sans-serif;';
 }
 
 h1,

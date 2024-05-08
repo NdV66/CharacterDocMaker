@@ -1,8 +1,3 @@
-@use "@angular/material" as mat;
-@use "variables";
-
-// @include mat.core();
-
 $primary-palette: (
     50: #e9eafa,
     100: #c7c9f2,
@@ -77,28 +72,3 @@ $warning-palette: (
         900: #fff
     )
 );
-
-$character-doc-maker-primary: mat.define-palette($primary-palette, 600);
-$character-doc-maker-accent: mat.define-palette($secondary-palette, 200);
-$character-doc-maker-warn: mat.define-palette($warning-palette, 800);
-$app-typography: mat.define-typography-config(
-    $font-family: '"Ubuntu", sans-serif;'
-);
-
-$theme: mat.define-light-theme(
-    (
-        color: (
-            primary: $character-doc-maker-primary,
-            accent: $character-doc-maker-accent,
-            warn: $character-doc-maker-warn
-        ),
-        density: 0,
-        typography: $app-typography
-    )
-);
-
-@include mat.all-component-themes($theme);
-@include mat.typography-hierarchy($theme);
-
-// $primary-default: mat.get-theme-color($theme, primary, default);
-// $type: mat.get-theme-type($theme);
