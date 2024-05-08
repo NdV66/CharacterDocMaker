@@ -1,20 +1,20 @@
 import { Component } from '@angular/core';
 import { TranslationsPipe } from '../../translations/translations.pipe';
-import { TitleComponent } from '../../elements/title/title.component';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { NgForOf } from '@angular/common';
 import { CharacterFormService } from '../character-form.service';
 import { NoteComponent } from '../../elements/note/note.component';
+import { PanelComponent } from '../../elements/panel/panel.component';
 
 @Component({
   selector: 'app-basic-info-panel',
   standalone: true,
   imports: [
     TranslationsPipe,
-    TitleComponent,
     NgForOf,
     ReactiveFormsModule,
     NoteComponent,
+    PanelComponent,
   ],
   templateUrl: './basic-info-panel.component.html',
   styleUrl: './basic-info-panel.component.scss',

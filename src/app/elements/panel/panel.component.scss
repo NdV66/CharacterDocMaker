@@ -1,0 +1,7 @@
+@use "variables";
+
+.panel-container {
+    position: relative;
+    margin-top: variables.$base * 14;
+    padding-bottom: variables.$base * 12;
+}

@@ -1,8 +1,4 @@
-<div class="basic-info-panel">
-    <app-title title="{{ 'form.basicInfo.title' | getTranslations}}"
-        subtitle="{{ 'form.basicInfo.subtitle' | getTranslations}}">
-    </app-title>
-
+<app-panel [title]="'form.basicInfo.title' | getTranslations" [subtitle]="'form.basicInfo.subtitle' | getTranslations">
     <app-note class="basic-info-note" text="{{'form.basicInfo.note' | getTranslations}}" />
 
     <fieldset class="basic-info-fieldset" [formGroup]="form">
@@ -11,4 +7,4 @@
             <input type="text" [name]="field.name" [formControlName]="field.name">
         </div>
     </fieldset>
-</div>
+</app-panel>

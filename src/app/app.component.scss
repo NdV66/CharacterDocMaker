@@ -1,14 +1,25 @@
 @use "variables";
 
+.nav {
+    display: flex;
+    justify-content: center;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+}
+
 .main {
     display: flex;
     justify-content: center;
 }
 
-.content {
-    padding: variables.$content-padding;
+.width-wrapper {
+    max-width: variables.$max-width;
+    position: relative;
     width: 100%;
-    max-width: 1000px;
+    padding: variables.$content-padding;
 
     @media screen and (max-width: variables.$small) {
         padding: variables.$content-padding;
