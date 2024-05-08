@@ -1,6 +1,6 @@
 <app-avatar-panel></app-avatar-panel>
 
-<form (ngSubmit)="onSubmit($event)" [formGroup]="form">
+<form (ngSubmit)="onSubmit($event)" [formGroup]="form" autocomplete="off">
     <app-basic-info-panel />
 
     <button type="submit">Submit me</button>

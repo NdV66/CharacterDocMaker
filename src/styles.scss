@@ -1,6 +1,10 @@
 @use "variables";
 @use "colors";
 
+*:focus {
+    outline: none;
+}
+
 html,
 body {
     height: 100%;
@@ -24,4 +28,11 @@ fieldset {
     padding: 0;
     margin: 0;
     min-width: 0;
+}
+
+label {
+    font-size: variables.$small-font-size;
+    color: colors.$accent;
+    margin-bottom: variables.$base / 2;
+    display: inline-block;
 }

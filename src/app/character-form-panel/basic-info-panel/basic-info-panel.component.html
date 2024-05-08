@@ -4,17 +4,17 @@
     </app-title>
 
     <fieldset class="basic-info-fieldset" [formGroup]="form">
-        <div class="input-wrapper">
+        <div class="input-wrapper--error">
             <label>{{'form.basicInfo.fields.name.label' | getTranslations}}</label>
             <input type="text" name="name" formControlName="name">
         </div>
         <div class="input-wrapper">
-            <label>{{'form.basicInfo.fields.nature.label' | getTranslations}}</label>
+            <label for="nature">{{'form.basicInfo.fields.nature.label' | getTranslations}}</label>
             <input type="text" name="nature" formControlName="nature">
         </div>
         <div class="input-wrapper">
-            <label>{{'form.basicInfo.fields.race.label' | getTranslations}}</label>
-            <input type="text" name="race" formControlName="race">
+            <label for="race">{{'form.basicInfo.fields.race.label' | getTranslations}}</label>
+            <input type="text" name="race" formControlName="race" id="race">
         </div>
         <div class="input-wrapper">
             <label>{{'form.basicInfo.fields.age.label' | getTranslations}}</label>
@@ -23,6 +23,10 @@
         <div class="input-wrapper">
             <label>{{'form.basicInfo.fields.origin.label' | getTranslations}}</label>
             <input type="text" name="origin" formControlName="origin">
+        </div>
+        <div class="input-wrapper">
+            <label>{{'form.basicInfo.fields.live.label' | getTranslations}}</label>
+            <input type="text" name="live" formControlName="live">
         </div>
     </fieldset>
 </div>

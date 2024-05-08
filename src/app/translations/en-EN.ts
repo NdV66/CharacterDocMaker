@@ -47,13 +47,9 @@ export const TEXTS = {
           label: 'What are they come from?',
           hint: 'xxx',
         },
-        todo1: {
-          label: 'What are they come from?',
+        live: {
+          label: 'Where do they live?',
           hint: 'xxx1',
-        },
-        todo2: {
-          label: 'What are they come from?',
-          hint: 'xxx2',
         },
       },
       errors: {

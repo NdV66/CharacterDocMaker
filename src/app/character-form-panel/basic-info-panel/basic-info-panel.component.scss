@@ -1,52 +1,49 @@
 @use "colors";
 @use "variables";
 
-::ng-deep .basic-info-fieldset {
+.basic-info-fieldset {
     width: 100%;
-
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 
     .input-wrapper {
-        width: 48%;
+        width: 49%;
+        margin-bottom: variables.$base * 3;
 
         @media screen and (max-width: variables.$small) {
             width: 100%;
         }
-    }
-
-    .mat-mdc-form-field {
-        width: 100% !important;
-    }
-
-    .mat-mdc-text-field-wrapper {
-        border: 2px solid colors.$accent;
-        border-radius: 45px !important;
-        background-color: transparent !important;
 
         input {
-            color: colors.$text !important;
+            $space: variables.$base * 6;
+            color: colors.$text;
             font-size: variables.$basic-font-size;
+            border: 2px solid colors.$accent;
+            border-radius: 45px;
+            background-color: transparent;
+            width: calc(100% - 2 * $space);
+            height: variables.$base * 9;
+            padding: 0 $space;
+
+            &:focus {
+                box-shadow: none;
+                outline-color: none;
+                border-color: colors.$text;
+            }
+        }
+    }
+
+    .input-wrapper--error {
+        @extend .input-wrapper;
+
+        input {
+            border-color: colors.$error;
+            color: colors.$error;
         }
 
         label {
-            color: colors.$accent !important;
-            font-size: variables.$basic-font-size;
+            color: colors.$error;
         }
-
-        .mdc-text-field--invalid {
-            background: red !important;
-            border: 20px solid red;
-        }
-    }
-
-    /* Sets the underline to red if dirty and invalid */
-    .mat-form-field.ng-dirty.ng-invalid .mat-form-field-underline {
-        background-color: red;
-    }
-    /* Sets the label to red if dirty and invalid */
-    .mat-form-field.ng-dirty.ng-invalid .mat-form-field-label {
-        color: red;
     }
 }

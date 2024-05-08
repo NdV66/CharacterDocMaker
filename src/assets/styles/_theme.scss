@@ -8,19 +8,7 @@ $primary-palette: (
     600: #3c41c6,
     700: #3336ba,
     800: #2a2aae,
-    900: #1a129b,
-    contrast: (
-        50: rgba(black, 0.87),
-        100: rgba(black, 0.87),
-        200: rgba(black, 0.87),
-        300: #fff,
-        400: #fff,
-        500: #fff,
-        600: #fff,
-        700: #fff,
-        800: #fff,
-        900: #fff
-    )
+    900: #1a129b
 );
 
 $secondary-palette: (
@@ -33,19 +21,7 @@ $secondary-palette: (
     600: #00b6bf,
     700: #00a1a4,
     800: #008c8c,
-    900: #00685e,
-    contrast: (
-        50: rgba(black, 0.87),
-        100: rgba(black, 0.87),
-        200: rgba(black, 0.87),
-        300: #fff,
-        400: #fff,
-        500: #fff,
-        600: #fff,
-        700: #fff,
-        800: #fff,
-        900: #fff
-    )
+    900: #00685e
 );
 
 $warning-palette: (
@@ -58,17 +34,5 @@ $warning-palette: (
     600: #ffd818,
     700: #ffbf0d,
     800: #ffa601,
-    900: #fd7a00,
-    contrast: (
-        50: rgba(black, 0.87),
-        100: rgba(black, 0.87),
-        200: rgba(black, 0.87),
-        300: #fff,
-        400: #fff,
-        500: #fff,
-        600: #fff,
-        700: #fff,
-        800: #fff,
-        900: #fff
-    )
+    900: #fd7a00
 );

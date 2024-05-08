@@ -12,6 +12,7 @@ export class CharacterFormService {
       age: ['', [Validators.required]],
       origin: ['', [Validators.required]],
       nature: ['', [Validators.required]],
+      live: ['', [Validators.required]],
     });
   }
 }
