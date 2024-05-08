@@ -1,36 +1,19 @@
-import { Injectable } from '@angular/core';
-import { CharacterDTO } from '../models';
-import { Subject } from 'rxjs';
+import { Injectable, inject } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class CharacterFormService {
-  private _$name: Subject<string> = new Subject();
-  private _$race: Subject<string> = new Subject();
+  readonly form: FormGroup = new FormGroup({});
 
-  set name(data: string) {
-    this._$name.next(data);
-  }
-
-  set race(data: string) {
-    this._$race.next(data);
-  }
-
-  get $name() {
-    return this._$name.asObservable();
-  }
-
-  get $race() {
-    return this._$race.asObservable();
-  }
-
-  public dispose() {
-    this._$name.unsubscribe();
-    this._$race.unsubscribe();
-  }
-
-  get characterDTO() {
-    return new CharacterDTO();
+  constructor(formBuilder: FormBuilder) {
+    this.form = formBuilder.group({
+      name: ['', [Validators.required]],
+      race: ['', [Validators.required]],
+      age: ['', [Validators.required]],
+      origin: ['', [Validators.required]],
+      nature: ['', [Validators.required]],
+    });
   }
 }
+
+//https://sandroroth.com/blog/angular-complex-reactive-forms/

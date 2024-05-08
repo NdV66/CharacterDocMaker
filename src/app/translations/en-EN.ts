@@ -31,6 +31,10 @@ export const TEXTS = {
           label: 'What is they name?',
           hint: 'Choose a name that makes dragons jealous!',
         },
+        nature: {
+          label: 'What is their nature?',
+          hint: 'Hint',
+        },
         age: {
           label: 'How old are they?',
           hint: 'Hint',
@@ -39,7 +43,7 @@ export const TEXTS = {
           label: 'What is they race?',
           hint: 'Hint',
         },
-        place: {
+        origin: {
           label: 'What are they come from?',
           hint: 'xxx',
         },

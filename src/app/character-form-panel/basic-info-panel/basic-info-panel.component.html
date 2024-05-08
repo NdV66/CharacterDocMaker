@@ -3,40 +3,36 @@
         subtitle="{{ 'form.basicInfo.subtitle' | getTranslations}}">
     </app-title>
 
-    <div *ngFor="let field of fields">
-        <div>{{field.name}}</div>
-    </div>
-
-    <fieldset ngModelGroup="app-character-form-panel" class="basic-info-fieldset">
-        <div class="input-wrapper" *ngFor="let field of fields; let i=index; trackBy:itemIdentity">
-            <mat-form-field appearance="fill">
-                <mat-label>{{field.translateKey| getTranslations}}</mat-label>
-                <input matInput type="text" [name]="field.name" [(ngModel)]="field.model">
-            </mat-form-field>
-        </div>
-
-    </fieldset>
-
-    <!-- <fieldset ngModelGroup="app-character-form-panel" class="basic-info-fieldset">
+    <fieldset class="basic-info-fieldset" [formGroup]="form">
         <div class="input-wrapper">
             <mat-form-field appearance="fill">
                 <mat-label>{{'form.basicInfo.fields.name.label' | getTranslations}}</mat-label>
-                <input matInput type="text" name="model.name" [(ngModel)]="model.name">
+                <input matInput type="text" name="name" formControlName="name">
             </mat-form-field>
         </div>
-
         <div class="input-wrapper">
             <mat-form-field appearance="fill">
-                <mat-label>{{'form.basicInfo.fields.age.label' | getTranslations}}</mat-label>
-                <input matInput type="text" name="model.age" [(ngModel)]="model.age">
+                <mat-label>{{'form.basicInfo.fields.nature.label' | getTranslations}}</mat-label>
+                <input matInput type="text" name="nature" formControlName="nature">
             </mat-form-field>
         </div>
-
         <div class="input-wrapper">
             <mat-form-field appearance="fill">
                 <mat-label>{{'form.basicInfo.fields.race.label' | getTranslations}}</mat-label>
-                <input matInput type="text" name="model.race" [(ngModel)]="model.race">
+                <input matInput type="text" name="race" formControlName="race">
             </mat-form-field>
         </div>
-    </fieldset> -->
+        <div class="input-wrapper">
+            <mat-form-field appearance="fill">
+                <mat-label>{{'form.basicInfo.fields.age.label' | getTranslations}}</mat-label>
+                <input matInput type="text" name="age" formControlName="age">
+            </mat-form-field>
+        </div>
+        <div class="input-wrapper">
+            <mat-form-field appearance="fill">
+                <mat-label>{{'form.basicInfo.fields.origin.label' | getTranslations}}</mat-label>
+                <input matInput type="text" name="origin" formControlName="origin">
+            </mat-form-field>
+        </div>
+    </fieldset>
 </div>

@@ -16,13 +16,6 @@
         }
     }
 
-    .mat-mdc-form-field-flex {
-        // height: 44px;
-    }
-
-    .mat-mdc-form-field-infix {
-    }
-
     .mat-mdc-form-field {
         width: 100% !important;
     }
@@ -41,5 +34,19 @@
             color: colors.$accent !important;
             font-size: variables.$basic-font-size;
         }
+
+        .mdc-text-field--invalid {
+            background: red !important;
+            border: 20px solid red;
+        }
+    }
+
+    /* Sets the underline to red if dirty and invalid */
+    .mat-form-field.ng-dirty.ng-invalid .mat-form-field-underline {
+        background-color: red;
+    }
+    /* Sets the label to red if dirty and invalid */
+    .mat-form-field.ng-dirty.ng-invalid .mat-form-field-label {
+        color: red;
     }
 }
