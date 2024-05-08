@@ -6,10 +6,11 @@
 }
 
 .content {
-    padding: 0 8%;
+    padding: variables.$content-padding;
     width: 100%;
+    max-width: 1000px;
 
     @media screen and (max-width: variables.$small) {
-        padding: 12px;
+        padding: variables.$content-padding;
     }
 }

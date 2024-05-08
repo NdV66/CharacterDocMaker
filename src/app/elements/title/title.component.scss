@@ -2,8 +2,8 @@
 @use "colors";
 
 .title {
-    margin-top: 48px;
-    margin-bottom: 32px;
+    margin-top: variables.$base * 14;
+    margin-bottom: variables.$base * 10;
 
     h2 {
         font-family: "Chango";
