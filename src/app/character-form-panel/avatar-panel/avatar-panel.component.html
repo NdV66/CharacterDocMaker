@@ -1,5 +1,7 @@
-<div>
-    <app-title title="{{ 'form.avatar.title' | getTranslations}}"
-        subtitle="{{ 'form.avatar.subtitle' | getTranslations}}">
-    </app-title>
-</div>
+<app-panel
+  [title]="'form.avatar.title' | getTranslations"
+  [subtitle]="'form.avatar.subtitle' | getTranslations"
+  class="basic-info"
+>
+  <app-note class="note" text="{{ 'form.avatar.note' | getTranslations }}" />
+</app-panel>
