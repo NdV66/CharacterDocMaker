@@ -4,7 +4,6 @@ import { TValueChangeEvent } from './slider/slider.types';
 import { AvatarFiltersSharedServiceService } from './avatar-filters-shared-service.service';
 import { NgFor } from '@angular/common';
 import { TranslationsPipe } from '../../../translations/translations.pipe';
-import { tap } from 'rxjs';
 
 enum EFilterNames {
   GREY_SCALE = 'grey_scale',
@@ -24,23 +23,10 @@ export class AvatarFiltersComponent {
   greyScale = 0;
   zoom = 0;
   brightness = 0;
-  filterFields = [
-    {
-      name: EFilterNames.GREY_SCALE,
-      value: this.greyScale,
-      label: 'form.avatar.fields.greyScale',
-    },
-    {
-      name: EFilterNames.ZOOM,
-      value: this.zoom,
-      label: 'form.avatar.fields.zoom',
-    },
-    {
-      name: EFilterNames.BRIGHTNESS,
-      value: this.brightness,
-      label: 'form.avatar.fields.brightness',
-    },
-  ];
+
+  get names() {
+    return EFilterNames;
+  }
 
   constructor(private _sharedService: AvatarFiltersSharedServiceService) {}
 
@@ -50,9 +36,9 @@ export class AvatarFiltersComponent {
 
   //TODO add unsubscribe() on exit component
   private _subscribe() {
-    this._sharedService.greyScale$
-      .pipe(tap((el) => console.log('>> UWAGA', el)))
-      .subscribe((value) => (this.greyScale = value));
+    this._sharedService.greyScale$.subscribe(
+      (value) => (this.greyScale = value)
+    );
     this._sharedService.zoom$.subscribe((value) => (this.zoom = value));
     this._sharedService.brightness$.subscribe(
       (value) => (this.brightness = value)
@@ -60,10 +46,8 @@ export class AvatarFiltersComponent {
   }
 
   onValueChange({ name, value }: TValueChangeEvent) {
-    if (name === EFilterNames.BRIGHTNESS) {
+    if (name === EFilterNames.BRIGHTNESS)
       this._sharedService.updateBrightness(value);
-      this._sharedService.updateGreyScale(value);
-    }
     if (name === EFilterNames.GREY_SCALE)
       this._sharedService.updateGreyScale(value);
     if (name === EFilterNames.ZOOM) this._sharedService.updateZoom(value);

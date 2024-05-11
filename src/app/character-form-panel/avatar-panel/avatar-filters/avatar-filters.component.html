@@ -1,12 +1,26 @@
 <div class="avatar-filters">
-  <ng-container *ngFor="let element of filterFields; trackBy: identify">
-    <app-slider
-      [min]="0"
-      [max]="100"
-      [name]="element.name"
-      (onValueChangeEvent)="onValueChange($event)"
-      [value]="element.value"
-      [label]="element.label | getTranslations"
-    />
-  </ng-container>
+  <app-slider
+    [min]="0"
+    [max]="100"
+    [name]="names.GREY_SCALE"
+    (onValueChangeEvent)="onValueChange($event)"
+    [value]="greyScale"
+    [label]="'form.avatar.fields.greyScale' | getTranslations"
+  />
+  <app-slider
+    [min]="0"
+    [max]="100"
+    [name]="names.BRIGHTNESS"
+    (onValueChangeEvent)="onValueChange($event)"
+    [value]="greyScale"
+    [label]="'form.avatar.fields.brightness' | getTranslations"
+  />
+  <app-slider
+    [min]="0"
+    [max]="100"
+    [name]="names.ZOOM"
+    (onValueChangeEvent)="onValueChange($event)"
+    [value]="greyScale"
+    [label]="'form.avatar.fields.zoom' | getTranslations"
+  />
 </div>
