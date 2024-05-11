@@ -7,12 +7,14 @@ import { CharacterFormPanelComponent } from './character-form-panel/character-fo
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { CharacterFormService } from './services';
 import { DocumentPanelComponent } from './document-panel/document-panel.component';
+import { TranslationsPipe } from './translations/translations.pipe';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
     RouterOutlet,
+    TranslationsPipe,
     ReactiveFormsModule,
     NavbarComponent,
     JumbotronComponent,

@@ -65,17 +65,17 @@ export const TEXTS = {
     theme: {
       title: '4. Select your document theme',
       subtitle: 'Which theme is your favorite one?',
-      note: 'Which one do you prefer? A green, floral spring or maybe a simple paper notes? Decision is yours!',
+      note: "Just select the document's theme and download your epic description!",
 
       fields: {
         theme1: 'Light life',
-        theme2: 'Medium meditation',
+        theme2: 'Lovely lila',
         theme3: 'Back to black',
       },
     },
   },
   download: {
-    action: 'Download PDF',
+    action: 'Download your PDF!',
   },
   footer: {
     repo: 'See my public repositories!',

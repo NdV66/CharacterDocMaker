@@ -1,6 +1,15 @@
+@use 'variables';
+
 .theme {
     .theme-options {
         display: flex;
         justify-content: space-between;
+    }
+
+    .note {
+        position: absolute;
+        bottom: variables.$base * 14 * (-1);
+        transform: rotate(-6deg);
+        left: 0;
     }
 }

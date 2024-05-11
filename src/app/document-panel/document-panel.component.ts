@@ -5,6 +5,7 @@ import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { CharacterFormService } from '../services';
 import { ThemeElementComponent } from './theme-element/theme-element.component';
 import { NgForOf } from '@angular/common';
+import { NoteComponent } from '../elements/note/note.component';
 
 @Component({
   selector: 'app-document-panel',
@@ -15,6 +16,7 @@ import { NgForOf } from '@angular/common';
     PanelComponent,
     ReactiveFormsModule,
     ThemeElementComponent,
+    NoteComponent,
   ],
   templateUrl: './document-panel.component.html',
   styleUrl: './document-panel.component.scss',

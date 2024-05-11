@@ -3,6 +3,8 @@
   [subtitle]="'form.theme.subtitle' | getTranslations"
   class="theme"
 >
+  <app-note class="note" text="{{ 'form.theme.note' | getTranslations }}" />
+
   <fieldset class="fieldset" [formGroup]="form" class="theme-options">
     <div class="wrapper" *ngFor="let themeOption of themeOptions">
       <app-theme-element
