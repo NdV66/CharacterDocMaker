@@ -1,11 +1,12 @@
 <div class="avatar-filters">
-  <ng-container *ngFor="let element of filterFields">
+  <ng-container *ngFor="let element of filterFields; trackBy: identify">
     <app-slider
       [min]="0"
       [max]="100"
       [name]="element.name"
       (onValueChangeEvent)="onValueChange($event)"
       [value]="element.value"
+      [label]="element.label | getTranslations"
     />
   </ng-container>
 </div>

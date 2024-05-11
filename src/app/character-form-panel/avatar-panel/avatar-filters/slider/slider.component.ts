@@ -13,6 +13,7 @@ export class SliderComponent {
   @Input() max = 0;
   @Input() name = '';
   @Input() value = 0;
+  @Input() label = '';
   @Output('onValueChangeEvent') readonly onValueChangeEventEmitter =
     new EventEmitter<TValueChangeEvent>();
 

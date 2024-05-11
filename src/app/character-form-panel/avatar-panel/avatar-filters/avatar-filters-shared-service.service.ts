@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
-const DEFAULT_VALUE = 50;
+export const DEFAULT_VALUE_FILTER = 50;
 
 @Injectable()
 export class AvatarFiltersSharedServiceService {
-  private readonly _greyScale$ = new BehaviorSubject<number>(DEFAULT_VALUE);
-  private readonly _brightness$ = new BehaviorSubject<number>(DEFAULT_VALUE);
-  private readonly _zoom$ = new BehaviorSubject<number>(DEFAULT_VALUE);
+  private readonly _greyScale$ = new BehaviorSubject(DEFAULT_VALUE_FILTER);
+  private readonly _brightness$ = new BehaviorSubject(DEFAULT_VALUE_FILTER);
+  private readonly _zoom$ = new BehaviorSubject(DEFAULT_VALUE_FILTER);
 
   get greyScale$() {
     return this._greyScale$.asObservable();

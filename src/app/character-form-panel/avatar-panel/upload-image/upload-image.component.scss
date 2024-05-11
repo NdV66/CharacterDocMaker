@@ -1,0 +1,16 @@
+@use "variables";
+@use "colors";
+
+.upload-image {
+    .element {
+        $size: 180px;
+
+        border-radius: 50%;
+        width: $size;
+        height: $size;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border: variables.$base * 0.5 solid colors.$accent-dark;
+    }
+}
