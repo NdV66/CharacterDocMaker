@@ -1,27 +1,30 @@
 <nav class="nav">
-    <div class="width-wrapper">
-        <app-navbar />
-    </div>
+  <div class="width-wrapper">
+    <app-navbar />
+  </div>
 </nav>
 
 <header class="header">
-    <div class="width-wrapper">
-        <app-jumbotron />
-    </div>
+  <div class="width-wrapper">
+    <app-jumbotron />
+  </div>
 </header>
 
 <main class="main">
-    <div class="width-wrapper">
-        <form (ngSubmit)="onSubmit($event)" [formGroup]="form" autocomplete="off">
-            <app-character-form-panel></app-character-form-panel>
-            <app-document-panel></app-document-panel>
-            <button type="submit">Submit me now</button>
-        </form>
-    </div>
+  <div class="width-wrapper">
+    <form (ngSubmit)="onSubmit($event)" [formGroup]="form" autocomplete="off">
+      <app-character-form-panel></app-character-form-panel>
+      <app-document-panel></app-document-panel>
+
+      <div class="submit-wrapper">
+        <button type="submit">Submit me now</button>
+      </div>
+    </form>
+  </div>
 </main>
 
 <footer>
-    <app-footer></app-footer>
+  <app-footer></app-footer>
 </footer>
 
 <router-outlet />

@@ -1,4 +1,5 @@
 @use "variables";
+@use 'colors';
 
 .nav {
     display: flex;
@@ -23,5 +24,25 @@
 
     @media screen and (max-width: variables.$small) {
         padding: variables.$content-padding;
+    }
+}
+
+.submit-wrapper {
+    display: flex;
+    justify-content: flex-end;
+
+    [type="submit"] {
+        border-radius: variables.$border-radius;
+        height: 44px;
+        cursor: pointer;
+        border: variables.$base * 0.5 solid colors.$accent;
+        background-color: colors.$accent-dark;
+        color: colors.$text;
+        padding: 0 variables.$base * 4;
+
+        &:focus, &:hover {
+            background-color: colors.$accent;
+            border-color: colors.$accent;
+        }
     }
 }

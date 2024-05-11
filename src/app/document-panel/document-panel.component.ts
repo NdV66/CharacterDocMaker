@@ -20,29 +20,32 @@ import { NgForOf } from '@angular/common';
   styleUrl: './document-panel.component.scss',
 })
 export class DocumentPanelComponent {
+  selectedId = -1;
   readonly form: FormGroup = new FormGroup({});
   readonly themeOptions = [
     {
       id: 1,
       textKey: 'form.theme.fields.theme1',
       imageUrl: '/assets/images/themeOption_pastel.png',
-      isSelected: true,
     },
     {
       id: 2,
       textKey: 'form.theme.fields.theme2',
       imageUrl: '/assets/images/themeOption_sky.png',
-      isSelected: false,
     },
     {
       id: 3,
       textKey: 'form.theme.fields.theme3',
       imageUrl: '/assets/images/themeOption_blackWhite.png',
-      isSelected: false,
     },
   ];
 
   constructor(service: CharacterFormService) {
     this.form = service.form;
+    this.selectedId = service.form.get('themeOption')?.value;
+  }
+
+  onSelectElement(event: number) {
+    console.log('ZYJE! ', event);
   }
 }

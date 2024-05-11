@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output, output } from '@angular/core';
 
 @Component({
   selector: 'app-theme-element',
@@ -12,12 +12,14 @@ export class ThemeElementComponent {
   @Input() text: string = '';
   @Input() imageUrl: string = '';
   @Input() isSelected: boolean = false;
+  @Output('onClickElementEvent') private readonly onClickEventEmitter =
+    new EventEmitter<number>();
 
   get imageUrlCss() {
     return `url(${this.imageUrl})`;
   }
 
   onClick() {
-    console.log('>>>> Element was clicked! ', this.id);
+    this.onClickEventEmitter.emit(this.id);
   }
 }

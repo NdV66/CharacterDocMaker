@@ -8,8 +8,9 @@
       <app-theme-element
         [id]="themeOption.id"
         [text]="themeOption.textKey | getTranslations"
-        [isSelected]="themeOption.isSelected"
+        [isSelected]="themeOption.id === selectedId"
         [imageUrl]="themeOption.imageUrl"
+        (onClickElementEvent)="onSelectElement($event)"
       />
     </div>
   </fieldset>

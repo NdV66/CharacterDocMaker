@@ -15,6 +15,8 @@ export class CharacterFormService {
       live: ['', [Validators.required]],
 
       description: ['', [Validators.required]],
+      themeOption: [1],
+      avatar: [''],
     });
   }
 }
