@@ -1,7 +1,7 @@
-<app-panel [title]="'form.basicInfo.title' | getTranslations" [subtitle]="'form.basicInfo.subtitle' | getTranslations">
-    <app-note class="basic-info-note" text="{{'form.basicInfo.note' | getTranslations}}" />
+<app-panel [title]="'form.basicInfo.title' | getTranslations" [subtitle]="'form.basicInfo.subtitle' | getTranslations" class="basic-info">
+    <app-note class="note" text="{{'form.basicInfo.note' | getTranslations}}" />
 
-    <fieldset class="basic-info-fieldset" [formGroup]="form">
+    <fieldset class="fieldset" [formGroup]="form" >
         <div class="input-wrapper" *ngFor="let field of fields">
             <label>{{ "form.basicInfo.fields." + field.name + ".label" | getTranslations}}</label>
             <input type="text" [name]="field.name" [formControlName]="field.name">

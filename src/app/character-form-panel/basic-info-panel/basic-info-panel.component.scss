@@ -1,63 +1,46 @@
 @use "colors";
 @use "variables";
+@import 'inputs';
 
-.basic-info-note {
-    transform: rotate(4deg);
-    position: absolute;
-    top: variables.$base * 8;
-    right: 0;
-
-    @media screen and (max-width: variables.$small) {
-        & {
-            bottom: 0;
-            top: unset;
-        }
+.basic-info {
+    .note {
+        transform: rotate(4deg);
+        position: absolute;
+        right: 0;
+        bottom: variables.$base * 6 * (-1)
     }
-}
-
-.basic-info-fieldset {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-
-    .input-wrapper {
-        width: 49%;
-        margin-bottom: variables.$base * 3;
-
-        @media screen and (max-width: variables.$small) {
-            width: 100%;
-        }
-
-        input {
-            $space: variables.$base * 6;
-            color: colors.$text;
-            font-size: variables.$basic-font-size;
-            border: 2px solid colors.$accent-dark;
-            border-radius: 45px;
-            background-color: transparent;
-            width: calc(100% - 2 * $space);
-            height: variables.$base * 9;
-            padding: 0 $space;
-
-            &:focus {
-                box-shadow: none;
-                outline-color: none;
-                border-color: colors.$accent;
+    
+    .fieldset {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    
+        .input-wrapper {
+            width: 49%;
+            margin-bottom: variables.$base * 5;
+    
+            @media screen and (max-width: variables.$small) {
+                width: 100%;
+            }
+    
+            input {
+                @include any-input;
+                // height: variables.$base * 10;
             }
         }
-    }
-
-    .input-wrapper--error {
-        @extend .input-wrapper;
-
-        input {
-            border-color: colors.$error;
-            color: colors.$error;
-        }
-
-        label {
-            color: colors.$error;
+    
+        .input-wrapper--error {
+            @extend .input-wrapper;
+    
+            input {
+                border-color: colors.$error;
+                color: colors.$error;
+            }
+    
+            label {
+                color: colors.$error;
+            }
         }
     }
 }

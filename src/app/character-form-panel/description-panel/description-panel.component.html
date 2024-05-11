@@ -1,5 +1,9 @@
-<div>
-    <app-title title="{{ 'form.background.title' | getTranslations}}"
-        subtitle="{{ 'form.background.subtitle' | getTranslations}}">
-    </app-title>
-</div>
+<app-panel [title]="'form.description.title' | getTranslations" [subtitle]="'form.description.subtitle' | getTranslations" class="description">
+
+    <fieldset class="description-info-fieldset" [formGroup]="form">
+        <div class="input-wrapper">
+            <label>{{ "form.description.label" | getTranslations}}</label>
+            <textarea type="text" name="description" formControlName="description" rows="12"></textarea>
+        </div>
+    </fieldset>
+</app-panel>

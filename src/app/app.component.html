@@ -12,8 +12,11 @@
 
 <main class="main">
     <div class="width-wrapper">
-        <app-character-form-panel></app-character-form-panel>
-        <app-document-theme-panel></app-document-theme-panel>
+        <form (ngSubmit)="onSubmit($event)" [formGroup]="form" autocomplete="off">
+            <app-character-form-panel></app-character-form-panel>
+            <app-document-theme-panel></app-document-theme-panel>
+            <button type="submit">Submit me now</button>
+        </form>
     </div>
 </main>
 

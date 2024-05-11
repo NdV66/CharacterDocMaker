@@ -13,6 +13,8 @@ export class CharacterFormService {
       origin: ['', [Validators.required]],
       nature: ['', [Validators.required]],
       live: ['', [Validators.required]],
+
+      description: ['', [Validators.required]],
     });
   }
 }

@@ -6,21 +6,34 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { DocumentThemePanelComponent } from './document-panel/document-theme-panel/document-theme-panel.component';
 import { FooterComponent } from './footer/footer.component';
 import { CharacterFormPanelComponent } from './character-form-panel/character-form-panel.component';
+import { FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { CharacterFormService } from './services';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
     RouterOutlet,
+    ReactiveFormsModule,
     NavbarComponent,
     JumbotronComponent,
     CharacterFormPanelComponent,
     DocumentThemePanelComponent,
     FooterComponent,
   ],
+  providers: [CharacterFormService],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'character-doc-maker';
+  readonly form: FormGroup = new FormGroup({});
+
+  constructor(service: CharacterFormService) {
+    this.form = service.form;
+  }
+
+  onSubmit(e: any) {
+    e.preventDefault();
+    console.log('PARENT basicCharacterInfo ', this.form.value);
+  }
 }

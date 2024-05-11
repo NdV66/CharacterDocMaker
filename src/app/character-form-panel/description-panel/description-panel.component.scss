@@ -1,0 +1,13 @@
+@import 'inputs';
+
+.description {
+    .input-wrapper {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    textarea {
+        @include any-input;
+    }
+}

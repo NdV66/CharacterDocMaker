@@ -5,7 +5,7 @@ export const TEXTS = {
   jumbotron: {
     title: 'Hello there!',
     subtitle: "Let's create your character description!",
-    note: "We know, you always wanted a nice background character document. No worries, we're on the same site!",
+    note: "We know, you always wanted a nice description character document. No worries, we're on the same site!",
   },
 
   form: {
@@ -56,9 +56,10 @@ export const TEXTS = {
         error1: 'todo error 1',
       },
     },
-    background: {
-      title: '3. Describe your background',
+    description: {
+      title: '3. Describe your description',
       subtitle: 'What would you like to share abut your character?',
+      label: 'What would you like to tell about our new friend?',
       note: 'Oh, oh, a final stage! Remember to use an epic description!',
     },
     theme: {

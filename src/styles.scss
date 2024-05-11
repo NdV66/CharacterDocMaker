@@ -33,6 +33,6 @@ fieldset {
 label {
     font-size: variables.$small-font-size;
     color: colors.$accent;
-    margin-bottom: variables.$base / 2;
-    display: inline-block;
+    margin-bottom: calc(variables.$base / 2);
+    display: block;
 }
