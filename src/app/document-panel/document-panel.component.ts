@@ -45,7 +45,17 @@ export class DocumentPanelComponent {
     this.selectedId = service.form.get('themeOption')?.value;
   }
 
+  ngOnInit() {
+    this._subscribe();
+  }
+
+  private _subscribe() {
+    this.form
+      .get('themeOption')
+      ?.valueChanges.subscribe((value) => (this.selectedId = value));
+  }
+
   onSelectElement(event: number) {
-    console.log('ZYJE! ', event);
+    this.form.patchValue({ themeOption: event });
   }
 }
