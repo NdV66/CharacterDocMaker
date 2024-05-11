@@ -13,6 +13,10 @@ export class ThemeElementComponent {
   @Input() imageUrl: string = '';
   @Input() isSelected: boolean = false;
 
+  get imageUrlCss() {
+    return `url(${this.imageUrl})`;
+  }
+
   onClick() {
     console.log('>>>> Element was clicked! ', this.id);
   }

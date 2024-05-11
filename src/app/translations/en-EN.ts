@@ -68,9 +68,9 @@ export const TEXTS = {
       note: 'Which one do you prefer? A green, floral spring or maybe a simple paper notes? Decision is yours!',
 
       fields: {
-        spring: 'Floral spring',
-        sky: 'Starring sky',
-        notes: 'Paper notes',
+        theme1: 'Light life',
+        theme2: 'Medium meditation',
+        theme3: 'Back to black',
       },
     },
   },

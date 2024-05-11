@@ -4,7 +4,7 @@ import { PanelComponent } from '../elements/panel/panel.component';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { CharacterFormService } from '../services';
 import { ThemeElementComponent } from './theme-element/theme-element.component';
-import { NgFor, NgForOf } from '@angular/common';
+import { NgForOf } from '@angular/common';
 
 @Component({
   selector: 'app-document-panel',
@@ -24,20 +24,20 @@ export class DocumentPanelComponent {
   readonly themeOptions = [
     {
       id: 1,
-      textKey: 'todo1',
-      imageUrl: 'imageHere',
-      isSelected: false,
-    },
-    {
-      id: 2,
-      textKey: 'todo2',
-      imageUrl: 'imageHere',
+      textKey: 'form.theme.fields.theme1',
+      imageUrl: '/assets/images/themeOption_pastel.png',
       isSelected: true,
     },
     {
+      id: 2,
+      textKey: 'form.theme.fields.theme2',
+      imageUrl: '/assets/images/themeOption_sky.png',
+      isSelected: false,
+    },
+    {
       id: 3,
-      textKey: 'todo3',
-      imageUrl: 'imageHere',
+      textKey: 'form.theme.fields.theme3',
+      imageUrl: '/assets/images/themeOption_blackWhite.png',
       isSelected: false,
     },
   ];

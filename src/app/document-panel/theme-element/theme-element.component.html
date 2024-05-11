@@ -1,10 +1,11 @@
 <div class="theme-element">
   <div
     (mousedown)="onClick()"
+    [style]="{ backgroundImage: imageUrlCss }"
     [class]="{
       'element--selected': isSelected,
       element: true
     }"
   ></div>
-  <label [class]="{ 'label--selected': isSelected }">{{ text }}</label>
+  <label>{{ text }}</label>
 </div>

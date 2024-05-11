@@ -6,16 +6,18 @@
 
     .element {
         cursor: pointer;
-        background-color: red;
         border-radius: variables.$border-radius;
         width: $size;
         height: $size;
         position: relative;
-        // border: variables.$base solid colors.$accent-dark;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border: variables.$base * 0.5 solid colors.$accent-dark;
     }
 
     .element--selected {
-        border: variables.$base solid colors.$accent;
+        border-color: colors.$accent;
 
         &::after {
             content: "";
@@ -26,17 +28,14 @@
             top: variables.$base * .5 * (-1);
             left: variables.$base * .5 * (-1);
             border-radius: variables.$border-radius;
-            opacity: 0.5;
+            opacity: 0.4;
         }
     }
 
     label {
         text-align: center;
-        margin-top: variables.$base;
-        color: colors.$accent-dark;
+        margin-top: variables.$base * 2;
     }
 
-    .label--selected {
-        color: colors.$accent;
-    }
+  
 }
