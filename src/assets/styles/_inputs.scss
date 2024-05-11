@@ -7,7 +7,7 @@
     color: colors.$text;
     font-size: variables.$basic-font-size;
     border: 2px solid colors.$accent-dark;
-    border-radius: 35px;
+    border-radius: variables.$border-radius;
     background-color: transparent;
     width: calc(100% - 2 * $space);
     padding: variables.$base * 3 $space;

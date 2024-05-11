@@ -1,0 +1,28 @@
+@use 'variables';
+@use 'colors';
+
+.theme-element {
+    .element {
+        cursor: pointer;
+        background-color: red;
+        $size: 200px;
+        border-radius: variables.$border-radius;
+        width: $size;
+        height: $size;
+        // border: variables.$base solid colors.$accent-dark;
+    }
+    
+    .element--selected {
+        border: variables.$base solid colors.$accent;
+    }
+    
+    label {
+        text-align: center;
+        margin-top: variables.$base;
+        color: colors.$accent-dark;
+    }
+
+    .label--selected {
+        color: colors.$accent;
+    }
+}

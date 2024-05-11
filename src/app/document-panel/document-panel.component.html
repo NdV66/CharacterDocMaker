@@ -1,1 +1,16 @@
-
+<app-panel
+  [title]="'form.theme.title' | getTranslations"
+  [subtitle]="'form.theme.subtitle' | getTranslations"
+  class="theme"
+>
+  <fieldset class="fieldset" [formGroup]="form" class="theme-options">
+    <div class="wrapper" *ngFor="let themeOption of themeOptions">
+      <app-theme-element
+        [id]="themeOption.id"
+        [text]="themeOption.textKey | getTranslations"
+        [isSelected]="themeOption.isSelected"
+        [imageUrl]="themeOption.imageUrl"
+      />
+    </div>
+  </fieldset>
+</app-panel>

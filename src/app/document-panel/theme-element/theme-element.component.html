@@ -1,0 +1,10 @@
+<div class="theme-element">
+  <div
+    (mousedown)="onClick()"
+    [class]="{
+      'element--selected': isSelected,
+      element: true
+    }"
+  ></div>
+  <label [class]="{ 'label--selected': isSelected }">{{ text }}</label>
+</div>
