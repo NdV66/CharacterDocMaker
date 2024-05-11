@@ -34,6 +34,7 @@ export class AvatarFiltersComponent {
     this._subscribe();
   }
 
+  //TODO add unsubscribe() on exit component
   private _subscribe() {
     this._sharedService.greyScale$.subscribe(
       (value) => (this.greyScale = value)
@@ -45,7 +46,6 @@ export class AvatarFiltersComponent {
   }
 
   onValueChange({ name, value }: TValueChangeEvent) {
-    console.log('parent slider ', value, name);
     if (name === EFilterNames.BRIGHTNESS)
       this._sharedService.updateBrightness(value);
     if (name === EFilterNames.GREY_SCALE)

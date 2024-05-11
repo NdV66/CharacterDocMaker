@@ -12,7 +12,7 @@ export const TEXTS = {
     avatar: {
       title: '1. Upload your avatar',
       subtitle: "We're so excited to see your new character!",
-      note: 'Upload your image here!',
+      note: "Don't be shy, upload your character image here!",
       upload: 'Edit',
 
       fields: {
