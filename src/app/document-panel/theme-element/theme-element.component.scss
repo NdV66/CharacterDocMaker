@@ -1,21 +1,35 @@
-@use 'variables';
-@use 'colors';
+@use "variables";
+@use "colors";
 
 .theme-element {
+    $size: 200px;
+
     .element {
         cursor: pointer;
         background-color: red;
-        $size: 200px;
         border-radius: variables.$border-radius;
         width: $size;
         height: $size;
+        position: relative;
         // border: variables.$base solid colors.$accent-dark;
     }
-    
+
     .element--selected {
         border: variables.$base solid colors.$accent;
+
+        &::after {
+            content: "";
+            background-color: colors.$accent;
+            width: $size + variables.$base;
+            height: $size + variables.$base;
+            position: absolute;
+            top: variables.$base * .5 * (-1);
+            left: variables.$base * .5 * (-1);
+            border-radius: variables.$border-radius;
+            opacity: 0.5;
+        }
     }
-    
+
     label {
         text-align: center;
         margin-top: variables.$base;
