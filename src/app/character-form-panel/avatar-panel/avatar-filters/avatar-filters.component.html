@@ -1,8 +1,11 @@
 <div class="avatar-filters">
-  <app-slider
-    [min]="0"
-    [max]="100"
-    name="greyscale"
-    (onValueChangeEvent)="onValueChange($event)"
-  ></app-slider>
+  <ng-container *ngFor="let element of filterFields">
+    <app-slider
+      [min]="0"
+      [max]="100"
+      [name]="element.name"
+      (onValueChangeEvent)="onValueChange($event)"
+      [value]="element.value"
+    />
+  </ng-container>
 </div>

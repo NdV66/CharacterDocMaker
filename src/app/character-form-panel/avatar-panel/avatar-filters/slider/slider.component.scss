@@ -1,1 +1,32 @@
-.slider {}
+@use "colors";
+@use "variables";
+
+.slider {
+    $circle-size: variables.$base * 5.5;
+    height: $circle-size;
+    margin: variables.$base * 4 0;
+    width: 100%;
+
+    .slider-element {
+        -webkit-appearance: none;
+        width: 100%;
+        height: variables.$base * 2;
+        border-radius: variables.$border-radius;
+        background: colors.$accent-dark;
+        outline: none;
+        -webkit-transition: 0.2s;
+        transition: opacity 0.2s;
+
+        &::-webkit-slider-thumb,
+        &::-moz-range-thumb {
+            border-radius: 50%;
+            -webkit-appearance: none;
+            appearance: none;
+            width: $circle-size;
+            height: $circle-size;
+            background-color: colors.$accent;
+            cursor: pointer;
+            border: none;
+        }
+    }
+}
