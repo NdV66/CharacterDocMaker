@@ -19,6 +19,7 @@ export const TEXTS = {
         greyScale: 'Grey scale',
         zoom: 'Zoom',
         brightness: 'Brightness',
+        reset: 'Reset filters',
       },
     },
     basicInfo: {

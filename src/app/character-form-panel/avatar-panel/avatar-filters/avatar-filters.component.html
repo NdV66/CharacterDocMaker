@@ -5,4 +5,8 @@
         [label]="'form.avatar.fields.brightness' | getTranslations" />
     <app-slider [min]="100" [max]="200" id="zoom" (onValueChangeEvent)="onValueChange($event)" [value]="zoom"
         [label]="'form.avatar.fields.zoom' | getTranslations" />
+
+    <div class="reset">
+        <span role="button" (mousedown)="onClickReset()">{{'form.avatar.fields.reset' | getTranslations}}</span>
+    </div>
 </div>

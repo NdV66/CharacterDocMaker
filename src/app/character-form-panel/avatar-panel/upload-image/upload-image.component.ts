@@ -23,8 +23,6 @@ export class UploadImageComponent {
   }
 
   get imageInlineStyles() {
-    console.log(`${this.zoom}% ${this.zoom}%`);
-
     return {
       filter: `grayscale(${this._greyScaleAsNonPercent}) brightness(${this._brightnessAsNonPercent})`,
       backgroundImage: `url(${this.imageUrl})`,

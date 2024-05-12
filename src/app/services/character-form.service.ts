@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-const DEFAULT_VALUES = {
+export const DEFAULT_VALUES = {
   greyScale: 0,
   zoom: 100,
   brightness: 100,

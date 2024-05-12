@@ -3,7 +3,7 @@ import { SliderComponent } from './slider/slider.component';
 import { TValueChangeEvent } from './slider/slider.types';
 import { NgFor } from '@angular/common';
 import { TranslationsPipe } from '../../../translations/translations.pipe';
-import { CharacterFormService } from '../../../services';
+import { CharacterFormService, DEFAULT_VALUES } from '../../../services';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
@@ -34,11 +34,9 @@ export class AvatarFiltersComponent {
     this.form
       .get('greyScale')
       ?.valueChanges.subscribe((value) => (this.greyScale = value));
-
     this.form
       .get('zoom')
       ?.valueChanges.subscribe((value) => (this.zoom = value));
-
     this.form
       .get('brightness')
       ?.valueChanges.subscribe((value) => (this.brightness = value));
@@ -46,5 +44,13 @@ export class AvatarFiltersComponent {
 
   onValueChange({ name, value }: TValueChangeEvent) {
     this.form.patchValue({ [name]: value });
+  }
+
+  onClickReset() {
+    this.form.patchValue({
+      zoom: DEFAULT_VALUES.zoom,
+      brightness: DEFAULT_VALUES.brightness,
+      greyScale: DEFAULT_VALUES.greyScale,
+    });
   }
 }
