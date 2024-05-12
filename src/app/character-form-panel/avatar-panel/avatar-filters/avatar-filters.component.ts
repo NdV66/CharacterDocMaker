@@ -5,7 +5,6 @@ import { NgFor } from '@angular/common';
 import { TranslationsPipe } from '../../../translations/translations.pipe';
 import { CharacterFormService } from '../../../services';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { tap } from 'rxjs';
 
 @Component({
   selector: 'app-avatar-filters',
