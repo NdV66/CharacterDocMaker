@@ -1,9 +1,10 @@
 import { Component, Input } from '@angular/core';
+import { TranslationsPipe } from '../../../translations/translations.pipe';
 
 @Component({
   selector: 'app-upload-image',
   standalone: true,
-  imports: [],
+  imports: [TranslationsPipe],
   templateUrl: './upload-image.component.html',
   styleUrl: './upload-image.component.scss',
 })

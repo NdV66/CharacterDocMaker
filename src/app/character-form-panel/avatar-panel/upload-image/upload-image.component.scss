@@ -2,9 +2,11 @@
 @use "colors";
 
 .upload-image {
-    .element {
-        $size: 180px;
+    $size: 180px;
 
+    .element {
+        position: relative;
+        cursor: pointer;
         border-radius: 50%;
         width: $size;
         height: $size;
@@ -12,5 +14,24 @@
         background-repeat: no-repeat;
         background-size: cover;
         border: variables.$base * 0.5 solid colors.$accent-dark;
+
+        &:hover {
+            border-color: colors.$accent;
+        }
+    }
+
+    .element-edit {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(colors.$accent-dark, 0.5);
+        width: $size;
+        height: $size * 0.5;
+        border-bottom-left-radius: $size;
+        border-bottom-right-radius: $size;
+
+        &:hover {
+            background-color: rgba(colors.$accent, 0.5);
+        }
     }
 }
