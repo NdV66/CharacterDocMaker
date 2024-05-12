@@ -7,7 +7,29 @@
     padding: variables.$base * 3 0;
     width: 100%;
 
-    .slider-element {
+    @mixin thumb {
+        border-radius: 50%;
+        width: $circle-size;
+        height: $circle-size;
+        background-color: colors.$accent;
+        cursor: pointer;
+        border: none;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        @include thumb;
+    }
+
+    input[type="range"]::-moz-range-thumb {
+        @include thumb;
+    }
+
+    input[type="range"]::-ms-thumb {
+        @include thumb;
+    }
+
+    input[type="range"] {
         -webkit-appearance: none;
         width: 100%;
         height: variables.$base * 2;
@@ -16,17 +38,5 @@
         outline: none;
         -webkit-transition: 0.2s;
         transition: opacity 0.2s;
-
-        &::-webkit-slider-thumb,
-        &::-moz-range-thumb {
-            border-radius: 50%;
-            -webkit-appearance: none;
-            appearance: none;
-            width: $circle-size;
-            height: $circle-size;
-            background-color: colors.$accent;
-            cursor: pointer;
-            border: none;
-        }
     }
 }

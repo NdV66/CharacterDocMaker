@@ -1,5 +1,5 @@
 @use "variables";
-@use 'colors';
+@use "colors";
 
 .nav {
     display: flex;
@@ -41,7 +41,8 @@
         color: colors.$text;
         padding: 0 variables.$base * 4;
 
-        &:focus, &:hover {
+        &:focus,
+        &:hover {
             background-color: colors.$accent;
             border-color: colors.$accent;
         }

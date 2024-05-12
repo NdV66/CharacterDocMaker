@@ -10,7 +10,7 @@
         border-radius: 50%;
         width: $size;
         height: $size;
-        border: variables.$base * 0.5 solid colors.$accent-dark;
+        border: variables.$base solid colors.$accent-dark;
         background: transparent;
 
         &:hover {

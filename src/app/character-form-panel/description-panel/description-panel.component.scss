@@ -10,12 +10,13 @@
 
     textarea {
         @include any-input;
+        resize: none;
     }
 
     .note {
         position: absolute;
         right: 0;
-        bottom: variables.$base * 2 * (-1);
+        bottom: variables.$base * 8 * (-1);
         transform: rotate(-4deg);
     }
 }

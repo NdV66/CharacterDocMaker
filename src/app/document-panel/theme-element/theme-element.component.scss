@@ -2,49 +2,49 @@
 @use "colors";
 
 .theme-element {
-  $size: 190px;
-  $min-size: 104px;
+    $size: 190px;
+    $min-size: 104px;
 
-  .element {
-    cursor: pointer;
-    border-radius: variables.$border-radius;
-    width: $size;
-    height: $size;
-    position: relative;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    border: variables.$base * 0.5 solid colors.$accent-dark;
+    .element {
+        cursor: pointer;
+        border-radius: variables.$border-radius;
+        width: $size;
+        height: $size;
+        position: relative;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border: variables.$base solid colors.$accent-dark;
 
-    @media screen and (max-width: variables.$small) {
-      width: $min-size;
-      height: $min-size;
+        @media screen and (max-width: variables.$small) {
+            width: $min-size;
+            height: $min-size;
+        }
     }
-  }
 
-  .element--selected {
-    border-color: colors.$accent;
+    .element--selected {
+        border-color: colors.$accent;
 
-    &::after {
-      content: "";
-      background-color: colors.$accent;
-      width: $size + variables.$base;
-      height: $size + variables.$base;
-      position: absolute;
-      top: variables.$base * 0.5 * (-1);
-      left: variables.$base * 0.5 * (-1);
-      border-radius: variables.$border-radius;
-      opacity: 0.4;
+        &::after {
+            content: "";
+            background-color: colors.$accent;
+            width: $size + variables.$base;
+            height: $size + variables.$base;
+            position: absolute;
+            top: variables.$base * 0.5 * (-1);
+            left: variables.$base * 0.5 * (-1);
+            border-radius: variables.$border-radius;
+            opacity: 0.4;
 
-      @media screen and (max-width: variables.$small) {
-        width: $min-size + variables.$base;
-        height: $min-size + variables.$base;
-      }
+            @media screen and (max-width: variables.$small) {
+                width: $min-size + variables.$base;
+                height: $min-size + variables.$base;
+            }
+        }
     }
-  }
 
-  label {
-    text-align: center;
-    margin-top: variables.$base * 2;
-  }
+    label {
+        text-align: center;
+        margin-top: variables.$base * 2;
+    }
 }
