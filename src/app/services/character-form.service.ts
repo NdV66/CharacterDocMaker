@@ -1,9 +1,13 @@
 import { Injectable } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-const FILTER_DEFAULT_VALUE = 50;
-const THEME_DEFAULT_VALUE = 1;
-const IMAGE_DEFAULT_VALUE = '/assets/images/avatarPlaceholder.png';
+const DEFAULT_VALUES = {
+  greyScale: 0,
+  zoom: 100,
+  brightness: 100,
+  themeOption: 1,
+  avatar: '/assets/images/avatarPlaceholder.png',
+};
 
 @Injectable({ providedIn: 'root' })
 export class CharacterFormService {
@@ -19,12 +23,12 @@ export class CharacterFormService {
       live: ['', [Validators.required]],
 
       description: ['', [Validators.required]],
-      themeOption: [THEME_DEFAULT_VALUE],
+      themeOption: [DEFAULT_VALUES.themeOption],
 
-      avatar: [IMAGE_DEFAULT_VALUE],
-      greyScale: [FILTER_DEFAULT_VALUE],
-      brightness: [FILTER_DEFAULT_VALUE],
-      zoom: [FILTER_DEFAULT_VALUE],
+      avatar: [DEFAULT_VALUES.avatar],
+      greyScale: [DEFAULT_VALUES.greyScale],
+      brightness: [DEFAULT_VALUES.brightness],
+      zoom: [DEFAULT_VALUES.zoom],
     });
   }
 }

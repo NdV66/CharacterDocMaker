@@ -10,10 +10,8 @@
         border-radius: 50%;
         width: $size;
         height: $size;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
         border: variables.$base * 0.5 solid colors.$accent-dark;
+        background: transparent;
 
         &:hover {
             border-color: colors.$accent;
@@ -22,6 +20,15 @@
                 background-color: rgba(colors.$accent, 0.5);
             }
         }
+    }
+
+    .element-image {
+        border-radius: 50%;
+        width: $size;
+        height: $size;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 
     .element-edit {

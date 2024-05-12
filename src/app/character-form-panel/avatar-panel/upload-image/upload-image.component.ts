@@ -8,11 +8,27 @@ import { TranslationsPipe } from '../../../translations/translations.pipe';
   templateUrl: './upload-image.component.html',
   styleUrl: './upload-image.component.scss',
 })
-//TODO some king od parent for imageUrl? extends or something
 export class UploadImageComponent {
   @Input() imageUrl = '';
+  @Input() greyScale = 0;
+  @Input() brightness = 0;
+  @Input() zoom = 100;
 
-  get imageUrlCss() {
-    return `url(${this.imageUrl})`;
+  private get _greyScaleAsNonPercent() {
+    return this.greyScale / 100;
+  }
+
+  private get _brightnessAsNonPercent() {
+    return this.brightness / 100;
+  }
+
+  get imageInlineStyles() {
+    console.log(`${this.zoom}% ${this.zoom}%`);
+
+    return {
+      filter: `grayscale(${this._greyScaleAsNonPercent}) brightness(${this._brightnessAsNonPercent})`,
+      backgroundImage: `url(${this.imageUrl})`,
+      backgroundSize: `${this.zoom}% ${this.zoom}%`,
+    };
   }
 }

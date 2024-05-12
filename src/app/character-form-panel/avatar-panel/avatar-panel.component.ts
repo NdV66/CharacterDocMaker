@@ -22,10 +22,39 @@ import { CharacterFormService } from '../../services';
 })
 export class AvatarPanelComponent {
   imageUrl = '';
+  greyScale = 0;
+  zoom = 0;
+  brightness = 0;
+
   readonly form: FormGroup = new FormGroup({});
 
   constructor(service: CharacterFormService) {
     this.form = service.form;
+    this.greyScale = service.form.get('greyScale')?.value;
+    this.zoom = service.form.get('zoom')?.value;
+    this.brightness = service.form.get('brightness')?.value;
     this.imageUrl = service.form.get('avatar')?.value;
+  }
+
+  ngOnInit() {
+    this._subscribe();
+  }
+
+  private _subscribe() {
+    this.form
+      .get('greyScale')
+      ?.valueChanges.subscribe((value) => (this.greyScale = value));
+
+    this.form
+      .get('zoom')
+      ?.valueChanges.subscribe((value) => (this.zoom = value));
+
+    this.form
+      .get('brightness')
+      ?.valueChanges.subscribe((value) => (this.brightness = value));
+
+    this.form
+      .get('avatar')
+      ?.valueChanges.subscribe((value) => (this.imageUrl = value));
   }
 }
