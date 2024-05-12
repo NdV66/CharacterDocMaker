@@ -1,4 +1,6 @@
-<app-panel [title]="'form.description.title' | getTranslations" [subtitle]="'form.description.subtitle' | getTranslations" class="description">
+<app-panel [title]="'form.description.title' | getTranslations"
+    [subtitle]="'form.description.subtitle' | getTranslations" class="description">
+    <app-note class="note" text="{{ 'form.description.note' | getTranslations }}" />
 
     <fieldset class="description-info-fieldset" [formGroup]="form">
         <div class="input-wrapper">

@@ -17,6 +17,10 @@
 
         &:hover {
             border-color: colors.$accent;
+
+            .element-edit {
+                background-color: rgba(colors.$accent, 0.5);
+            }
         }
     }
 
@@ -30,8 +34,9 @@
         border-bottom-left-radius: $size;
         border-bottom-right-radius: $size;
 
-        &:hover {
-            background-color: rgba(colors.$accent, 0.5);
-        }
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "Nothing You Could Do";
     }
 }

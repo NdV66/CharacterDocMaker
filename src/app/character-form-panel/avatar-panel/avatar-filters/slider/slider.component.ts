@@ -9,8 +9,8 @@ import { TValueChangeEvent } from './slider.types';
   styleUrl: './slider.component.scss',
 })
 export class SliderComponent {
-  @Input() min = 0;
-  @Input() max = 0;
+  min = 0;
+  max = 100;
   @Input() id = '';
   @Input() value = 0;
   @Input() label = '';

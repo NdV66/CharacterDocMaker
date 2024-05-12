@@ -1,3 +1,5 @@
+@use "variables";
+
 .flex-container {
     display: flex;
     flex-wrap: wrap;
@@ -13,8 +15,8 @@
 .basic-info {
     .note {
         position: absolute;
-        bottom: 0;
-        left: 0;
-        transform: rotate(-6deg);
+        bottom: variables.$base * 6 * (-1);
+        right: 0;
+        transform: rotate(-12deg);
     }
 }

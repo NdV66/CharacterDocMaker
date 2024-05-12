@@ -57,7 +57,7 @@ export const TEXTS = {
       },
     },
     description: {
-      title: '3. Describe your description',
+      title: '3. Describe your background',
       subtitle: 'What would you like to share abut your character?',
       label: 'What would you like to tell about our new friend?',
       note: 'Oh, oh, a final stage! Remember to use an epic description!',
