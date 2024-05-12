@@ -22,7 +22,6 @@ import { TranslationsPipe } from './translations/translations.pipe';
     DocumentPanelComponent,
     FooterComponent,
   ],
-  providers: [CharacterFormService],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
@@ -35,6 +34,6 @@ export class AppComponent {
 
   onSubmit(e: any) {
     e.preventDefault();
-    console.log('PARENT basicCharacterInfo ', this.form.value);
+    console.log('Form', this.form.value);
   }
 }

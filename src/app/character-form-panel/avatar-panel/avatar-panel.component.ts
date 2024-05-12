@@ -17,7 +17,6 @@ import { CharacterFormService } from '../../services';
     AvatarFiltersComponent,
     UploadImageComponent,
   ],
-  providers: [CharacterFormService],
   templateUrl: './avatar-panel.component.html',
   styleUrl: './avatar-panel.component.scss',
 })

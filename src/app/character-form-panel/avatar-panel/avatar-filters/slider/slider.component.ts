@@ -11,7 +11,7 @@ import { TValueChangeEvent } from './slider.types';
 export class SliderComponent {
   @Input() min = 0;
   @Input() max = 0;
-  @Input() name = '';
+  @Input() id = '';
   @Input() value = 0;
   @Input() label = '';
   @Output('onValueChangeEvent') readonly onValueChangeEventEmitter =
@@ -19,7 +19,7 @@ export class SliderComponent {
 
   onValueChange(event: Event) {
     const data: TValueChangeEvent = {
-      name: this.name,
+      name: this.id,
       value: Number.parseInt((event.target as HTMLInputElement).value, 10),
     };
     this.onValueChangeEventEmitter.emit(data);

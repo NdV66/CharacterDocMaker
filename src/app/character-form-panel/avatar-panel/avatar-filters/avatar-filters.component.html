@@ -1,26 +1,8 @@
 <div class="avatar-filters">
-  <app-slider
-    [min]="0"
-    [max]="100"
-    name="greyScale"
-    (onValueChangeEvent)="onValueChange($event)"
-    [value]="greyScale"
-    [label]="'form.avatar.fields.greyScale' | getTranslations"
-  />
-  <app-slider
-    [min]="0"
-    [max]="100"
-    name="brightness"
-    (onValueChangeEvent)="onValueChange($event)"
-    [value]="brightness"
-    [label]="'form.avatar.fields.brightness' | getTranslations"
-  />
-  <app-slider
-    [min]="0"
-    [max]="100"
-    name="zoom"
-    (onValueChangeEvent)="onValueChange($event)"
-    [value]="zoom"
-    [label]="'form.avatar.fields.zoom' | getTranslations"
-  />
+    <app-slider [min]="0" [max]="100" id="greyScale" (onValueChangeEvent)="onValueChange($event)" [value]="greyScale"
+        [label]="'form.avatar.fields.greyScale' | getTranslations" />
+    <app-slider [min]="0" [max]="100" id="brightness" (onValueChangeEvent)="onValueChange($event)" [value]="brightness"
+        [label]="'form.avatar.fields.brightness' | getTranslations" />
+    <app-slider [min]="0" [max]="100" id="zoom" (onValueChangeEvent)="onValueChange($event)" [value]="zoom"
+        [label]="'form.avatar.fields.zoom' | getTranslations" />
 </div>

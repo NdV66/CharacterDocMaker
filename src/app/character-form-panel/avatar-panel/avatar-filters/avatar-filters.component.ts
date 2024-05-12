@@ -4,14 +4,13 @@ import { TValueChangeEvent } from './slider/slider.types';
 import { NgFor } from '@angular/common';
 import { TranslationsPipe } from '../../../translations/translations.pipe';
 import { CharacterFormService } from '../../../services';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { tap } from 'rxjs';
 
 @Component({
   selector: 'app-avatar-filters',
   standalone: true,
-  providers: [CharacterFormService],
-  imports: [SliderComponent, TranslationsPipe, NgFor],
+  imports: [SliderComponent, TranslationsPipe, NgFor, ReactiveFormsModule],
   templateUrl: './avatar-filters.component.html',
   styleUrl: './avatar-filters.component.scss',
 })
@@ -40,11 +39,13 @@ export class AvatarFiltersComponent {
 
     this.form
       .get('zoom')
-      ?.valueChanges.subscribe((value) => (this.zoom = value));
+      ?.valueChanges.pipe(tap((el) => console.log('!!', el)))
+      .subscribe((value) => (this.zoom = value));
 
     this.form
       .get('brightness')
-      ?.valueChanges.subscribe((value) => (this.brightness = value));
+      ?.valueChanges.pipe(tap((el) => console.log('!!', el)))
+      .subscribe((value) => (this.brightness = value));
   }
 
   onValueChange({ name, value }: TValueChangeEvent) {

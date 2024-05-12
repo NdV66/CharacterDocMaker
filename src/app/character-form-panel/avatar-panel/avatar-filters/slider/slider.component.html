@@ -1,12 +1,5 @@
 <div class="slider">
-  <label>{{ label }}</label>
-  <input
-    type="range"
-    [min]="min"
-    [max]="max"
-    [value]="value"
-    class="slider-element"
-    [name]="name"
-    (input)="onValueChange($event)"
-  />
+    <label [for]="id">{{ label }}</label>
+    <input type="range" [min]="min" [max]="max" [value]="value" class="slider-element" [id]="id"
+        (input)="onValueChange($event)" />
 </div>

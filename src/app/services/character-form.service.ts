@@ -5,7 +5,7 @@ const FILTER_DEFAULT_VALUE = 50;
 const THEME_DEFAULT_VALUE = 1;
 const IMAGE_DEFAULT_VALUE = '/assets/images/avatarPlaceholder.png';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class CharacterFormService {
   readonly form: FormGroup = new FormGroup({});
 
