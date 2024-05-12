@@ -34,18 +34,15 @@ export class AvatarFiltersComponent {
   private _subscribe() {
     this.form
       .get('greyScale')
-      ?.valueChanges.pipe(tap((el) => console.log('!!', el)))
-      .subscribe((value) => (this.greyScale = value));
+      ?.valueChanges.subscribe((value) => (this.greyScale = value));
 
     this.form
       .get('zoom')
-      ?.valueChanges.pipe(tap((el) => console.log('!!', el)))
-      .subscribe((value) => (this.zoom = value));
+      ?.valueChanges.subscribe((value) => (this.zoom = value));
 
     this.form
       .get('brightness')
-      ?.valueChanges.pipe(tap((el) => console.log('!!', el)))
-      .subscribe((value) => (this.brightness = value));
+      ?.valueChanges.subscribe((value) => (this.brightness = value));
   }
 
   onValueChange({ name, value }: TValueChangeEvent) {
