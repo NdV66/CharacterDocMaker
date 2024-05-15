@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Observable } from 'rxjs';
 
 export const DEFAULT_VALUES = {
   greyScale: 0,
@@ -30,6 +31,12 @@ export class CharacterFormService {
       brightness: [DEFAULT_VALUES.brightness],
       zoom: [DEFAULT_VALUES.zoom],
     });
+  }
+
+  public uploadAvatar(image: File) {
+    this.form.patchValue({ image });
+
+    return true;
   }
 }
 
