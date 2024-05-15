@@ -2,6 +2,12 @@
 
 This project is about to create a simple page for generating a simple RPG-character pdf.
 
+# Goals
+
+- no additional libraries, only HTML, SCSS and Angular (!)
+- simple page
+-
+
 # How to develop it locally?
 
 ## Run development server

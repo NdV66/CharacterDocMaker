@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { TranslationsPipe } from '../../../translations/translations.pipe';
 import { CharacterFormService } from '../../../services';
 import { ImageSnippetDto } from '../../../models/';
+import { fromEvent } from 'rxjs';
 
 @Component({
   selector: 'app-upload-image',
@@ -17,8 +18,12 @@ export class UploadImageComponent {
   @Input() zoom = 100;
   isLoading = false;
   isError = false;
+  private _currentFile: File = null as any;
+  private readonly _reader = new FileReader();
 
-  constructor(private _service: CharacterFormService) {}
+  constructor(private _service: CharacterFormService) {
+    this._subscribeToLoadImage();
+  }
 
   private get _greyScaleAsNonPercent() {
     return this.greyScale / 100;
@@ -36,19 +41,23 @@ export class UploadImageComponent {
     };
   }
 
-  processFile(imageInput: any) {
-    if (this.isLoading) return;
-
-    this.isLoading = true;
-    const file: File = imageInput.files[0];
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-
-    reader.addEventListener('load', (event: any) => {
-      const selectedFile = new ImageSnippetDto(event.target.result, file);
-      const result = this._service.uploadAvatar(selectedFile.file);
+  private _subscribeToLoadImage() {
+    const load = fromEvent(this._reader, 'load');
+    load.subscribe((event: any) => {
+      const selectedFile = new ImageSnippetDto(
+        event.target.result,
+        this._currentFile
+      );
+      this._service.uploadAvatar(selectedFile.file);
       this.imageUrl = selectedFile.src;
       this.isLoading = false;
     });
+  }
+
+  processFile(imageInput: any) {
+    if (this.isLoading) return;
+    this.isLoading = true;
+    this._currentFile = imageInput.files[0];
+    this._reader.readAsDataURL(this._currentFile);
   }
 }
