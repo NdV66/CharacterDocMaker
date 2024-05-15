@@ -29,4 +29,8 @@ export class UploadImageComponent {
       backgroundSize: `${this.zoom}% ${this.zoom}%`,
     };
   }
+
+  processFile(element: HTMLInputElement) {
+    console.log('>>> process');
+  }
 }

@@ -1,6 +1,18 @@
 <div class="upload-image">
-    <div class="element">
-        <div class="element-image" [style]="imageInlineStyles"></div>
-        <div class="element-edit">{{'form.avatar.upload' | getTranslations}}</div>
+  <div class="element">
+    <div class="element-image" [style]="imageInlineStyles"></div>
+    <div>
+      <label for="file" class="element-edit">
+        {{ "form.avatar.upload" | getTranslations }}</label
+      >
+      <input
+        #imageInput
+        type="file"
+        accept="image/*"
+        (change)="processFile(imageInput)"
+        class="file"
+        id="file"
+      />
     </div>
+  </div>
 </div>
