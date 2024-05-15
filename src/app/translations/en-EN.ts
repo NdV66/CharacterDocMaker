@@ -14,6 +14,7 @@ export const TEXTS = {
       subtitle: "We're so excited to see your new character!",
       note: "Don't be shy, upload your character image here!",
       upload: 'Edit',
+      loading: 'Loading...',
 
       fields: {
         greyScale: 'Grey scale',

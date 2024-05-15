@@ -7,12 +7,11 @@
 
     .element {
         position: relative;
-        cursor: pointer;
         border-radius: 50%;
         width: $size;
         height: $size;
         border: variables.$base solid colors.$accent-dark;
-        background: transparent;
+        background-color: transparent;
 
         &:hover {
             border-color: colors.$accent;
@@ -25,6 +24,31 @@
         @media screen and (max-width: variables.$small) {
             width: $small-size;
             height: $small-size;
+        }
+    }
+
+    .element--loading {
+        @extend .element;
+        cursor: wait;
+
+        &:hover {
+            border-color: colors.$accent-dark;
+
+            .element-edit {
+                background-color: rgba(colors.$accent-dark, 0.5);
+            }
+        }
+
+        .element-image {
+            opacity: 0.5;
+        }
+
+        .element-edit {
+            cursor: wait;
+        }
+
+        .file {
+            cursor: wait;
         }
     }
 
@@ -63,10 +87,6 @@
             height: $small-size * 0.5;
         }
     }
-
-    .element-edit--loading {
-        @extend .element-edit;
-    }
 }
 
 .file {
@@ -75,20 +95,3 @@
     height: 0.1px;
     position: absolute;
 }
-
-// label {
-//     display: block;
-//     position: relative;
-//     width: 200px;
-//     height: 50px;
-//     border-radius: 25px;
-//     background: linear-gradient(40deg, #ff6ec4, #7873f5);
-//     box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     color: #fff;
-//     font-weight: bold;
-//     cursor: pointer;
-//     transition: transform 0.2s ease-out;
-// }

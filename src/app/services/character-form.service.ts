@@ -33,10 +33,10 @@ export class CharacterFormService {
     });
   }
 
+  //TODO
   public uploadAvatar(image: File) {
-    this.form.patchValue({ image });
-
-    return true;
+    // console.log('>>>> ', image);
+    // this.form.patchValue({ image });
   }
 }
 

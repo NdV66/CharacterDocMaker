@@ -1,9 +1,13 @@
 <div class="upload-image">
-  <div class="element">
+  <div [class]="{ 'element--loading': isLoading, element: !isLoading }">
     <div class="element-image" [style]="imageInlineStyles"></div>
     <div>
       <label for="file" class="element-edit">
-        {{ "form.avatar.upload" | getTranslations }}</label
+        {{
+          isLoading
+            ? ("form.avatar.loading" | getTranslations)
+            : ("form.avatar.upload" | getTranslations)
+        }}</label
       >
       <input
         #imageInput
@@ -12,6 +16,7 @@
         (change)="processFile(imageInput)"
         class="file"
         id="file"
+        [disabled]="isLoading"
       />
     </div>
   </div>
