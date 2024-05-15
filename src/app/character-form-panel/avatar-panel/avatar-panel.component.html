@@ -1,10 +1,21 @@
-<app-panel [title]="'form.avatar.title' | getTranslations" [subtitle]="'form.avatar.subtitle' | getTranslations"
-    class="basic-info">
-    <app-note class="note" text="{{ 'form.avatar.note' | getTranslations }}" />
+<app-panel
+  [title]="'form.avatar.title' | getTranslations"
+  [subtitle]="'form.avatar.subtitle' | getTranslations"
+  class="basic-info"
+>
+  <app-note class="note" text="{{ 'form.avatar.note' | getTranslations }}" />
 
-    <div class="flex-container">
-        <app-upload-image class="half" [imageUrl]="imageUrl" [greyScale]="greyScale" [brightness]="brightness"
-            [zoom]="zoom" />
-        <app-avatar-filters class="half" />
-    </div>
+  <div class="flex-container">
+    <app-upload-image
+      class="half"
+      [imageUrl]="imageUrl"
+      [greyScale]="greyScale"
+      [brightness]="brightness"
+      [isError]="isError"
+      [isLoading]="isLoading"
+      [zoom]="zoom"
+      (onProcessAvatarEvent)="onProcessImage($event)"
+    />
+    <app-avatar-filters class="half" />
+  </div>
 </app-panel>

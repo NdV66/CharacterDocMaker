@@ -6,6 +6,8 @@ import { AvatarFiltersComponent } from './avatar-filters/avatar-filters.componen
 import { UploadImageComponent } from './upload-image/upload-image.component';
 import { FormGroup } from '@angular/forms';
 import { CharacterFormService } from '../../services';
+import { fromEvent } from 'rxjs';
+import { ImageSnippetDto } from '../../models';
 
 @Component({
   selector: 'app-avatar-panel',
@@ -25,22 +27,48 @@ export class AvatarPanelComponent {
   greyScale = 0;
   zoom = 0;
   brightness = 0;
+  isLoading = false;
+  isError = false;
+
+  private _currentFile: File = null as any as File;
+  private readonly _reader = new FileReader();
 
   readonly form: FormGroup = new FormGroup({});
 
-  constructor(service: CharacterFormService) {
-    this.form = service.form;
-    this.greyScale = service.form.get('greyScale')?.value;
-    this.zoom = service.form.get('zoom')?.value;
-    this.brightness = service.form.get('brightness')?.value;
-    this.imageUrl = service.form.get('avatar')?.value;
+  constructor(private _service: CharacterFormService) {
+    this.form = this._service.form;
+    this.greyScale = this._service.form.get('greyScale')?.value;
+    this.zoom = this._service.form.get('zoom')?.value;
+    this.brightness = this._service.form.get('brightness')?.value;
+    this.imageUrl = this._service.form.get('avatar')?.value;
   }
 
   ngOnInit() {
-    this._subscribe();
+    this._subscribeToFiltersChanged();
+    this._subscribeToLoadImage();
   }
 
-  private _subscribe() {
+  onProcessImage(image: any) {
+    if (this.isLoading) return;
+    this.isLoading = true;
+    this._currentFile = image;
+    this._reader.readAsDataURL(this._currentFile);
+  }
+
+  private _subscribeToLoadImage() {
+    const load = fromEvent(this._reader, 'load');
+    load.subscribe((event: any) => {
+      const selectedFile = new ImageSnippetDto(
+        event.target.result,
+        this._currentFile
+      );
+      this._service.uploadAvatar(selectedFile.file);
+      this.imageUrl = selectedFile.src;
+      this.isLoading = false;
+    });
+  }
+
+  private _subscribeToFiltersChanged() {
     this.form
       .get('greyScale')
       ?.valueChanges.subscribe((value) => (this.greyScale = value));
