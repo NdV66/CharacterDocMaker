@@ -2,7 +2,8 @@
 @use "colors";
 
 .upload-image {
-    $size: 180px;
+    $size: 220px;
+    $small-size: $size * 0.7;
 
     .element {
         position: relative;
@@ -20,6 +21,11 @@
                 background-color: rgba(colors.$accent, 0.5);
             }
         }
+
+        @media screen and (max-width: variables.$small) {
+            width: $small-size;
+            height: $small-size;
+        }
     }
 
     .element-image {
@@ -29,6 +35,11 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+
+        @media screen and (max-width: variables.$small) {
+            width: $small-size;
+            height: $small-size;
+        }
     }
 
     .element-edit {
@@ -45,5 +56,10 @@
         justify-content: center;
         align-items: center;
         font-family: "Nothing You Could Do";
+
+        @media screen and (max-width: variables.$small) {
+            width: $small-size;
+            height: $small-size * 0.5;
+        }
     }
 }
