@@ -1,25 +1,6 @@
 @use "variables";
-@use "colors";
-@import "inputs";
 
 .description {
-    .input-wrapper {
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    .textarea {
-        @include any-input;
-        resize: none;
-    }
-
-    .textarea--error {
-        @extend .textarea;
-        @include any-input;
-        @include any-input--error;
-    }
-
     .note {
         position: absolute;
         right: 0;
