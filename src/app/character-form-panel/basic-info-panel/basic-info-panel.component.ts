@@ -36,5 +36,3 @@ export class BasicInfoPanelComponent {
     this.form = service.form;
   }
 }
-
-//https://www.telerik.com/blogs/angular-basics-what-reactive-forms-when-use-them

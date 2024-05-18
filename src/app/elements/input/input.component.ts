@@ -10,7 +10,7 @@ import { LabelComponent } from '../label/label.component';
   styleUrl: './input.component.scss',
 })
 export class InputComponent {
-  @Input() isError = false;
+  @Input() error = '';
   @Input() label = '';
   @Input() inputName!: string;
   @Input() form!: FormGroup;

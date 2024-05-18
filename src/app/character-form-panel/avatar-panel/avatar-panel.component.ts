@@ -86,4 +86,19 @@ export class AvatarPanelComponent {
       .get('avatar')
       ?.valueChanges.subscribe((value) => (this.imageUrl = value));
   }
+
+  private get _greyScaleAsNonPercent() {
+    return this.greyScale / 100;
+  }
+
+  private get _brightnessAsNonPercent() {
+    return this.brightness / 100;
+  }
+
+  get imageInlineStyles() {
+    return {
+      filter: `grayscale(${this._greyScaleAsNonPercent}) brightness(${this._brightnessAsNonPercent})`,
+      backgroundSize: `${this.zoom}% ${this.zoom}%`,
+    };
+  }
 }

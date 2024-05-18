@@ -9,30 +9,19 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class UploadImageComponent {
   @Input() imageUrl = '';
-  @Input() greyScale = 0;
-  @Input() brightness = 0;
-  @Input() zoom = 100;
   @Input() isLoading = false;
-  @Input() isError = true;
+  @Input() isError = false;
   @Input() uploadText = '';
   @Input() loadingText = '';
+  @Input() imageInlineStyles = {};
 
   @Output('onProcessAvatarEvent') readonly _onProcessAvatarEventEmitter =
     new EventEmitter<any>();
 
-  private get _greyScaleAsNonPercent() {
-    return this.greyScale / 100;
-  }
-
-  private get _brightnessAsNonPercent() {
-    return this.brightness / 100;
-  }
-
-  get imageInlineStyles() {
+  get inlineStyles() {
     return {
-      filter: `grayscale(${this._greyScaleAsNonPercent}) brightness(${this._brightnessAsNonPercent})`,
+      ...this.imageInlineStyles,
       backgroundImage: `url(${this.imageUrl})`,
-      backgroundSize: `${this.zoom}% ${this.zoom}%`,
     };
   }
 

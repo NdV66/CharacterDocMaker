@@ -9,14 +9,12 @@
     <app-upload-image
       class="half"
       [imageUrl]="imageUrl"
-      [greyScale]="greyScale"
-      [brightness]="brightness"
       [isError]="isError"
       [isLoading]="isLoading"
-      [zoom]="zoom"
       (onProcessAvatarEvent)="onProcessImage($event)"
       [loadingText]="'form.avatar.loading' | getTranslations"
       [uploadText]="'form.avatar.upload' | getTranslations"
+      [imageInlineStyles]="imageInlineStyles"
     />
     <app-avatar-filters class="half" />
   </div>

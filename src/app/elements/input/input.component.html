@@ -1,7 +1,7 @@
 <ng-container [formGroup]="form">
   <fieldset class="fieldset" [formGroup]="form">
     <app-label
-      [isError]="isError"
+      [isError]="!!error"
       [text]="label"
       [forField]="inputName"
     ></app-label>
@@ -9,7 +9,7 @@
       type="text"
       [name]="inputName"
       [formControlName]="inputName"
-      [class]="{ input: !isError, 'input--error': isError }"
+      [class]="{ input: !error, 'input--error': error }"
     />
   </fieldset>
 </ng-container>

@@ -1,12 +1,12 @@
 <ng-container [formGroup]="form">
   <app-label
-    [isError]="isError"
+    [isError]="!!error"
     [text]="label"
     [forField]="inputName"
   ></app-label>
 
   <textarea
-    [class]="{ 'textarea--error': isError, textarea: !isError }"
+    [class]="{ 'textarea--error': error, textarea: !error }"
     type="text"
     [name]="inputName"
     [formControlName]="inputName"

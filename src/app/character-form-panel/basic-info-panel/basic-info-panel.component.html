@@ -9,7 +9,7 @@
     <div class="input-wrapper" *ngFor="let field of fields">
       <app-input
         [form]="form"
-        [isError]="true"
+        [error]="'Maybe an error here'"
         [inputName]="field.name"
         [label]="
           'form.basicInfo.fields.' + field.name + '.label' | getTranslations

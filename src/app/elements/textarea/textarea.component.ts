@@ -10,7 +10,7 @@ import { FormGroup, ReactiveFormsModule } from '@angular/forms';
   styleUrl: './textarea.component.scss',
 })
 export class TextareaComponent {
-  @Input() isError = false;
+  @Input() error = '';
   @Input() label = '';
   @Input() inputName!: string;
   @Input() form!: FormGroup;

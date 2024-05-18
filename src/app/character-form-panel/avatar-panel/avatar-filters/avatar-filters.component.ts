@@ -53,11 +53,11 @@ export class AvatarFiltersComponent {
     this.form.patchValue({ [name]: value });
   }
 
-  onClickReset() {
+  onClickReset = () => {
     this.form.patchValue({
       zoom: DEFAULT_VALUES.zoom,
       brightness: DEFAULT_VALUES.brightness,
       greyScale: DEFAULT_VALUES.greyScale,
     });
-  }
+  };
 }
