@@ -13,7 +13,7 @@ export class UploadImageComponent {
   @Input() brightness = 0;
   @Input() zoom = 100;
   @Input() isLoading = false;
-  @Input() isError = false;
+  @Input() isError = true;
   @Input() uploadText = '';
   @Input() loadingText = '';
 

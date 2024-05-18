@@ -1,10 +1,16 @@
 <div class="upload-image">
-  <div [class]="{ 'element--loading': isLoading, element: !isLoading }">
+  <div
+    [class]="{
+        element: !isLoading && !isError,
+        'element--loading': isLoading,
+        'element--error': isError && !isLoading,
+    }"
+  >
     <div class="element-image" [style]="imageInlineStyles"></div>
     <div>
       <label for="file" class="element-edit">
-        {{ isLoading ? loadingText : uploadText }}</label
-      >
+        {{ isLoading ? loadingText : uploadText }}
+      </label>
       <input
         #imageInput
         type="file"

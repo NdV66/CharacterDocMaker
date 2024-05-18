@@ -52,6 +52,23 @@
         }
     }
 
+    .element--error {
+        @extend .element;
+        border: variables.$base solid colors.$error;
+
+        .element-edit {
+            background-color: rgba(colors.$error, 0.3);
+        }
+
+        &:hover {
+            border-color: colors.$error;
+
+            .element-edit {
+                background-color: rgba(colors.$error, 0.5);
+            }
+        }
+    }
+
     .element-image {
         border-radius: 50%;
         width: $size;
