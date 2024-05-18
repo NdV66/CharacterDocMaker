@@ -7,10 +7,10 @@
     class="note"
     text="{{ 'form.description.note' | getTranslations }}"
   />
-  <app-textarea-with-label
+  <app-textarea
     [isError]="isError"
     inputName="description"
     [label]="'form.description.label' | getTranslations"
     [form]="form"
-  />
+  ></app-textarea>
 </app-panel>

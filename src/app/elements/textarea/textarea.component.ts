@@ -3,13 +3,13 @@ import { LabelComponent } from '../label/label.component';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-textarea-with-label',
+  selector: 'app-textarea',
   standalone: true,
   imports: [ReactiveFormsModule, LabelComponent],
-  templateUrl: './textarea-with-label.component.html',
-  styleUrl: './textarea-with-label.component.scss',
+  templateUrl: './textarea.component.html',
+  styleUrl: './textarea.component.scss',
 })
-export class TextareaWithLabelComponent {
+export class TextareaComponent {
   @Input() isError = false;
   @Input() label = '';
   @Input() inputName!: string;
