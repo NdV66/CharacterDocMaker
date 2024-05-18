@@ -1,0 +1,7 @@
+<fieldset class="description-info-fieldset">
+    <div class="input-wrapper">
+        <app-label [isError]="isError" [text]="label" [forField]="name"></app-label>
+        <textarea [class]="{'textarea--error': isError, 'textarea': !isError}" type="text" [name]="name"
+            [formControlName]="formControlName" rows="12"></textarea>
+    </div>
+</fieldset>
