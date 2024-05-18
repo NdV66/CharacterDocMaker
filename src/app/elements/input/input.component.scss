@@ -1,0 +1,12 @@
+@use "colors";
+@use "variables";
+@import "inputs";
+
+.input {
+    @include any-input;
+}
+
+.input--error {
+    @include any-input--error;
+    @extend .input;
+}

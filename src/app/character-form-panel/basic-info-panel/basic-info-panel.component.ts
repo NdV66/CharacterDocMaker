@@ -5,6 +5,7 @@ import { NgForOf } from '@angular/common';
 import { CharacterFormService } from '../../services/character-form.service';
 import { NoteComponent } from '../../elements/note/note.component';
 import { PanelComponent } from '../../elements/panel/panel.component';
+import { InputComponent } from '../../elements/input/input.component';
 
 @Component({
   selector: 'app-basic-info-panel',
@@ -15,6 +16,7 @@ import { PanelComponent } from '../../elements/panel/panel.component';
     ReactiveFormsModule,
     NoteComponent,
     PanelComponent,
+    InputComponent,
   ],
   templateUrl: './basic-info-panel.component.html',
   styleUrl: './basic-info-panel.component.scss',

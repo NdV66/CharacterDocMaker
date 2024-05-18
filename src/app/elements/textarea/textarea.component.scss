@@ -2,12 +2,6 @@
 @use "colors";
 @import "inputs";
 
-.input-wrapper {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-}
-
 .textarea {
     @include any-input;
     resize: none;
@@ -17,11 +11,4 @@
     @extend .textarea;
     @include any-input;
     @include any-input--error;
-}
-
-.note {
-    position: absolute;
-    right: 0;
-    bottom: variables.$base * 8 * (-1);
-    transform: rotate(-4deg);
 }

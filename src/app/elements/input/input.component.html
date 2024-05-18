@@ -1,1 +1,15 @@
-<p>input works!</p>
+<ng-container [formGroup]="form">
+  <fieldset class="fieldset" [formGroup]="form">
+    <app-label
+      [isError]="isError"
+      [text]="label"
+      [forField]="inputName"
+    ></app-label>
+    <input
+      type="text"
+      [name]="inputName"
+      [formControlName]="inputName"
+      [class]="{ input: !isError, 'input--error': isError }"
+    />
+  </fieldset>
+</ng-container>

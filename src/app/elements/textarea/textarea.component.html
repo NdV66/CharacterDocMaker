@@ -1,19 +1,15 @@
 <ng-container [formGroup]="form">
-  <fieldset class="description-info-fieldset">
-    <div class="input-wrapper">
-      <app-label
-        [isError]="isError"
-        [text]="label"
-        [forField]="inputName"
-      ></app-label>
+  <app-label
+    [isError]="isError"
+    [text]="label"
+    [forField]="inputName"
+  ></app-label>
 
-      <textarea
-        [class]="{ 'textarea--error': isError, textarea: !isError }"
-        type="text"
-        [name]="inputName"
-        [formControlName]="inputName"
-        rows="12"
-      ></textarea>
-    </div>
-  </fieldset>
+  <textarea
+    [class]="{ 'textarea--error': isError, textarea: !isError }"
+    type="text"
+    [name]="inputName"
+    [formControlName]="inputName"
+    rows="12"
+  ></textarea>
 </ng-container>

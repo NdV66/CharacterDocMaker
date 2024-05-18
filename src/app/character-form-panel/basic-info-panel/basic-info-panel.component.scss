@@ -1,44 +1,27 @@
 @use "colors";
 @use "variables";
-@import 'inputs';
+@import "inputs";
 
 .basic-info {
     .note {
         transform: rotate(4deg);
         position: absolute;
         right: 0;
-        bottom: variables.$base * 6 * (-1)
+        bottom: variables.$base * 6 * (-1);
     }
-    
+
     .fieldset {
         width: 100%;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-    
+
         .input-wrapper {
             width: 49%;
             margin-bottom: variables.$base * 5;
-    
+
             @media screen and (max-width: variables.$small) {
                 width: 100%;
-            }
-    
-            input {
-                @include any-input;
-            }
-        }
-    
-        .input-wrapper--error {
-            @extend .input-wrapper;
-    
-            input {
-                border-color: colors.$error;
-                color: colors.$error;
-            }
-    
-            label {
-                color: colors.$error;
             }
         }
     }

@@ -3,14 +3,16 @@
   [subtitle]="'form.description.subtitle' | getTranslations"
   class="description"
 >
-  <app-note
-    class="note"
-    text="{{ 'form.description.note' | getTranslations }}"
-  />
-  <app-textarea
-    [isError]="isError"
-    inputName="description"
-    [label]="'form.description.label' | getTranslations"
-    [form]="form"
-  ></app-textarea>
+  <fieldset class="input-wrapper">
+    <app-note
+      class="note"
+      text="{{ 'form.description.note' | getTranslations }}"
+    />
+    <app-textarea
+      [isError]="isError"
+      inputName="description"
+      [label]="'form.description.label' | getTranslations"
+      [form]="form"
+    ></app-textarea>
+  </fieldset>
 </app-panel>
