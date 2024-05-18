@@ -1,14 +1,15 @@
-<app-panel [title]="'form.description.title' | getTranslations"
-    [subtitle]="'form.description.subtitle' | getTranslations" class="description">
-    <app-note class="note" text="{{ 'form.description.note' | getTranslations }}" />
-
-    <div class="input-wrapper">
-        <app-label [isError]="isError" [text]="'form.description.label' | getTranslations"></app-label>
-        <textarea [class]="{'textarea--error': isError, 'textarea': !isError}" type="text" name="description"
-            formControlName="description" rows="12"></textarea>
-    </div>
-
-    <!-- <app-textarea-with-label formControlName="description" [isError]="isError"
-        [label]="'form.description.label' | getTranslations" name="description" [form]="form"></app-textarea-with-label> -->
-
+<app-panel
+  [title]="'form.description.title' | getTranslations"
+  [subtitle]="'form.description.subtitle' | getTranslations"
+  class="description"
+>
+  <app-note
+    class="note"
+    text="{{ 'form.description.note' | getTranslations }}"
+  />
+  <app-textarea-with-label
+    [isError]="isError"
+    inputName="description"
+    [label]="'form.description.label' | getTranslations"
+  />
 </app-panel>

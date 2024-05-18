@@ -26,12 +26,9 @@ import { TextareaWithLabelComponent } from '../../elements/textarea-with-label/t
   ],
   templateUrl: './description-panel.component.html',
   styleUrl: './description-panel.component.scss',
-  viewProviders: [
-    { provide: ControlContainer, useExisting: FormGroupDirective },
-  ],
 })
 export class DescriptionPanelComponent {
-  isError = true;
+  isError = false;
   readonly form!: FormGroup;
 
   constructor(service: CharacterFormService) {
