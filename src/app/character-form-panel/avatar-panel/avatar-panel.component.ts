@@ -48,11 +48,12 @@ export class AvatarPanelComponent {
     this._subscribeToLoadImage();
   }
 
-  onProcessImage(image: any) {
+  onProcessImage(image: File) {
     if (this.isLoading) return;
     this.isLoading = true;
     this._currentFile = image;
     this._reader.readAsDataURL(this._currentFile);
+    this.form.patchValue({ avatar: image });
   }
 
   private _subscribeToLoadImage() {
