@@ -1,0 +1,12 @@
+<div class="slider">
+  <app-label [forField]="id" [text]="label"></app-label>
+
+  <input
+    type="range"
+    [min]="min"
+    [max]="max"
+    [value]="value"
+    [id]="id"
+    (input)="onValueChange($event)"
+  />
+</div>

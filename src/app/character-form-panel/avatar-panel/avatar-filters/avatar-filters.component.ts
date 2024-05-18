@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { SliderComponent } from './slider/slider.component';
-import { TValueChangeEvent } from './slider/slider.types';
+import { SliderComponent } from '../../../elements/slider/slider.component';
+import { TValueChangeEvent } from '../../../elements/slider/slider.types';
 import { NgFor } from '@angular/common';
 import { TranslationsPipe } from '../../../translations/translations.pipe';
 import { CharacterFormService, DEFAULT_VALUES } from '../../../services';
