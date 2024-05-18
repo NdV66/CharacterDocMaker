@@ -1,5 +1,5 @@
-@use 'variables';
-@use 'colors';
+@use "variables";
+@use "colors";
 
 @mixin any-input {
     $space: variables.$base * 6;
@@ -16,5 +16,13 @@
         box-shadow: none;
         outline-color: none;
         border-color: colors.$accent;
+    }
+}
+
+@mixin any-input--error {
+    border-color: colors.$error;
+
+    &:focus {
+        border-color: colors.$error;
     }
 }

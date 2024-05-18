@@ -4,8 +4,9 @@
 
     <fieldset class="description-info-fieldset" [formGroup]="form">
         <div class="input-wrapper">
-            <label>{{ "form.description.label" | getTranslations}}</label>
-            <textarea type="text" name="description" formControlName="description" rows="12"></textarea>
+            <app-label [isError]="isError" [text]="'form.description.label' | getTranslations"></app-label>
+            <textarea [class]="{'textarea--error': isError, 'textarea': !isError}" type="text" name="description"
+                formControlName="description" rows="12"></textarea>
         </div>
     </fieldset>
 </app-panel>

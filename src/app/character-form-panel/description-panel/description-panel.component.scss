@@ -1,4 +1,5 @@
 @use "variables";
+@use "colors";
 @import "inputs";
 
 .description {
@@ -8,9 +9,15 @@
         flex-wrap: wrap;
     }
 
-    textarea {
+    .textarea {
         @include any-input;
         resize: none;
+    }
+
+    .textarea--error {
+        @extend .textarea;
+        @include any-input;
+        @include any-input--error;
     }
 
     .note {

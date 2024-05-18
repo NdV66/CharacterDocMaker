@@ -1,0 +1,14 @@
+@use "colors";
+@use "variables";
+
+.label {
+    font-size: variables.$small-font-size;
+    color: colors.$accent;
+    padding-bottom: variables.$base;
+    display: block;
+}
+
+.label--error {
+    @extend .label;
+    color: colors.$error;
+}
