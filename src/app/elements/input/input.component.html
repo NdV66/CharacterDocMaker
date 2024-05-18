@@ -11,5 +11,6 @@
       [formControlName]="inputName"
       [class]="{ input: !error, 'input--error': error }"
     />
+    <app-field-error [error]="error"></app-field-error>
   </fieldset>
 </ng-container>

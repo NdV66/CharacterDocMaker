@@ -1,0 +1,10 @@
+@use "variables";
+@use "colors";
+
+.input-error {
+    color: colors.$error;
+    font-size: variables.$small-font-size * 0.9;
+    text-align: right;
+    margin-top: variables.$base;
+    height: 0;
+}
