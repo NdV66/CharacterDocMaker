@@ -1,0 +1,16 @@
+@use "variables";
+@use "colors";
+
+.text-button {
+    cursor: pointer;
+    font-size: variables.$small-font-size;
+    color: colors.$accent;
+    padding-bottom: variables.$base;
+    margin-top: variables.$base * 4;
+    display: inline-block;
+
+    &:hover,
+    &:active {
+        text-decoration: underline;
+    }
+}

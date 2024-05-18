@@ -5,11 +5,18 @@ import { NgFor } from '@angular/common';
 import { TranslationsPipe } from '../../../translations/translations.pipe';
 import { CharacterFormService, DEFAULT_VALUES } from '../../../services';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { TextButtonComponent } from '../../../elements/text-button/text-button.component';
 
 @Component({
   selector: 'app-avatar-filters',
   standalone: true,
-  imports: [SliderComponent, TranslationsPipe, NgFor, ReactiveFormsModule],
+  imports: [
+    SliderComponent,
+    TranslationsPipe,
+    NgFor,
+    ReactiveFormsModule,
+    TextButtonComponent,
+  ],
   templateUrl: './avatar-filters.component.html',
   styleUrl: './avatar-filters.component.scss',
 })

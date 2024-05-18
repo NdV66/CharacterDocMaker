@@ -3,19 +3,6 @@
 
 .avatar-filters {
     .reset {
-        font-size: variables.$small-font-size;
-        color: colors.$accent;
-        padding-bottom: variables.$base;
-        margin-top: variables.$base * 4;
         text-align: right;
-
-        span {
-            cursor: pointer;
-
-            &:hover,
-            &:active {
-                text-decoration: underline;
-            }
-        }
     }
 }
