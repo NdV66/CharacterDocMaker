@@ -1,7 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { LabelComponent } from '../label/label.component';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { CharacterFormService } from '../../services';
 
 @Component({
   selector: 'app-textarea-with-label',
@@ -14,10 +13,5 @@ export class TextareaWithLabelComponent {
   @Input() isError = false;
   @Input() label = '';
   @Input() inputName!: string;
-
-  readonly form!: FormGroup;
-
-  constructor(service: CharacterFormService) {
-    this.form = service.form;
-  }
+  @Input() form!: FormGroup;
 }
