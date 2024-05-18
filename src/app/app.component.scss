@@ -30,21 +30,4 @@
 .submit-wrapper {
     display: flex;
     justify-content: flex-end;
-    margin-top: variables.$base * 20;
-
-    [type="submit"] {
-        border-radius: variables.$border-radius;
-        height: 44px;
-        cursor: pointer;
-        border: variables.$base * 0.5 solid colors.$accent;
-        background-color: colors.$accent-dark;
-        color: colors.$text;
-        padding: 0 variables.$base * 4;
-
-        &:focus,
-        &:hover {
-            background-color: colors.$accent;
-            border-color: colors.$accent;
-        }
-    }
 }

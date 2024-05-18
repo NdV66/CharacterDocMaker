@@ -2,9 +2,7 @@ import { Component } from '@angular/core';
 import { AvatarPanelComponent } from './avatar-panel/avatar-panel.component';
 import { BasicInfoPanelComponent } from './basic-info-panel/basic-info-panel.component';
 import { DescriptionPanelComponent } from './description-panel/description-panel.component';
-
-import { FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { CharacterFormService } from '../services/character-form.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-character-form-panel',
@@ -18,5 +16,4 @@ import { CharacterFormService } from '../services/character-form.service';
   templateUrl: './character-form-panel.component.html',
   styleUrl: './character-form-panel.component.scss',
 })
-export class CharacterFormPanelComponent {
-}
+export class CharacterFormPanelComponent {}

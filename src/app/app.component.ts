@@ -8,6 +8,7 @@ import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { CharacterFormService } from './services';
 import { DocumentPanelComponent } from './document-panel/document-panel.component';
 import { TranslationsPipe } from './translations/translations.pipe';
+import { ButtonComponent } from './elements/button/button.component';
 
 @Component({
   selector: 'app-root',
@@ -21,6 +22,7 @@ import { TranslationsPipe } from './translations/translations.pipe';
     CharacterFormPanelComponent,
     DocumentPanelComponent,
     FooterComponent,
+    ButtonComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
