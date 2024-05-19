@@ -9,5 +9,5 @@ import { Component, Input } from '@angular/core';
   styleUrl: './field-error.component.scss',
 })
 export class FieldErrorComponent {
-  @Input() error = '';
+  @Input() error?: string;
 }

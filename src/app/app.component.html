@@ -20,6 +20,7 @@
         <app-button
           type="submit"
           [text]="'download.action' | getTranslations"
+          [isDisabled]="this.form.invalid"
         ></app-button>
       </div>
     </form>

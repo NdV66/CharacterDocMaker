@@ -16,4 +16,10 @@
         background-color: colors.$accent;
         border-color: colors.$accent;
     }
+
+    &:disabled {
+        cursor: not-allowed;
+        background-color: rgba(colors.$accent-dark, 0.5);
+        border-color: rgba(colors.$accent-dark, 0.5);
+    }
 }

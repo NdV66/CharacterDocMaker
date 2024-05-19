@@ -9,7 +9,7 @@
       text="{{ 'form.description.note' | getTranslations }}"
     />
     <app-textarea
-      [error]="'Maybe an error'"
+      [error]="descriptionError || '' | getTranslations"
       inputName="description"
       [label]="'form.description.label' | getTranslations"
       [form]="form"

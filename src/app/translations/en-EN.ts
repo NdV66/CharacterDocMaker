@@ -9,6 +9,9 @@ export const TEXTS = {
   },
 
   form: {
+    errors: {
+      required: 'This field is required',
+    },
     avatar: {
       title: '1. Upload your avatar',
       subtitle: "We're so excited to see your new character!",
@@ -53,9 +56,6 @@ export const TEXTS = {
           label: 'Where do they live?',
           hint: 'xxx1',
         },
-      },
-      errors: {
-        error1: 'todo error 1',
       },
     },
     description: {

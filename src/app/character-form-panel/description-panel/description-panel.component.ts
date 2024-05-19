@@ -20,4 +20,12 @@ export class DescriptionPanelComponent {
   constructor(service: CharacterFormService) {
     this.form = service.form;
   }
+
+  get descriptionError() {
+    return (
+      this.form.get('description')?.errors &&
+      this.form.get('description')?.touched &&
+      'form.errors.required'
+    );
+  }
 }
