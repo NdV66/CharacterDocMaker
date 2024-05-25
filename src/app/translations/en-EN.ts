@@ -11,6 +11,9 @@ export const TEXTS = {
   form: {
     errors: {
       required: 'This field is required',
+      minlength: 'This field is too short',
+      maxlength: 'This file is too long',
+      pattern: 'Invalid value for this file',
     },
     avatar: {
       title: '1. Upload your avatar',
