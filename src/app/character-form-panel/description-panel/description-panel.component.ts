@@ -22,10 +22,6 @@ export class DescriptionPanelComponent {
   }
 
   get descriptionError() {
-    return (
-      this.form.get('description')?.errors &&
-      this.form.get('description')?.touched &&
-      'form.errors.required'
-    );
+    return this.form.get('description')?.errors && 'form.errors.required';
   }
 }

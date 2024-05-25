@@ -23,7 +23,13 @@ export class CharacterFormService {
       nature: ['', [Validators.required]],
       live: ['', [Validators.required]],
 
-      description: ['', [Validators.required]],
+      description: [
+        '',
+        {
+          validators: [Validators.required],
+          updateOn: 'submit',
+        },
+      ],
       themeOption: [DEFAULT_VALUES.themeOption],
 
       avatar: [DEFAULT_VALUES.avatar],
