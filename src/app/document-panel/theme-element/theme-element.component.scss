@@ -21,6 +21,10 @@
             width: $min-size;
             height: $min-size;
         }
+
+        &:hover {
+            border-color: colors.$accent;
+        }
     }
 
     .element--selected {
