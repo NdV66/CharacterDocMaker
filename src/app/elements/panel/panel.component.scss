@@ -1,7 +1,14 @@
 @use "variables";
+@use "colors";
 
 .panel-container {
     position: relative;
     margin-top: variables.$base * 14;
     padding-bottom: variables.$base * 10;
+}
+
+.panel-bg {
+    background-color: colors.$background-dark;
+    border-radius: variables.$border-radius / 2;
+    padding: variables.$base * 4;
 }

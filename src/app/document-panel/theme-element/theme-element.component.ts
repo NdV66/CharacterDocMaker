@@ -1,9 +1,10 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { LabelComponent } from '../../elements/label/label.component';
 
 @Component({
   selector: 'app-theme-element',
   standalone: true,
-  imports: [],
+  imports: [LabelComponent],
   templateUrl: './theme-element.component.html',
   styleUrl: './theme-element.component.scss',
 })
