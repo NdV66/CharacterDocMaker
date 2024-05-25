@@ -41,8 +41,7 @@ export class CharacterFormService {
 
   //TODO
   public uploadAvatar(image: File) {
-    // console.log('>>>> ', image);
-    // this.form.patchValue({ image });
+    this.form.patchValue({ image });
   }
 }
 
