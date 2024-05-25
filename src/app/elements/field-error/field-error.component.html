@@ -1,1 +1,14 @@
-<small class="input-error" *ngIf="error">{{ error }}</small>
+<span *ngIf="isError">
+  <small *ngIf="formControlItem.errors?.['required']" class="input-error">
+    This field is required
+  </small>
+  <small *ngIf="formControlItem.errors?.['minlength']" class="input-error">
+    This field is too short
+  </small>
+  <small *ngIf="formControlItem.errors?.['maxlength']" class="input-error">
+    This field is too long
+  </small>
+  <small *ngIf="formControlItem.errors?.['pattern']" class="input-error">
+    Invalid value for this field
+  </small>
+</span>

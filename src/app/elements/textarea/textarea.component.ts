@@ -1,7 +1,13 @@
 import { Component, Input } from '@angular/core';
 import { LabelComponent } from '../label/label.component';
-import { FormGroup, ReactiveFormsModule } from '@angular/forms';
+import {
+  FormControl,
+  FormGroup,
+  isFormControl,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { FieldErrorComponent } from '../field-error/field-error.component';
+import { isFormControlInvalid } from '../../utils';
 
 @Component({
   selector: 'app-textarea',
@@ -15,4 +21,12 @@ export class TextareaComponent {
   @Input() label = '';
   @Input() inputName!: string;
   @Input() form!: FormGroup;
+
+  get formControl() {
+    return this.form.controls[this.inputName] as FormControl;
+  }
+
+  get isError() {
+    return isFormControlInvalid(this.formControl);
+  }
 }

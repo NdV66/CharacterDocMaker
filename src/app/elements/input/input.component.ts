@@ -1,7 +1,8 @@
 import { Component, Input } from '@angular/core';
-import { FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { LabelComponent } from '../label/label.component';
 import { FieldErrorComponent } from '../field-error/field-error.component';
+import { isFormControlInvalid } from '../../utils';
 
 @Component({
   selector: 'app-input',
@@ -15,4 +16,12 @@ export class InputComponent {
   @Input() label = '';
   @Input() inputName!: string;
   @Input() form!: FormGroup;
+
+  isError(name: string) {
+    return isFormControlInvalid(this.getFormControl(name));
+  }
+
+  getFormControl(name: string) {
+    return this.form.controls[name] as FormControl;
+  }
 }
