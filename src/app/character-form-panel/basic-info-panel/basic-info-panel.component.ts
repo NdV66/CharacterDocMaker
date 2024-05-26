@@ -22,7 +22,7 @@ import { InputComponent } from '../../elements/input/input.component';
   styleUrl: './basic-info-panel.component.scss',
 })
 export class BasicInfoPanelComponent {
-  readonly form: FormGroup = new FormGroup({});
+  readonly form!: FormGroup;
   readonly fields = [
     { name: 'name' },
     { name: 'race' },
@@ -33,6 +33,6 @@ export class BasicInfoPanelComponent {
   ];
 
   constructor(service: CharacterFormService) {
-    this.form = service.form;
+    this.form = service.basicInfoForm;
   }
 }

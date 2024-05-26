@@ -44,3 +44,7 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## version 2.0
 
 - support for basic BB code in the description panel (or something similar)
+
+
+INFO
+https://sergeygultyayev.medium.com/handling-errors-in-angular-forms-like-a-boss-aa73d8e22301

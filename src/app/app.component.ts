@@ -37,5 +37,6 @@ export class AppComponent {
   onSubmit(e: any) {
     e.preventDefault();
     console.log('Form', this.form.value);
+    this.form.markAllAsTouched();
   }
 }

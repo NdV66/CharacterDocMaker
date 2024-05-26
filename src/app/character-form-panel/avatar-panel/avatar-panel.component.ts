@@ -33,14 +33,15 @@ export class AvatarPanelComponent {
   private _currentFile: File = null as any as File;
   private readonly _reader = new FileReader();
 
-  readonly form: FormGroup = new FormGroup({});
+  readonly form!: FormGroup;
 
   constructor(private _service: CharacterFormService) {
-    this.form = this._service.form;
-    this.greyScale = this._service.form.get('greyScale')?.value;
-    this.zoom = this._service.form.get('zoom')?.value;
-    this.brightness = this._service.form.get('brightness')?.value;
-    this.imageUrl = this._service.form.get('avatar')?.value;
+    this.form = this._service.avatarForm;
+
+    this.greyScale = this.form.get('greyScale')?.value;
+    this.zoom = this.form.get('zoom')?.value;
+    this.brightness = this.form.get('brightness')?.value;
+    this.imageUrl = this.form.get('avatar')?.value;
   }
 
   ngOnInit() {

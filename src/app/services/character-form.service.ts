@@ -12,34 +12,35 @@ export const DEFAULT_VALUES = {
 
 @Injectable({ providedIn: 'root' })
 export class CharacterFormService {
-  readonly form: FormGroup = new FormGroup({});
+  readonly form!: FormGroup;
+  readonly avatarForm!: FormGroup;
+  readonly basicInfoForm!: FormGroup;
 
   constructor(formBuilder: FormBuilder) {
-    this.form = formBuilder.group({
+    this.avatarForm = formBuilder.group({
+      avatar: [DEFAULT_VALUES.avatar],
+      greyScale: [DEFAULT_VALUES.greyScale],
+      brightness: [DEFAULT_VALUES.brightness],
+      zoom: [DEFAULT_VALUES.zoom],
+    });
+
+    this.basicInfoForm = formBuilder.group({
       name: ['', [Validators.required]],
       race: ['', [Validators.required]],
       age: ['', [Validators.required]],
       origin: ['', [Validators.required]],
       nature: ['', [Validators.required]],
       live: ['', [Validators.required]],
+    });
 
-      description: [
-        '',
-        {
-          validators: [Validators.required],
-          updateOn: 'submit',
-        },
-      ],
+    this.form = formBuilder.group({
+      avatarInfo: this.avatarForm,
+      basicInfo: this.basicInfoForm,
+      description: ['', [Validators.required]],
       themeOption: [DEFAULT_VALUES.themeOption],
-
-      avatar: [DEFAULT_VALUES.avatar],
-      greyScale: [DEFAULT_VALUES.greyScale],
-      brightness: [DEFAULT_VALUES.brightness],
-      zoom: [DEFAULT_VALUES.zoom],
     });
   }
 
-  //TODO
   public uploadAvatar(image: File) {
     this.form.patchValue({ image });
   }
