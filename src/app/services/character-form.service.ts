@@ -47,8 +47,11 @@ export class CharacterFormService {
 
   onSubmit(event: any) {
     event.preventDefault();
-    console.log('Form', this.form.value);
     this.form.markAllAsTouched();
+
+    if (!this.form.invalid) {
+      console.log('Form', this.form.value);
+    }
   }
 }
 
