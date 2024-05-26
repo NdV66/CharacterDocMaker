@@ -41,8 +41,14 @@ export class CharacterFormService {
     });
   }
 
-  public uploadAvatar(image: File) {
+  uploadAvatar(image: File) {
     this.form.patchValue({ image });
+  }
+
+  onSubmit(event: any) {
+    event.preventDefault();
+    console.log('Form', this.form.value);
+    this.form.markAllAsTouched();
   }
 }
 

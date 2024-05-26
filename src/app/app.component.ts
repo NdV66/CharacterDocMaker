@@ -28,15 +28,13 @@ import { ButtonComponent } from './elements/button/button.component';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  readonly form: FormGroup = new FormGroup({});
+  readonly form!: FormGroup;
 
-  constructor(service: CharacterFormService) {
-    this.form = service.form;
+  constructor(private _service: CharacterFormService) {
+    this.form = this._service.form;
   }
 
   onSubmit(e: any) {
-    e.preventDefault();
-    console.log('Form', this.form.value);
-    this.form.markAllAsTouched();
+    this._service.onSubmit(e);
   }
 }
