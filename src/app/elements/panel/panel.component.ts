@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { TitleComponent } from '../title/title.component';
+import { TitleComponent } from '@elements/title/title.component';
 
 @Component({
   selector: 'app-panel',

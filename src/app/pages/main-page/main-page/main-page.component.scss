@@ -1,0 +1,33 @@
+@use "variables";
+@use "colors";
+
+.nav {
+    display: flex;
+    justify-content: center;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+}
+
+.width-wrapper {
+    max-width: variables.$max-width;
+    position: relative;
+    width: 100%;
+    padding: variables.$content-padding;
+
+    @media screen and (max-width: variables.$small) {
+        padding: variables.$content-padding;
+    }
+}
+
+.submit-wrapper {
+    display: flex;
+    justify-content: flex-end;
+}

@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
-import { TranslationsPipe } from '../../translations/translations.pipe';
-import { PanelComponent } from '../../elements/panel/panel.component';
-import { NoteComponent } from '../../elements/note/note.component';
+import { TranslationsPipe } from '@translations/translations.pipe';
+import { PanelComponent } from '@elements/panel/panel.component';
+import { NoteComponent } from '@elements/note/note.component';
 import { AvatarFiltersComponent } from './avatar-filters/avatar-filters.component';
 import { FormGroup } from '@angular/forms';
-import { CharacterFormService } from '../../services';
+import { CharacterFormService } from '@services/character-form.service';
 import { fromEvent } from 'rxjs';
-import { ImageSnippetDto } from '../../models';
-import { UploadImageComponent } from '../../elements/upload-image/upload-image.component';
+import { ImageSnippetDto } from '@models/ImageSnippet.dto';
+import { UploadImageComponent } from '@elements/upload-image/upload-image.component';
 
 @Component({
   selector: 'app-avatar-panel',

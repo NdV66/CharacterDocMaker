@@ -1,8 +1,8 @@
 import { NgIf } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { TranslationsPipe } from '../../translations/translations.pipe';
+import { TranslationsPipe } from '@translations/translations.pipe';
 import { FormControl } from '@angular/forms';
-import { isFormControlInvalid } from '../../utils';
+import { isFormControlInvalid } from '@utils/form';
 
 @Component({
   selector: 'app-field-error',

@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { LabelComponent } from '../../elements/label/label.component';
+import { LabelComponent } from '@elements/label/label.component';
 
 @Component({
   selector: 'app-theme-element',

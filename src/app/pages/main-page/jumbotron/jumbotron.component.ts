@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { TranslationsPipe } from '../translations/translations.pipe';
-import { NoteComponent } from '../elements/note/note.component';
+import { TranslationsPipe } from '@translations/translations.pipe';
+import { NoteComponent } from '@elements/note/note.component';
 
 @Component({
   selector: 'app-jumbotron',

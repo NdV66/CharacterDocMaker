@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { TValueChangeEvent } from './slider.types';
-import { LabelComponent } from '../label/label.component';
+import { LabelComponent } from '@elements/label/label.component';
 
 @Component({
   selector: 'app-slider',

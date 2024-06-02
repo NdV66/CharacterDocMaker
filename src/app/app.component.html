@@ -4,32 +4,4 @@
   </div>
 </nav>
 
-<header class="header">
-  <div class="width-wrapper">
-    <app-jumbotron />
-  </div>
-</header>
-
-<main class="main">
-  <div class="width-wrapper">
-    <form (ngSubmit)="onSubmit($event)" [formGroup]="form" autocomplete="off">
-      <app-character-form-panel></app-character-form-panel>
-      <app-document-panel></app-document-panel>
-
-      <div class="submit-wrapper">
-        <app-button
-          type="submit"
-          [text]="'download.action' | getTranslations"
-        ></app-button>
-      </div>
-    </form>
-  </div>
-
-  <app-pdf-documents></app-pdf-documents>
-</main>
-
-<footer>
-  <app-footer></app-footer>
-</footer>
-
 <router-outlet />

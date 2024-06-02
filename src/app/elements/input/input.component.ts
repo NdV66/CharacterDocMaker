@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { LabelComponent } from '../label/label.component';
-import { FieldErrorComponent } from '../field-error/field-error.component';
-import { isFormControlInvalid } from '../../utils';
+import { LabelComponent } from '@elements/label/label.component';
+import { FieldErrorComponent } from '@elements/field-error/field-error.component';
+import { isFormControlInvalid } from '@utils/form';
 
 @Component({
   selector: 'app-input',
