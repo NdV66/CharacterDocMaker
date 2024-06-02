@@ -79,8 +79,12 @@ export const TEXTS = {
       },
     },
   },
+  preview: {
+    action: 'Preview your PDF!',
+  },
   download: {
     action: 'Download your PDF!',
+    back: 'I want go back!',
   },
   footer: {
     repo: 'See my public repositories!',

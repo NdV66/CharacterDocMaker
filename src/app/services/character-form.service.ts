@@ -10,6 +10,12 @@ export const DEFAULT_VALUES = {
   avatar: '/assets/images/avatarPlaceholder.png',
 };
 
+const PREVIEW_ROUTES_BY_THEME_OPTION = new Map([
+  [1, 'pdf/light-life'],
+  [2, 'pdf/lovely-lila'],
+  [3, 'pdf/back-to-black'],
+]);
+
 @Injectable({ providedIn: 'root' })
 export class CharacterFormService {
   readonly form!: FormGroup;
@@ -44,14 +50,32 @@ export class CharacterFormService {
     });
   }
 
+  get previewRoute() {
+    return (
+      PREVIEW_ROUTES_BY_THEME_OPTION.get(this.form.value['themeOption']) || ''
+    );
+  }
+
+  get isFormValid() {
+    return !this.form.invalid;
+  }
+
   uploadAvatar(image: File) {
     this.form.patchValue({ image });
+  }
+
+  onSubmitPreview(event: any) {
+    event.preventDefault();
+    this.form.markAllAsTouched();
+
+    if (this.isFormValid) {
+      console.log('Form', this.form.value);
+    }
   }
 
   // https://decentro.tech/blog/jspdf/
   onSubmit(event: any) {
     event.preventDefault();
-    this.form.markAllAsTouched();
 
     const pages = document.querySelector('.pdf-document') as HTMLElement;
     console.log(pages);

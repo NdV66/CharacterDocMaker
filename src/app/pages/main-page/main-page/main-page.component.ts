@@ -5,9 +5,10 @@ import { TranslationsPipe } from '@translations/translations.pipe';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from '@elements/footer/footer.component';
 import { ButtonComponent } from '@elements/button/button.component';
-import { PdfDocumentsComponent } from '../../pdf-documents/pdf-documents.component';
 import { DocumentPanelComponent } from '../document-panel/document-panel.component';
 import { CharacterFormService } from '@services/character-form.service';
+import { Router } from '@angular/router';
+import { NavbarComponent } from '@elements/navbar/navbar.component';
 
 @Component({
   selector: 'app-main-page',
@@ -19,8 +20,8 @@ import { CharacterFormService } from '@services/character-form.service';
     CharacterFormPanelComponent,
     FooterComponent,
     ButtonComponent,
-    PdfDocumentsComponent,
     DocumentPanelComponent,
+    NavbarComponent,
   ],
   templateUrl: './main-page.component.html',
   styleUrl: './main-page.component.scss',
@@ -28,11 +29,13 @@ import { CharacterFormService } from '@services/character-form.service';
 export class MainPageComponent {
   readonly form!: FormGroup;
 
-  constructor(private _service: CharacterFormService) {
+  constructor(private _service: CharacterFormService, private _router: Router) {
     this.form = this._service.form;
   }
 
-  onSubmit(e: any) {
-    this._service.onSubmit(e);
+  onSubmitPreview(e: any) {
+    this._service.onSubmitPreview(e);
+    this._service.isFormValid &&
+      this._router.navigate([this._service.previewRoute]);
   }
 }

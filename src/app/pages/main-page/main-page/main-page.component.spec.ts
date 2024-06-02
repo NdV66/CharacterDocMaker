@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MainPageComponent } from './main-page.component';
+import { NavbarComponent } from '@elements/navbar/navbar.component';
 
 describe('MainPageComponent', () => {
   let component: MainPageComponent;
@@ -8,10 +9,9 @@ describe('MainPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MainPageComponent]
-    })
-    .compileComponents();
-    
+      imports: [MainPageComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(MainPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
