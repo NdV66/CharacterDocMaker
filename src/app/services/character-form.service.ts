@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Form, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Observable } from 'rxjs';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { PdfCreatorService } from './pdf-creator.service';
 
 export const DEFAULT_VALUES = {
   greyScale: 0,
@@ -16,7 +16,10 @@ export class CharacterFormService {
   readonly avatarForm!: FormGroup;
   readonly basicInfoForm!: FormGroup;
 
-  constructor(formBuilder: FormBuilder) {
+  constructor(
+    formBuilder: FormBuilder,
+    private _pdfCreatorService: PdfCreatorService
+  ) {
     this.avatarForm = formBuilder.group({
       avatar: [DEFAULT_VALUES.avatar],
       greyScale: [DEFAULT_VALUES.greyScale],
@@ -45,9 +48,14 @@ export class CharacterFormService {
     this.form.patchValue({ image });
   }
 
+  // https://decentro.tech/blog/jspdf/
   onSubmit(event: any) {
     event.preventDefault();
     this.form.markAllAsTouched();
+
+    const pages = document.querySelector('.pdf-document') as HTMLElement;
+    console.log(pages);
+    this._pdfCreatorService.exportToPdf(pages);
 
     if (!this.form.invalid) {
       console.log('Form', this.form.value);

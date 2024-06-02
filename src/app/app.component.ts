@@ -9,6 +9,7 @@ import { CharacterFormService } from './services';
 import { DocumentPanelComponent } from './document-panel/document-panel.component';
 import { TranslationsPipe } from './translations/translations.pipe';
 import { ButtonComponent } from './elements/button/button.component';
+import { PdfDocumentsComponent } from './pdf-documents/pdf-documents.component';
 
 @Component({
   selector: 'app-root',
@@ -23,6 +24,8 @@ import { ButtonComponent } from './elements/button/button.component';
     DocumentPanelComponent,
     FooterComponent,
     ButtonComponent,
+
+    PdfDocumentsComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
