@@ -10,25 +10,23 @@
   </div>
 </header>
 
-<main class="main">
-  <div class="width-wrapper">
-    <form
-      (ngSubmit)="onSubmitPreview($event)"
-      [formGroup]="form"
-      autocomplete="off"
-    >
-      <app-character-form-panel></app-character-form-panel>
-      <app-document-panel></app-document-panel>
+<app-width-wrapper>
+  <form
+    (ngSubmit)="onSubmitPreview($event)"
+    [formGroup]="form"
+    autocomplete="off"
+  >
+    <app-character-form-panel></app-character-form-panel>
+    <app-document-panel></app-document-panel>
 
-      <div class="submit-wrapper">
-        <app-button
-          type="submit"
-          [text]="'preview.action' | getTranslations"
-        ></app-button>
-      </div>
-    </form>
-  </div>
-</main>
+    <div class="submit-wrapper">
+      <app-button
+        type="submit"
+        [text]="'preview.action' | getTranslations"
+      ></app-button>
+    </div>
+  </form>
+</app-width-wrapper>
 
 <footer>
   <app-footer></app-footer>

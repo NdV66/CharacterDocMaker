@@ -81,6 +81,10 @@ export const TEXTS = {
   },
   preview: {
     action: 'Preview your PDF!',
+    alert: {
+      title: 'Warning!',
+      text: 'This only a preview. To download PDF, use the button below. Or go back.',
+    },
   },
   download: {
     action: 'Download your PDF!',

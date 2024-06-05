@@ -9,6 +9,7 @@ import { DocumentPanelComponent } from '../document-panel/document-panel.compone
 import { CharacterFormService } from '@services/character-form.service';
 import { Router } from '@angular/router';
 import { NavbarComponent } from '@elements/navbar/navbar.component';
+import { WidthWrapperComponent } from '@elements/width-wrapper/width-wrapper.component';
 
 @Component({
   selector: 'app-main-page',
@@ -22,6 +23,7 @@ import { NavbarComponent } from '@elements/navbar/navbar.component';
     ButtonComponent,
     DocumentPanelComponent,
     NavbarComponent,
+    WidthWrapperComponent,
   ],
   templateUrl: './main-page.component.html',
   styleUrl: './main-page.component.scss',

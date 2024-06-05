@@ -1,0 +1,18 @@
+<app-width-wrapper>
+  <app-navbar></app-navbar>
+
+  <div role="alert" class="alert-info">
+    <span class="title">{{ "preview.alert.title" | getTranslations }}</span>
+    <span>{{ "preview.alert.text" | getTranslations }}</span>
+  </div>
+
+  <div class="buttons-wrapper">
+    <app-text-button
+      [onClick]="onGoBack"
+      [text]="'download.back' | getTranslations"
+    ></app-text-button>
+    <app-button [text]="'download.action' | getTranslations"></app-button>
+  </div>
+
+  <div class="pdf-content">AA</div>
+</app-width-wrapper>

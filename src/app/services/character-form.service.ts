@@ -10,12 +10,6 @@ export const DEFAULT_VALUES = {
   avatar: '/assets/images/avatarPlaceholder.png',
 };
 
-const PREVIEW_ROUTES_BY_THEME_OPTION = new Map([
-  [1, 'pdf/light-life'],
-  [2, 'pdf/lovely-lila'],
-  [3, 'pdf/back-to-black'],
-]);
-
 @Injectable({ providedIn: 'root' })
 export class CharacterFormService {
   readonly form!: FormGroup;
@@ -51,9 +45,7 @@ export class CharacterFormService {
   }
 
   get previewRoute() {
-    return (
-      PREVIEW_ROUTES_BY_THEME_OPTION.get(this.form.value['themeOption']) || ''
-    );
+    return 'pdf';
   }
 
   get isFormValid() {

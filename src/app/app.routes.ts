@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
 import { MainPageComponent } from '@pages/main-page/main-page/main-page.component';
-import { LightLifePdfComponent } from '@pages/pdf/light-life-pdf/light-life-pdf.component';
+import { PdfPanelComponent } from '@pages/pdf/pdf-panel/pdf-panel.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: MainPageComponent },
-  { path: 'pdf/light-life', component: LightLifePdfComponent },
+  { path: 'pdf', component: PdfPanelComponent },
 ];
