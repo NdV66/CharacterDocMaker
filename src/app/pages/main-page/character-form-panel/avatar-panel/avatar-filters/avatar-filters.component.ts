@@ -30,10 +30,10 @@ export class AvatarFiltersComponent {
   readonly form: FormGroup = new FormGroup({});
 
   constructor(service: CharacterFormService) {
-    this.form = service.form;
-    this.greyScale = service.form.get('greyScale')?.value;
-    this.zoom = service.form.get('zoom')?.value;
-    this.brightness = service.form.get('brightness')?.value;
+    this.form = service.avatarForm;
+    this.greyScale = this.form.get('greyScale')?.value;
+    this.zoom = this.form.get('zoom')?.value;
+    this.brightness = this.form.get('brightness')?.value;
   }
 
   ngOnInit() {
