@@ -2,25 +2,47 @@
 @use "colors";
 
 .pdf-content {
-    margin-top: variables.$base * 8;
-    // background-image:;
-}
-
-.alert-info {
-    background-color: colors.$error;
-    border-radius: variables.$border-radius;
     padding: variables.$base * 4;
-
-    .title {
-        font-weight: 700;
-        margin-right: variables.$base * 2;
-        margin-left: variables.$base * 2;
-    }
-}
-
-.buttons-wrapper {
+    background-image: url("../../../../assets/images/theme1.png");
     display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-top: variables.$base * 4;
+    justify-content: center;
+    color: colors.$background-dark;
+
+    .panel {
+        background-color: colors.$background-dark;
+        border-radius: variables.$border-radius * 0.5;
+        padding: variables.$base * 4;
+        width: 100%;
+        color: colors.$text;
+    }
+
+    .name {
+        margin: variables.$base * 4 0;
+        font-family: "Chango";
+        display: inline-block;
+    }
+
+    .info {
+        font-size: variables.$basic-font-size;
+        font-weight: 900;
+    }
+
+    .info-title {
+        font-size: variables.$basic-font-size;
+        margin-right: variables.$base * 2;
+        width: 60px;
+        display: inline-block;
+    }
+
+    .avatar {
+        $size: 180px;
+        width: $size;
+        height: $size;
+        border-radius: 50%;
+        border: variables.$base solid colors.$accent;
+        margin-right: variables.$base * 4;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
 }

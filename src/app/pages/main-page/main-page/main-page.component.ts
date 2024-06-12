@@ -7,9 +7,9 @@ import { FooterComponent } from '@elements/footer/footer.component';
 import { ButtonComponent } from '@elements/button/button.component';
 import { DocumentPanelComponent } from '../document-panel/document-panel.component';
 import { CharacterFormService } from '@services/character-form.service';
-import { Router } from '@angular/router';
 import { NavbarComponent } from '@elements/navbar/navbar.component';
 import { WidthWrapperComponent } from '@elements/width-wrapper/width-wrapper.component';
+import { PdfPanelComponent } from '@pages/pdf/pdf-panel/pdf-panel.component';
 
 @Component({
   selector: 'app-main-page',
@@ -24,6 +24,7 @@ import { WidthWrapperComponent } from '@elements/width-wrapper/width-wrapper.com
     DocumentPanelComponent,
     NavbarComponent,
     WidthWrapperComponent,
+    PdfPanelComponent,
   ],
   templateUrl: './main-page.component.html',
   styleUrl: './main-page.component.scss',
@@ -31,13 +32,12 @@ import { WidthWrapperComponent } from '@elements/width-wrapper/width-wrapper.com
 export class MainPageComponent {
   readonly form!: FormGroup;
 
-  constructor(private _service: CharacterFormService, private _router: Router) {
+  constructor(private _service: CharacterFormService) {
     this.form = this._service.form;
   }
 
   onSubmitPreview(e: any) {
-    this._service.onSubmitPreview(e);
-    this._service.isFormValid &&
-      this._router.navigate([this._service.previewRoute]);
+    // this._service.isFormValid && this._service.onSubmit(e);
+    this._service.onSubmit(e);
   }
 }

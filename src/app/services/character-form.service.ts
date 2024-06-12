@@ -56,26 +56,11 @@ export class CharacterFormService {
     this.form.patchValue({ image });
   }
 
-  onSubmitPreview(event: any) {
-    event.preventDefault();
+  onSubmit(e: any) {
+    e.preventDefault();
     this.form.markAllAsTouched();
-
-    if (this.isFormValid) {
-      console.log('Form', this.form.value);
-    }
-  }
-
-  // https://decentro.tech/blog/jspdf/
-  onSubmit(event: any) {
-    event.preventDefault();
-
-    const pages = document.querySelector('.pdf-document') as HTMLElement;
-    console.log(pages);
-    this._pdfCreatorService.exportToPdf(pages);
-
-    if (!this.form.invalid) {
-      console.log('Form', this.form.value);
-    }
+    console.log('Form', this.form.value);
+    this._pdfCreatorService.exportToPdf();
   }
 }
 

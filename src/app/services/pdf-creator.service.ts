@@ -9,20 +9,21 @@ const A4_FORMAT = [595, 842];
 export class PdfCreatorService {
   constructor() {}
 
-  exportToPdf(pages: HTMLElement) {
+  exportToPdf() {
+    const source = document.querySelector('.pdf-content') as HTMLElement;
+    console.log(source);
     const doc = new jsPDF({
       unit: 'px',
       format: A4_FORMAT,
+      orientation: 'portrait',
     });
 
-    doc.text('Hello world!', 1, 1);
-    doc.save('two-by-four.pdf');
-
-    // doc.html(pages, {
-    //   callback: (doc: jsPDF) => {
-    //     doc.deletePage(doc.getNumberOfPages());
-    //     doc.save('pdf-export');
-    //   },
-    // });
+    doc.html(source as any, {
+      callback: function (doc) {
+        doc.save('document-html.pdf');
+      },
+      margin: [10, 10, 10, 10],
+      autoPaging: 'text',
+    });
   }
 }

@@ -80,10 +80,18 @@ export const TEXTS = {
     },
   },
   preview: {
-    action: 'Preview your PDF!',
+    action: 'Download your PDF!',
     alert: {
       title: 'Warning!',
       text: 'This only a preview. To download PDF, use the button below. Or go back.',
+    },
+    pdf: {
+      name: 'name',
+      race: 'race',
+      age: 'age',
+      origin: 'origin',
+      nature: 'nature',
+      live: 'live',
     },
   },
   download: {

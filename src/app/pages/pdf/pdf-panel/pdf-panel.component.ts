@@ -1,9 +1,11 @@
+import { NgFor } from '@angular/common';
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { FormGroup } from '@angular/forms';
 import { ButtonComponent } from '@elements/button/button.component';
 import { NavbarComponent } from '@elements/navbar/navbar.component';
 import { TextButtonComponent } from '@elements/text-button/text-button.component';
 import { WidthWrapperComponent } from '@elements/width-wrapper/width-wrapper.component';
+import { CharacterFormService } from '@services/character-form.service';
 import { TranslationsPipe } from '@translations/translations.pipe';
 
 @Component({
@@ -15,14 +17,20 @@ import { TranslationsPipe } from '@translations/translations.pipe';
     TextButtonComponent,
     NavbarComponent,
     WidthWrapperComponent,
+    NgFor,
   ],
   templateUrl: './pdf-panel.component.html',
   styleUrl: './pdf-panel.component.scss',
 })
 export class PdfPanelComponent {
-  constructor(private _router: Router) {}
+  basisInfoForm!: FormGroup;
+  basicInfoFieldsNames = ['race', 'age', 'origin', 'nature', 'live'];
 
-  onGoBack = () => {
-    this._router.navigate(['/home']);
-  };
+  constructor(private _service: CharacterFormService) {
+    this.basisInfoForm = _service.basicInfoForm;
+  }
+
+  get imageUrlCss() {
+    return `url(${this._service.avatarForm.get('avatar')?.value})`;
+  }
 }

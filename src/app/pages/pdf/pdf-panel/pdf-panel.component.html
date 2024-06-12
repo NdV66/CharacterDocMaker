@@ -1,18 +1,23 @@
-<app-width-wrapper>
-  <app-navbar></app-navbar>
+<div class="pdf-content-wrapper">
+  <div class="pdf-content" id="pdf">
+    <div class="basic-wrapper">
+      <div class="avatar" [style]="{ backgroundImage: imageUrlCss }"></div>
 
-  <div role="alert" class="alert-info">
-    <span class="title">{{ "preview.alert.title" | getTranslations }}</span>
-    <span>{{ "preview.alert.text" | getTranslations }}</span>
+      <div class="panel">
+        <div class="name">
+          {{ basisInfoForm.get("name")?.value || "NAME NAME" }}
+        </div>
+
+        <div *ngFor="let field of basicInfoFieldsNames">
+          <span class="info-title"
+            >{{ "preview.pdf." + field | getTranslations }}:</span
+          >
+          <span class="info">{{
+            this.basisInfoForm.get(field)?.value || "info info"
+          }}</span>
+        </div>
+      </div>
+    </div>
+    <div>BIO</div>
   </div>
-
-  <div class="buttons-wrapper">
-    <app-text-button
-      [onClick]="onGoBack"
-      [text]="'download.back' | getTranslations"
-    ></app-text-button>
-    <app-button [text]="'download.action' | getTranslations"></app-button>
-  </div>
-
-  <div class="pdf-content">AA</div>
-</app-width-wrapper>
+</div>
