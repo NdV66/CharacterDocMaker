@@ -7,6 +7,7 @@ import { TextButtonComponent } from '@elements/text-button/text-button.component
 import { WidthWrapperComponent } from '@elements/width-wrapper/width-wrapper.component';
 import { CharacterFormService } from '@services/character-form.service';
 import { TranslationsPipe } from '@translations/translations.pipe';
+import { AAvatarFilterHandler } from '../character-form-panel/avatar-panel/avatar-filters-handler';
 
 @Component({
   selector: 'app-pdf-panel',
@@ -22,18 +23,13 @@ import { TranslationsPipe } from '@translations/translations.pipe';
   templateUrl: './pdf-panel.component.html',
   styleUrl: './pdf-panel.component.scss',
 })
-export class PdfPanelComponent {
+export class PdfPanelComponent extends AAvatarFilterHandler {
   basisInfoForm!: FormGroup;
   basicInfoFieldsNames = ['race', 'age', 'origin', 'nature', 'live'];
-  avatarUrl = '';
 
-  constructor(private _service: CharacterFormService) {
-    this.basisInfoForm = _service.basicInfoForm;
-    this.avatarUrl = `url(${this._service.avatarForm.get('avatarUrl')?.value})`;
-
-    this._service.avatarForm
-      .get('avatarUrl')
-      ?.valueChanges.subscribe((value) => (this.avatarUrl = `url(${value})`));
+  constructor(service: CharacterFormService) {
+    super(service);
+    this.basisInfoForm = this._service.basicInfoForm;
   }
 
   get themeNumber() {

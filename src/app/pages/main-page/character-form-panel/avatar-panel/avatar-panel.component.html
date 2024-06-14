@@ -8,13 +8,12 @@
   <div class="flex-container">
     <app-upload-image
       class="half"
-      [imageUrl]="imageUrl"
       [isError]="isError"
       [isLoading]="isLoading"
       (onProcessAvatarEvent)="onProcessImage($event)"
       [loadingText]="'form.avatar.loading' | getTranslations"
       [uploadText]="'form.avatar.upload' | getTranslations"
-      [imageInlineStyles]="imageInlineStyles"
+      [imageInlineStyles]="avatarInlineStyles"
     />
     <app-avatar-filters class="half" />
   </div>

@@ -3,8 +3,8 @@ import { FormGroup } from '@angular/forms';
 import { CharacterFormService } from '@services/character-form.service';
 
 @Injectable()
-export abstract class AvatarFilterHandler {
-  imageUrl = '';
+export abstract class AAvatarFilterHandler {
+  protected _imageUrl = '';
   greyScale = 0;
   zoom = 0;
   brightness = 0;
@@ -17,7 +17,7 @@ export abstract class AvatarFilterHandler {
     this.greyScale = this.form.get('greyScale')?.value;
     this.zoom = this.form.get('zoom')?.value;
     this.brightness = this.form.get('brightness')?.value;
-    this.imageUrl = this.form.get('avatarUrl')?.value;
+    this._imageUrl = this.form.get('avatarUrl')?.value;
   }
 
   ngOnInit() {
@@ -39,7 +39,7 @@ export abstract class AvatarFilterHandler {
 
     this.form
       .get('avatarUrl')
-      ?.valueChanges.subscribe((value) => (this.imageUrl = value));
+      ?.valueChanges.subscribe((value) => (this._imageUrl = value));
   }
 
   private get _greyScaleAsNonPercent() {
@@ -50,10 +50,11 @@ export abstract class AvatarFilterHandler {
     return this.brightness / 100;
   }
 
-  get imageInlineStyles() {
+  get avatarInlineStyles() {
     return {
       filter: `grayscale(${this._greyScaleAsNonPercent}) brightness(${this._brightnessAsNonPercent})`,
       backgroundSize: `${this.zoom}% ${this.zoom}%`,
+      backgroundImage: `url(${this._imageUrl})`,
     };
   }
 }

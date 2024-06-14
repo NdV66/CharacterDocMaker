@@ -8,7 +8,6 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrl: './upload-image.component.scss',
 })
 export class UploadImageComponent {
-  @Input() imageUrl = '';
   @Input() isLoading = false;
   @Input() isError = false;
   @Input() uploadText = '';
@@ -17,13 +16,6 @@ export class UploadImageComponent {
 
   @Output('onProcessAvatarEvent') readonly _onProcessAvatarEventEmitter =
     new EventEmitter<any>();
-
-  get inlineStyles() {
-    return {
-      ...this.imageInlineStyles,
-      backgroundImage: `url(${this.imageUrl})`,
-    };
-  }
 
   processFile(imageInput: any) {
     if (this.isLoading) return;
