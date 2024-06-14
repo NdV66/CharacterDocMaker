@@ -25,16 +25,18 @@ import { TranslationsPipe } from '@translations/translations.pipe';
 export class PdfPanelComponent {
   basisInfoForm!: FormGroup;
   basicInfoFieldsNames = ['race', 'age', 'origin', 'nature', 'live'];
+  avatarUrl = '';
 
   constructor(private _service: CharacterFormService) {
     this.basisInfoForm = _service.basicInfoForm;
+    this.avatarUrl = `url(${this._service.avatarForm.get('avatarUrl')?.value})`;
+
+    this._service.avatarForm
+      .get('avatarUrl')
+      ?.valueChanges.subscribe((value) => (this.avatarUrl = `url(${value})`));
   }
 
   get themeNumber() {
     return this._service.form.get('themeOption')?.value;
-  }
-
-  get imageUrlCss() {
-    return `url(${this._service.avatarForm.get('avatar')?.value})`;
   }
 }

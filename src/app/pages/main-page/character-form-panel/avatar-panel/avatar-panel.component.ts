@@ -41,7 +41,7 @@ export class AvatarPanelComponent {
     this.greyScale = this.form.get('greyScale')?.value;
     this.zoom = this.form.get('zoom')?.value;
     this.brightness = this.form.get('brightness')?.value;
-    this.imageUrl = this.form.get('avatar')?.value;
+    this.imageUrl = this.form.get('avatarUrl')?.value;
   }
 
   ngOnInit() {
@@ -64,7 +64,7 @@ export class AvatarPanelComponent {
         event.target.result,
         this._currentFile
       );
-      this._service.uploadAvatar(selectedFile.file);
+      this._service.uploadAvatar(selectedFile);
       this.imageUrl = selectedFile.src;
       this.isLoading = false;
     });
@@ -84,7 +84,7 @@ export class AvatarPanelComponent {
       ?.valueChanges.subscribe((value) => (this.brightness = value));
 
     this.form
-      .get('avatar')
+      .get('avatarUrl')
       ?.valueChanges.subscribe((value) => (this.imageUrl = value));
   }
 
