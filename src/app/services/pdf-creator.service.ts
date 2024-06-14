@@ -11,7 +11,15 @@ export class PdfCreatorService {
   constructor() {}
 
   async exportToPdf() {
-    const rawSource = document.getElementById('pdf') as HTMLElement;
+    const iframe = document.getElementById('pdf-iframe') as HTMLIFrameElement;
+    const rawSource = iframe.contentWindow!.document.getElementById(
+      'pdf'
+    ) as HTMLElement;
+
+    console.log(rawSource);
+
+    // const rawSource = document.getElementById('pdf') as HTMLElement;
+
     const canvas = await html2canvas(rawSource);
     const contentDataUrl = canvas.toDataURL('image/png');
 

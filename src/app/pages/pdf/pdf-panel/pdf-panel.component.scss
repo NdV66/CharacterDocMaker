@@ -2,6 +2,9 @@
 @use "colors";
 
 .pdf-content {
+    width: 210mm;
+    height: 297mm;
+
     padding: variables.$base * 4;
     background-image: url("../../../../assets/images/theme1.png");
     display: flex;
