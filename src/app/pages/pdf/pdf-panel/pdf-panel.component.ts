@@ -31,7 +31,6 @@ export class PdfPanelComponent {
   }
 
   get themeNumber() {
-    console.log(this._service.form.get('themeOption')?.value);
     return this._service.form.get('themeOption')?.value;
   }
 

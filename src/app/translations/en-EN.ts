@@ -86,6 +86,7 @@ export const TEXTS = {
       text: 'This only a preview. To download PDF, use the button below. Or go back.',
     },
     pdf: {
+      noInfo: 'No info',
       name: 'name',
       race: 'race',
       age: 'age',

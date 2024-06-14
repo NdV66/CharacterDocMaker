@@ -23,11 +23,8 @@ export class PdfCreatorService {
   }
 
   private async _createContentDataUrl() {
-    const iframe = document.getElementById('pdf-iframe') as HTMLIFrameElement;
-    const rawSource = iframe.contentWindow!.document.getElementById(
-      'pdf'
-    ) as HTMLElement;
-
+    const rawSource = document.getElementById('pdf') as HTMLElement;
+    console.log(rawSource);
     const canvas = await html2canvas(rawSource);
     return canvas.toDataURL('image/png');
   }
