@@ -24,7 +24,6 @@ export class PdfCreatorService {
 
   private async _createContentDataUrl() {
     const rawSource = document.getElementById('pdf') as HTMLElement;
-    console.log(rawSource);
     const canvas = await html2canvas(rawSource);
     return canvas.toDataURL('image/png');
   }

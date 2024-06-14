@@ -9,7 +9,7 @@ import { DocumentPanelComponent } from '../document-panel/document-panel.compone
 import { CharacterFormService } from '@services/character-form.service';
 import { NavbarComponent } from '@elements/navbar/navbar.component';
 import { WidthWrapperComponent } from '@elements/width-wrapper/width-wrapper.component';
-import { PdfPanelComponent } from '@pages/pdf/pdf-panel/pdf-panel.component';
+import { PdfPanelComponent } from '@pages/main-page/pdf-panel/pdf-panel.component';
 import { PdfCreatorService } from '@services/pdf-creator.service';
 import { NgIf } from '@angular/common';
 

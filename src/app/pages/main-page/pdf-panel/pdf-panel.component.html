@@ -14,22 +14,27 @@
       <div class="panel">
         <div class="name">
           {{
-            basisInfoForm.get("name")?.value || "preview.pdf.noInfo"
-              | getTranslations
+            basisInfoForm.get("name")?.value ||
+              ("preview.pdf.noInfo" | getTranslations)
           }}
         </div>
 
         <div *ngFor="let field of basicInfoFieldsNames">
-          <span class="info-title"
-            >{{ "preview.pdf." + field | getTranslations }}:</span
-          >
-          <span class="info">{{
-            this.basisInfoForm.get(field)?.value || "preview.pdf.noInfo"
-              | getTranslations
-          }}</span>
+          <span class="info-title">
+            {{ "preview.pdf." + field | getTranslations }}:
+          </span>
+          <span class="info">
+            {{
+              this.basisInfoForm.get(field)?.value ||
+                ("preview.pdf.noInfo" | getTranslations)
+            }}
+          </span>
         </div>
+
+        <div class="by-who">{{ "preview.pdf.by" | getTranslations }}</div>
       </div>
     </div>
+
     <div>BIO</div>
   </div>
 </div>

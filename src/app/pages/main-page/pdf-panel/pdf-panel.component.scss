@@ -13,51 +13,72 @@
     background-image: url("../../../../assets/images/theme3.png");
 }
 
+.pdf-content-wrapper {
+    margin-top: variables.$base * 8;
+}
+
 .pdf-content {
+    padding: 20mm;
     width: 210mm;
     height: 297mm;
-
-    display: flex;
-    justify-content: center;
-    color: colors.$background-dark;
 
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 
-    .panel {
+    color: colors.$accent;
+    font-size: variables.$basic-font-size;
+
+    .basic-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
         background-color: colors.$background-dark;
         border-radius: variables.$border-radius * 0.5;
-        padding: variables.$base * 4;
-        width: 100%;
-        color: colors.$text;
+        padding: variables.$base * 8 variables.$base * 12;
+        position: relative;
+    }
+
+    .by-who {
+        position: absolute;
+        right: 4mm;
+        bottom: 4mm;
+        font-size: variables.$small-font-size * 0.8;
+    }
+
+    .panel {
+        width: 110mm;
+        height: 100%;
+
+        padding-left: 6mm;
+        border-left: 1px solid colors.$accent;
     }
 
     .name {
-        margin: variables.$base * 4 0;
+        margin-bottom: variables.$base * 4;
         font-family: "Chango";
         display: inline-block;
+        font-size: variables.$title-font-size;
     }
 
     .info {
-        font-size: variables.$basic-font-size;
         font-weight: 900;
+        font-size: variables.$small-font-size;
     }
 
     .info-title {
-        font-size: variables.$basic-font-size;
-        margin-right: variables.$base * 2;
-        width: 60px;
+        width: 18mm;
         display: inline-block;
+        font-size: variables.$small-font-size;
     }
 
     .avatar {
-        $size: 180px;
+        $size: 50mm;
         width: $size;
         height: $size;
         border-radius: 50%;
         border: variables.$base solid colors.$accent;
-        margin-right: variables.$base * 4;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;

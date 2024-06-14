@@ -70,7 +70,7 @@ export const TEXTS = {
     theme: {
       title: '4. Select your document theme',
       subtitle: 'Which theme is your favorite one?',
-      note: "Just select the document's theme and download your epic description!",
+      note: 'See below, if your PDF is fine! If you love it, just click and download your document, yay!',
 
       fields: {
         theme1: 'Light life',
@@ -86,7 +86,9 @@ export const TEXTS = {
       text: 'This only a preview. To download PDF, use the button below. Or go back.',
     },
     pdf: {
+      by: 'by NdV66, Simple Character PDF, 2024, v1.0',
       noInfo: 'No info',
+
       name: 'name',
       race: 'race',
       age: 'age',
