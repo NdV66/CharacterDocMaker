@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { jsPDF } from 'jspdf';
+import html2canvas from 'html2canvas';
 
-const A4_FORMAT = [595, 842];
+const A4_FORMAT = [210, 297];
 
 @Injectable({
   providedIn: 'root',
@@ -9,21 +10,21 @@ const A4_FORMAT = [595, 842];
 export class PdfCreatorService {
   constructor() {}
 
-  exportToPdf() {
-    const source = document.querySelector('.pdf-content') as HTMLElement;
-    console.log(source);
+  async exportToPdf() {
+    const rawSource = document.getElementById('pdf') as HTMLElement;
+    const canvas = await html2canvas(rawSource);
+    const contentDataUrl = canvas.toDataURL('image/png');
+
     const doc = new jsPDF({
-      unit: 'px',
-      format: A4_FORMAT,
       orientation: 'portrait',
+      unit: 'mm',
+      format: A4_FORMAT,
     });
 
-    doc.html(source as any, {
-      callback: function (doc) {
-        doc.save('document-html.pdf');
-      },
-      margin: [10, 10, 10, 10],
-      autoPaging: 'text',
-    });
+    const width = doc.internal.pageSize.getWidth();
+    const height = doc.internal.pageSize.getHeight();
+
+    doc.addImage(contentDataUrl, 'PNG', 0, 0, width, height);
+    doc.save('hello-dear.pdf');
   }
 }

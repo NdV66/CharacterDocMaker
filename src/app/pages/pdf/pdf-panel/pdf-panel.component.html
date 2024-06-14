@@ -1,23 +1,21 @@
-<div class="pdf-content-wrapper">
-  <div class="pdf-content" id="pdf">
-    <div class="basic-wrapper">
-      <div class="avatar" [style]="{ backgroundImage: imageUrlCss }"></div>
+<div class="pdf-content">
+  <div class="basic-wrapper">
+    <div class="avatar" [style]="{ backgroundImage: imageUrlCss }"></div>
 
-      <div class="panel">
-        <div class="name">
-          {{ basisInfoForm.get("name")?.value || "NAME NAME" }}
-        </div>
+    <div class="panel">
+      <div class="name">
+        {{ basisInfoForm.get("name")?.value || "NAME NAME" }}
+      </div>
 
-        <div *ngFor="let field of basicInfoFieldsNames">
-          <span class="info-title"
-            >{{ "preview.pdf." + field | getTranslations }}:</span
-          >
-          <span class="info">{{
-            this.basisInfoForm.get(field)?.value || "info info"
-          }}</span>
-        </div>
+      <div *ngFor="let field of basicInfoFieldsNames">
+        <span class="info-title"
+          >{{ "preview.pdf." + field | getTranslations }}:</span
+        >
+        <span class="info">{{
+          this.basisInfoForm.get(field)?.value || "info info"
+        }}</span>
       </div>
     </div>
-    <div>BIO</div>
   </div>
+  <div>BIO</div>
 </div>
