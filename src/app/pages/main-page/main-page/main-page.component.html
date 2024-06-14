@@ -32,7 +32,7 @@
   <app-footer></app-footer>
 </footer>
 
-<div class="pdf-content-wrapper">
+<div class="pdf-content-wrapper" *ngIf="isPdfExporting">
   <iframe
     [style]="{ width: '210mm', height: '297mm' }"
     src="/pdf"
@@ -40,7 +40,3 @@
   >
   </iframe>
 </div>
-
-<!-- <div class="pdf-content-wrapper">
-  <app-pdf-panel></app-pdf-panel>
-</div> -->

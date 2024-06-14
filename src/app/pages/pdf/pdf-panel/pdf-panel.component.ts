@@ -30,6 +30,11 @@ export class PdfPanelComponent {
     this.basisInfoForm = _service.basicInfoForm;
   }
 
+  get themeNumber() {
+    console.log(this._service.form.get('themeOption')?.value);
+    return this._service.form.get('themeOption')?.value;
+  }
+
   get imageUrlCss() {
     return `url(${this._service.avatarForm.get('avatar')?.value})`;
   }

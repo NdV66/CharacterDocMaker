@@ -1,15 +1,29 @@
 @use "variables";
 @use "colors";
 
+.theme-1 {
+    background-image: url("../../../../assets/images/theme1.png");
+}
+
+.theme-2 {
+    background-image: url("../../../../assets/images/theme2.png");
+}
+
+.theme-3 {
+    background-image: url("../../../../assets/images/theme3.png");
+}
+
 .pdf-content {
     width: 210mm;
     height: 297mm;
 
-    padding: variables.$base * 4;
-    background-image: url("../../../../assets/images/theme1.png");
     display: flex;
     justify-content: center;
     color: colors.$background-dark;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 
     .panel {
         background-color: colors.$background-dark;

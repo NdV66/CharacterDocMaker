@@ -28,17 +28,17 @@ export class DocumentPanelComponent {
     {
       id: 1,
       textKey: 'form.theme.fields.theme1',
-      imageUrl: '/assets/images/themeOption_pastel.png',
+      imageUrl: '/assets/images/theme1.png',
     },
     {
       id: 2,
       textKey: 'form.theme.fields.theme2',
-      imageUrl: '/assets/images/themeOption_sky.png',
+      imageUrl: '/assets/images/theme2.png',
     },
     {
       id: 3,
       textKey: 'form.theme.fields.theme3',
-      imageUrl: '/assets/images/themeOption_blackWhite.png',
+      imageUrl: '/assets/images/theme3.png',
     },
   ];
 

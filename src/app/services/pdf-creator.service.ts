@@ -1,28 +1,39 @@
 import { Injectable } from '@angular/core';
 import { jsPDF } from 'jspdf';
 import html2canvas from 'html2canvas';
+import { BehaviorSubject, filter } from 'rxjs';
 
 const A4_FORMAT = [210, 297];
 
+// for v2: https://stackoverflow.com/questions/19272933/jspdf-multi-page-pdf-with-html-renderer
 @Injectable({
   providedIn: 'root',
 })
 export class PdfCreatorService {
-  constructor() {}
+  private _isPdfExporting = new BehaviorSubject<boolean>(false);
 
-  async exportToPdf() {
+  constructor() {
+    this._isPdfExporting
+      .pipe(filter((el) => !!el))
+      .subscribe(() => this._onExportToPdf());
+  }
+
+  get isPdfExporting() {
+    return this._isPdfExporting.asObservable();
+  }
+
+  private async _createContentDataUrl() {
     const iframe = document.getElementById('pdf-iframe') as HTMLIFrameElement;
     const rawSource = iframe.contentWindow!.document.getElementById(
       'pdf'
     ) as HTMLElement;
 
-    console.log(rawSource);
-
-    // const rawSource = document.getElementById('pdf') as HTMLElement;
-
     const canvas = await html2canvas(rawSource);
-    const contentDataUrl = canvas.toDataURL('image/png');
+    return canvas.toDataURL('image/png');
+  }
 
+  private async _onExportToPdf() {
+    const contentDataUrl = await this._createContentDataUrl();
     const doc = new jsPDF({
       orientation: 'portrait',
       unit: 'mm',
@@ -34,5 +45,11 @@ export class PdfCreatorService {
 
     doc.addImage(contentDataUrl, 'PNG', 0, 0, width, height);
     doc.save('hello-dear.pdf');
+
+    this._isPdfExporting.next(false);
+  }
+
+  async exportToPdf() {
+    this._isPdfExporting.next(true);
   }
 }

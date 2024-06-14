@@ -59,7 +59,6 @@ export class CharacterFormService {
   onSubmit(e: any) {
     e.preventDefault();
     this.form.markAllAsTouched();
-    console.log('Form', this.form.value);
     this._pdfCreatorService.exportToPdf();
   }
 }
