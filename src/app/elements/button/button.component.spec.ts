@@ -1,23 +1,15 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { screen, render } from '@testing-library/angular';
+import userEvent from '@testing-library/user-event';
 import { ButtonComponent } from './button.component';
 
+const textMock = 'click me!';
+
 describe('ButtonComponent', () => {
-  let component: ButtonComponent;
-  let fixture: ComponentFixture<ButtonComponent>;
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [ButtonComponent]
-    })
-    .compileComponents();
-    
-    fixture = TestBed.createComponent(ButtonComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('Should create as basic', async () => {
+    // Given
+    // When
+    await render(ButtonComponent, { componentProperties: { text: textMock } });
+    // Then
+    expect(screen.getByText(textMock)).toBeTruthy();
   });
 });

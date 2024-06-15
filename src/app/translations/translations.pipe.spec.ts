@@ -1,3 +1,4 @@
+import 'jest-preset-angular/setup-jest';
 import { TranslationsPipe } from './translations.pipe';
 import { TEXTS } from './en-EN';
 
