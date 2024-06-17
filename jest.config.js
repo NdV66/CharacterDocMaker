@@ -18,6 +18,11 @@ module.exports = {
   moduleDirectories: ["node_modules", "src"],
   modulePaths: ["<rootDir>"],
   moduleNameMapper: {
-    "^@app/(.*)$": ["<rootDir>/src/app/$1"],
+    "@elements/(.*)$": ["<rootDir>/src/app/elements/$1"],
+    "@services/(.*)$": ["<rootDir>/src/app/services/$1"],
+    "@translations/(.*)$": ["<rootDir>/src/app/translations/$1"],
+    "@models/(.*)$": ["<rootDir>/src/app/models/$1"],
+    "@utils/(.*)$": ["<rootDir>/src/app/utils/$1"],
+    "@pages/(.*)$": ["<rootDir>/src/app/pages/$1"],
   },
 };

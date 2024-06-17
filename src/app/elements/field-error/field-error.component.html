@@ -1,14 +1,12 @@
-<span *ngIf="isError">
-  <small *ngIf="formControlItem.errors?.['required']" class="input-error">
-    {{ "form.errors.required" | getTranslations }}
-  </small>
-  <small *ngIf="formControlItem.errors?.['minlength']" class="input-error">
-    {{ "form.errors.minLength" | getTranslations }}
-  </small>
-  <small *ngIf="formControlItem.errors?.['maxlength']" class="input-error">
-    {{ "form.errors.maxlength" | getTranslations }}
-  </small>
-  <small *ngIf="formControlItem.errors?.['pattern']" class="input-error">
-    {{ "form.errors.pattern" | getTranslations }}
-  </small>
-</span>
+<small *ngIf="formControlItem.errors?.['required']" class="input-error">
+  {{ "form.errors.required" | getTranslations }}
+</small>
+<small *ngIf="formControlItem.errors?.['minlength']" class="input-error">
+  {{ "form.errors.minlength" | getTranslations }}
+</small>
+<small *ngIf="formControlItem.errors?.['maxlength']" class="input-error">
+  {{ "form.errors.maxlength" | getTranslations }}
+</small>
+<small *ngIf="formControlItem.errors?.['pattern']" class="input-error">
+  {{ "form.errors.pattern" | getTranslations }}
+</small>
