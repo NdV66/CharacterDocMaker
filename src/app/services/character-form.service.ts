@@ -44,6 +44,14 @@ export class CharacterFormService {
       description: ['', [Validators.required]],
       themeOption: [DEFAULT_VALUES.themeOption],
     });
+
+    this._subscribe();
+  }
+
+  private _subscribe() {
+    // this._pdfCreatorService.isPdfExporting.subscribe((value) =>
+    //   value ? this.form.disable() : this.form.enable()
+    // );
   }
 
   get isFormValid() {
