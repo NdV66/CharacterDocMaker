@@ -30,6 +30,14 @@ export class AvatarPanelComponent extends AAvatarFilterHandler {
     this._subscribeToLoadImage();
   }
 
+  get avatarInlineStyles() {
+    return {
+      filter: `grayscale(${this._greyScaleAsNonPercent}) brightness(${this._brightnessAsNonPercent})`,
+      backgroundSize: `${this.zoom}% ${this.zoom}%`,
+      backgroundImage: `url(${this._imageUrl})`,
+    };
+  }
+
   onProcessImage(image: File) {
     if (this.isLoading) return;
     this.isLoading = true;

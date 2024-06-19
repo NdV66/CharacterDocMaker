@@ -11,7 +11,7 @@ import {
 } from '@services/character-form.service';
 import { TranslationsPipe } from '@translations/translations.pipe';
 import { AAvatarFilterHandler } from '../character-form-panel/avatar-panel/avatar-filters-handler';
-import { fromEvent } from 'rxjs';
+import { fromEvent, merge } from 'rxjs';
 
 @Component({
   selector: 'app-pdf-panel',
@@ -30,23 +30,17 @@ import { fromEvent } from 'rxjs';
 export class PdfPanelComponent extends AAvatarFilterHandler {
   basisInfoForm!: FormGroup;
   basicInfoFieldsNames = ['race', 'age', 'origin', 'nature', 'live'];
-  @ViewChild('avatarCanvas') avatarCanvas!: ElementRef<HTMLCanvasElement>;
-  private _avatarImageToDraw = new Image();
+  @ViewChild('avatarCanvas') avatarCanvas?: ElementRef<HTMLCanvasElement>;
+  private readonly _avatarImageToDraw = new Image();
 
   constructor(service: CharacterFormService) {
     super(service);
+    const onLoadAvatarSrc$ = fromEvent(this._avatarImageToDraw, 'load');
     this.basisInfoForm = this._service.basicInfoForm;
 
-    this._service.avatarForm
-      .get('avatarUrl')
-      ?.valueChanges.subscribe(this._setAvatarImageSrc);
-
-    // this._service.avatarForm
-    //   .get('greyScale')
-    //   ?.valueChanges.subscribe((value) => this._drawAvatarOnCanvas(value));
-
-    fromEvent(this._avatarImageToDraw, 'load').subscribe(() =>
-      this._drawAvatarOnCanvas()
+    this._avatarUrl$?.subscribe(this._setAvatarImageSrc);
+    merge(this._greyScale$, this._brightness$, onLoadAvatarSrc$).subscribe(
+      this._drawAvatarOnCanvas
     );
   }
 
@@ -54,21 +48,25 @@ export class PdfPanelComponent extends AAvatarFilterHandler {
     this._setAvatarImageSrc(DEFAULT_VALUES.avatarUrl);
   }
 
-  private _prepareFilters = (greyScale: number) => `grayscale(${greyScale}) `;
+  private _prepareFilters = () => {
+    return `grayscale(${this._greyScaleAsNonPercent}) brightness(${this._brightnessAsNonPercent})`;
+  };
 
   private _setAvatarImageSrc = (value: string) =>
     (this._avatarImageToDraw.src = value);
 
-  private _drawAvatarOnCanvas() {
-    const canvas = this.avatarCanvas.nativeElement;
+  private _drawAvatarOnCanvas = () => {
+    const canvas = this.avatarCanvas?.nativeElement;
+    if (!canvas) return;
+
     const { width, height } = canvas;
     const ctx = canvas.getContext('2d');
     if (ctx) {
-      ctx.filter = this._prepareFilters(1);
+      ctx.filter = this._prepareFilters();
       ctx.clearRect(0, 0, width, height);
       ctx.drawImage(this._avatarImageToDraw, 0, 0, width, height);
     }
-  }
+  };
 
   get themeNumber() {
     return this._service.form.get('themeOption')?.value;

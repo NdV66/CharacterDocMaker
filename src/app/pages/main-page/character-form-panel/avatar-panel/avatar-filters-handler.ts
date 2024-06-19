@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { CharacterFormService } from '@services/character-form.service';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export abstract class AAvatarFilterHandler {
@@ -12,12 +13,22 @@ export abstract class AAvatarFilterHandler {
   isError = false;
   readonly form!: FormGroup;
 
+  protected readonly _greyScale$!: Observable<number>;
+  protected readonly _zoom$!: Observable<number>;
+  protected readonly _brightness$!: Observable<number>;
+  protected readonly _avatarUrl$!: Observable<string>;
+
   constructor(protected _service: CharacterFormService) {
     this.form = this._service.avatarForm;
     this.greyScale = this.form.get('greyScale')?.value;
     this.zoom = this.form.get('zoom')?.value;
     this.brightness = this.form.get('brightness')?.value;
     this._imageUrl = this.form.get('avatarUrl')?.value;
+
+    this._greyScale$ = this.form.get('greyScale')?.valueChanges!;
+    this._zoom$ = this.form.get('zoom')?.valueChanges!;
+    this._brightness$ = this.form.get('brightness')?.valueChanges!;
+    this._avatarUrl$ = this.form.get('avatarUrl')?.valueChanges!;
   }
 
   ngOnInit() {
@@ -25,21 +36,10 @@ export abstract class AAvatarFilterHandler {
   }
 
   private _subscribeToFiltersChanged() {
-    this.form
-      .get('greyScale')
-      ?.valueChanges.subscribe((value) => (this.greyScale = value));
-
-    this.form
-      .get('zoom')
-      ?.valueChanges.subscribe((value) => (this.zoom = value));
-
-    this.form
-      .get('brightness')
-      ?.valueChanges.subscribe((value) => (this.brightness = value));
-
-    this.form
-      .get('avatarUrl')
-      ?.valueChanges.subscribe((value) => (this._imageUrl = value));
+    this._greyScale$?.subscribe((value) => (this.greyScale = value));
+    this._zoom$?.subscribe((value) => (this.zoom = value));
+    this._brightness$?.subscribe((value) => (this.brightness = value));
+    this._avatarUrl$?.subscribe((value) => (this._imageUrl = value));
   }
 
   protected get _greyScaleAsNonPercent() {
@@ -48,13 +48,5 @@ export abstract class AAvatarFilterHandler {
 
   protected get _brightnessAsNonPercent() {
     return this.brightness / 100;
-  }
-
-  get avatarInlineStyles() {
-    return {
-      filter: `grayscale(${this._greyScaleAsNonPercent}) brightness(${this._brightnessAsNonPercent})`,
-      backgroundSize: `${this.zoom}% ${this.zoom}%`,
-      backgroundImage: `url(${this._imageUrl})`,
-    };
   }
 }
