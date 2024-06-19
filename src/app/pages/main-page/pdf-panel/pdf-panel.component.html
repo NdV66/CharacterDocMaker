@@ -9,7 +9,10 @@
     id="pdf"
   >
     <div class="basic-wrapper">
-      <div class="avatar" [style]="avatarInlineStyles"></div>
+      <!-- <div class="avatar" [style]="avatarInlineStyles"></div> -->
+
+      <canvas id="avatar-canvas" class="avatar" #avatarCanvas></canvas>
+
       <div class="panel">
         <div class="name">
           {{

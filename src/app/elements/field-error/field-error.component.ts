@@ -15,7 +15,6 @@ export class FieldErrorComponent {
   @Input() formControlItem!: FormControl;
 
   get isError() {
-    console.log('>>>>>>>>>>>> ', isFormControlInvalid(this.formControlItem));
     return isFormControlInvalid(this.formControlItem);
   }
 }

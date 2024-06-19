@@ -42,11 +42,11 @@ export abstract class AAvatarFilterHandler {
       ?.valueChanges.subscribe((value) => (this._imageUrl = value));
   }
 
-  private get _greyScaleAsNonPercent() {
+  protected get _greyScaleAsNonPercent() {
     return this.greyScale / 100;
   }
 
-  private get _brightnessAsNonPercent() {
+  protected get _brightnessAsNonPercent() {
     return this.brightness / 100;
   }
 
