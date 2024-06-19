@@ -57,15 +57,15 @@ export class PdfPanelComponent extends AAvatarFilterHandler {
 
   private _drawAvatarOnCanvas = () => {
     const canvas = this.avatarCanvas?.nativeElement;
-    if (!canvas) return;
+    if (!canvas) return false;
 
-    const { width, height } = canvas;
     const ctx = canvas.getContext('2d');
-    if (ctx) {
-      ctx.filter = this._prepareFilters();
-      ctx.clearRect(0, 0, width, height);
-      ctx.drawImage(this._avatarImageToDraw, 0, 0, width, height);
-    }
+    if (!ctx) return false;
+
+    ctx.filter = this._prepareFilters();
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(this._avatarImageToDraw, 0, 0, canvas.width, canvas.height);
+    return true;
   };
 
   get themeNumber() {
