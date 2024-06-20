@@ -12,6 +12,7 @@ import {
 import { TranslationsPipe } from '@translations/translations.pipe';
 import { AAvatarFilterHandler } from '../character-form-panel/avatar-panel/avatar-filters-handler';
 import { fromEvent, merge } from 'rxjs';
+import { AvatarCanvasHandler } from './avatar-canvas-handler.service';
 
 @Component({
   selector: 'app-pdf-panel',
@@ -24,6 +25,7 @@ import { fromEvent, merge } from 'rxjs';
     WidthWrapperComponent,
     NgFor,
   ],
+  providers: [AvatarCanvasHandler],
   templateUrl: './pdf-panel.component.html',
   styleUrl: './pdf-panel.component.scss',
 })
@@ -33,14 +35,21 @@ export class PdfPanelComponent extends AAvatarFilterHandler {
   @ViewChild('avatarCanvas') avatarCanvas?: ElementRef<HTMLCanvasElement>;
   private readonly _avatarImageToDraw = new Image();
 
-  constructor(service: CharacterFormService) {
+  constructor(
+    service: CharacterFormService,
+    private _avatarCanvasHandlerService: AvatarCanvasHandler
+  ) {
     super(service);
     const onLoadAvatarSrc$ = fromEvent(this._avatarImageToDraw, 'load');
     this.basisInfoForm = this._service.basicInfoForm;
 
     this._avatarUrl$?.subscribe(this._setAvatarImageSrc);
-    merge(this._greyScale$, this._brightness$, onLoadAvatarSrc$).subscribe(
-      this._drawAvatarOnCanvas
+    merge(this._greyScale$, this._brightness$, onLoadAvatarSrc$).subscribe(() =>
+      this._avatarCanvasHandlerService.drawAvatarOnCanvas(
+        this._avatarImageToDraw,
+        this.avatarCanvas,
+        this._prepareFilters()
+      )
     );
   }
 
@@ -54,19 +63,6 @@ export class PdfPanelComponent extends AAvatarFilterHandler {
 
   private _setAvatarImageSrc = (value: string) =>
     (this._avatarImageToDraw.src = value);
-
-  private _drawAvatarOnCanvas = () => {
-    const canvas = this.avatarCanvas?.nativeElement;
-    if (!canvas) return false;
-
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return false;
-
-    ctx.filter = this._prepareFilters();
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.drawImage(this._avatarImageToDraw, 0, 0, canvas.width, canvas.height);
-    return true;
-  };
 
   get themeNumber() {
     return this._service.form.get('themeOption')?.value;
