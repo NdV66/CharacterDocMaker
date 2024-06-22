@@ -5,7 +5,7 @@ import { ImageSnippetDto } from '@models/ImageSnippet.dto';
 
 export const DEFAULT_VALUES = {
   greyScale: 0,
-  zoom: 100,
+  sepia: 0,
   brightness: 100,
   themeOption: 1,
   avatarUrl: '/assets/images/avatarPlaceholder.png',
@@ -26,7 +26,7 @@ export class CharacterFormService {
       avatarUrl: [DEFAULT_VALUES.avatarUrl],
       greyScale: [DEFAULT_VALUES.greyScale],
       brightness: [DEFAULT_VALUES.brightness],
-      zoom: [DEFAULT_VALUES.zoom],
+      sepia: [DEFAULT_VALUES.sepia],
     });
 
     this.basicInfoForm = formBuilder.group({

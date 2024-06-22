@@ -32,8 +32,7 @@ export class AvatarPanelComponent extends AAvatarFilterHandler {
 
   get avatarInlineStyles() {
     return {
-      filter: `grayscale(${this._greyScaleAsNonPercent}) brightness(${this._brightnessAsNonPercent})`,
-      backgroundSize: `${this.zoom}% ${this.zoom}%`,
+      filter: this._prepareFilters(),
       backgroundImage: `url(${this._imageUrl})`,
     };
   }

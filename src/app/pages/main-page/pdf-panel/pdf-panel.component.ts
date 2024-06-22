@@ -44,7 +44,12 @@ export class PdfPanelComponent extends AAvatarFilterHandler {
     this.basisInfoForm = this._service.basicInfoForm;
 
     this._avatarUrl$?.subscribe(this._setAvatarImageSrc);
-    merge(this._greyScale$, this._brightness$, onLoadAvatarSrc$).subscribe(() =>
+    merge(
+      this._greyScale$,
+      this._brightness$,
+      onLoadAvatarSrc$,
+      this._sepia$
+    ).subscribe(() =>
       this._avatarCanvasHandlerService.drawAvatarOnCanvas(
         this._avatarImageToDraw,
         this.avatarCanvas,
@@ -56,10 +61,6 @@ export class PdfPanelComponent extends AAvatarFilterHandler {
   ngAfterViewInit() {
     this._setAvatarImageSrc(DEFAULT_VALUES.avatarUrl);
   }
-
-  private _prepareFilters = () => {
-    return `grayscale(${this._greyScaleAsNonPercent}) brightness(${this._brightnessAsNonPercent})`;
-  };
 
   private _setAvatarImageSrc = (value: string) =>
     (this._avatarImageToDraw.src = value);

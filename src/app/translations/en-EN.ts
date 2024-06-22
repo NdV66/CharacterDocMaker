@@ -24,7 +24,7 @@ export const TEXTS = {
 
       fields: {
         greyScale: 'Grey scale',
-        zoom: 'Zoom',
+        sepia: 'Sepia',
         brightness: 'Brightness',
         reset: 'Reset filters',
       },

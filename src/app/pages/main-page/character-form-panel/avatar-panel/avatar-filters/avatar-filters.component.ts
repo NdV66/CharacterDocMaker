@@ -25,14 +25,14 @@ import { TextButtonComponent } from '@elements/text-button/text-button.component
 })
 export class AvatarFiltersComponent {
   greyScale = 0;
-  zoom = 0;
+  sepia = 0;
   brightness = 0;
   readonly form: FormGroup = new FormGroup({});
 
   constructor(service: CharacterFormService) {
     this.form = service.avatarForm;
     this.greyScale = this.form.get('greyScale')?.value;
-    this.zoom = this.form.get('zoom')?.value;
+    this.sepia = this.form.get('sepia')?.value;
     this.brightness = this.form.get('brightness')?.value;
   }
 
@@ -45,8 +45,8 @@ export class AvatarFiltersComponent {
       .get('greyScale')
       ?.valueChanges.subscribe((value) => (this.greyScale = value));
     this.form
-      .get('zoom')
-      ?.valueChanges.subscribe((value) => (this.zoom = value));
+      .get('sepia')
+      ?.valueChanges.subscribe((value) => (this.sepia = value));
     this.form
       .get('brightness')
       ?.valueChanges.subscribe((value) => (this.brightness = value));
@@ -58,7 +58,7 @@ export class AvatarFiltersComponent {
 
   onClickReset = () => {
     this.form.patchValue({
-      zoom: DEFAULT_VALUES.zoom,
+      sepia: DEFAULT_VALUES.sepia,
       brightness: DEFAULT_VALUES.brightness,
       greyScale: DEFAULT_VALUES.greyScale,
     });
