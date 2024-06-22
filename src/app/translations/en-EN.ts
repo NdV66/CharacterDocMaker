@@ -11,8 +11,8 @@ export const TEXTS = {
   form: {
     errors: {
       required: 'This field is required',
-      minlength: 'This field is too short',
-      maxlength: 'This file is too long',
+      minlength: 'This input is too short',
+      maxlength: 'This input is too long',
       pattern: 'Invalid value for this file',
     },
     avatar: {

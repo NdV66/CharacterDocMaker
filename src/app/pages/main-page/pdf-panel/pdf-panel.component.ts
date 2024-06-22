@@ -32,6 +32,7 @@ import { AvatarCanvasHandler } from './avatar-canvas-handler.service';
 export class PdfPanelComponent extends AAvatarFilterHandler {
   basisInfoForm!: FormGroup;
   basicInfoFieldsNames = ['race', 'age', 'origin', 'nature', 'live'];
+  description = '';
   @ViewChild('avatarCanvas') avatarCanvas?: ElementRef<HTMLCanvasElement>;
   private readonly _avatarImageToDraw = new Image();
 
@@ -42,6 +43,10 @@ export class PdfPanelComponent extends AAvatarFilterHandler {
     super(service);
     const onLoadAvatarSrc$ = fromEvent(this._avatarImageToDraw, 'load');
     this.basisInfoForm = this._service.basicInfoForm;
+
+    this._service.form
+      .get('description')
+      ?.valueChanges.subscribe((value) => (this.description = value));
 
     this._avatarUrl$?.subscribe(this._setAvatarImageSrc);
     merge(

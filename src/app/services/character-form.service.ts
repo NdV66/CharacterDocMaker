@@ -11,6 +11,8 @@ export const DEFAULT_VALUES = {
   avatarUrl: '/assets/images/avatarPlaceholder.png',
 };
 
+const DESCRIPTION_MAX_LENGTH = 2500;
+
 @Injectable({ providedIn: 'root' })
 export class CharacterFormService {
   readonly form!: FormGroup;
@@ -41,7 +43,10 @@ export class CharacterFormService {
     this.form = formBuilder.group({
       avatarInfo: this.avatarForm,
       basicInfo: this.basicInfoForm,
-      description: ['', [Validators.required]],
+      description: [
+        '',
+        [Validators.required, Validators.maxLength(DESCRIPTION_MAX_LENGTH)],
+      ],
       themeOption: [DEFAULT_VALUES.themeOption],
     });
 

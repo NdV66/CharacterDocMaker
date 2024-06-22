@@ -15,9 +15,12 @@
 
 .pdf-content-wrapper {
     margin-top: variables.$base * 8;
+    border: variables.$base solid colors.$accent-dark;
 }
 
 .pdf-content {
+    $space-top: variables.$base * 12;
+
     padding: 20mm;
     width: 210mm;
     height: 297mm;
@@ -36,8 +39,16 @@
 
         background-color: colors.$background-dark;
         border-radius: variables.$border-radius * 0.5;
-        padding: variables.$base * 8 variables.$base * 12;
+        padding: variables.$base * 8 $space-top;
         position: relative;
+    }
+
+    .bio {
+        @extend .basic-wrapper;
+        $space: variables.$base * 4;
+        margin-top: $space;
+        height: calc(100% - $space-top * 2 - $space - 230px);
+        overflow: hidden;
     }
 
     .by-who {
