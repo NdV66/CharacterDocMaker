@@ -59,10 +59,6 @@ export class CharacterFormService {
     // );
   }
 
-  get isFormValid() {
-    return !this.form.invalid;
-  }
-
   uploadAvatar(image: ImageSnippetDto) {
     this.avatarForm.patchValue({
       avatarUrl: image.src,
@@ -73,7 +69,7 @@ export class CharacterFormService {
   onSubmit(e: any) {
     e.preventDefault();
     this.form.markAllAsTouched();
-    this._pdfCreatorService.exportToPdf();
+    !this.form.invalid && this._pdfCreatorService.exportToPdf();
   }
 }
 

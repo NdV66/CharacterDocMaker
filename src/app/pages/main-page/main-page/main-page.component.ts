@@ -35,6 +35,7 @@ import { NgIf } from '@angular/common';
 export class MainPageComponent {
   readonly form!: FormGroup;
   isPdfExporting = false;
+  isFormValid = false;
 
   constructor(
     private _service: CharacterFormService,
@@ -47,8 +48,7 @@ export class MainPageComponent {
     );
   }
 
-  onSubmitPreview(e: any) {
-    // this._service.isFormValid && this._service.onSubmit(e);
+  onSubmit(e: any) {
     this._service.onSubmit(e);
   }
 }

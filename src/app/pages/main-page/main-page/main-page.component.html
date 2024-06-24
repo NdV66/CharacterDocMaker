@@ -11,11 +11,7 @@
 </header>
 
 <app-width-wrapper>
-  <form
-    (ngSubmit)="onSubmitPreview($event)"
-    [formGroup]="form"
-    autocomplete="off"
-  >
+  <form (ngSubmit)="onSubmit($event)" [formGroup]="form" autocomplete="off">
     <app-character-form-panel></app-character-form-panel>
     <app-document-panel></app-document-panel>
 
@@ -23,6 +19,7 @@
       <app-button
         type="submit"
         [text]="'preview.action' | getTranslations"
+        [isDisabled]="!form.invalid"
       ></app-button>
     </div>
   </form>
