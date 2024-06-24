@@ -1,1 +1,19 @@
-<p>footer works!</p>
+<app-width-wrapper>
+  <div class="footer-wrapper">
+    <span>{{ "footer.info" | getTranslations }}</span>
+    <a
+      href="{{ 'footer.contact.link' | getTranslations }}"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      {{ "footer.contact.title" | getTranslations }}
+    </a>
+    <a
+      href="{{ 'footer.github.link' | getTranslations }}"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      {{ "footer.github.title" | getTranslations }}
+    </a>
+  </div>
+</app-width-wrapper>

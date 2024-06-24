@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
+import { WidthWrapperComponent } from '@elements/width-wrapper/width-wrapper.component';
+import { TranslationsPipe } from '@translations/translations.pipe';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [],
+  imports: [WidthWrapperComponent, TranslationsPipe],
   templateUrl: './footer.component.html',
-  styleUrl: './footer.component.scss'
+  styleUrl: './footer.component.scss',
 })
-export class FooterComponent {
-
-}
+export class FooterComponent {}

@@ -1,0 +1,18 @@
+@use "variables";
+@use "colors";
+
+.footer-wrapper {
+    padding: variables.$base * 4 0;
+    display: flex;
+    justify-content: space-between;
+
+    color: colors.$text;
+    font-size: variables.$small-font-size;
+
+    a:link,
+    a:visited,
+    a:hover,
+    a:active {
+        color: colors.$text;
+    }
+}

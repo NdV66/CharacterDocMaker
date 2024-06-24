@@ -102,9 +102,14 @@ export const TEXTS = {
     back: 'I want go back!',
   },
   footer: {
-    repo: 'See my public repositories!',
-    contact: 'Stay in touch!',
-    projects: 'See my other projects!',
-    author: 'NdV66 (Marta Zażlak)',
+    github: {
+      title: 'See my public repositories!',
+      link: 'https://github.com/NdV66',
+    },
+    contact: {
+      title: 'See my other projects!',
+      link: 'https://www.linkedin.com/in/marta-zazlak/',
+    },
+    info: 'created by NdV66 (Marta Zażlak), 2024, v1.0',
   },
 };
