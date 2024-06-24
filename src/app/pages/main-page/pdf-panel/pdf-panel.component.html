@@ -35,6 +35,8 @@
       </div>
     </div>
 
-    <div class="bio">{{ description }}</div>
+    <div class="bio">
+      {{ description || ("preview.pdf.noInfo" | getTranslations) }}
+    </div>
   </div>
 </div>
