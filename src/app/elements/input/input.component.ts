@@ -12,7 +12,6 @@ import { isFormControlInvalid } from '@utils/form';
   styleUrl: './input.component.scss',
 })
 export class InputComponent {
-  @Input() error = '';
   @Input() label = '';
   @Input() inputName!: string;
   @Input() form!: FormGroup;
