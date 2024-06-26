@@ -13,6 +13,7 @@ import { PdfPanelComponent } from '@pages/main-page/pdf-panel/pdf-panel.componen
 import { PdfCreatorService } from '@services/pdf-creator.service';
 import { NgIf } from '@angular/common';
 import { GlobalLoaderService } from '@services/global-loader.service';
+import { GlobalLoaderComponent } from 'app/element/global-loader/global-loader.component';
 
 @Component({
   selector: 'app-main-page',
@@ -29,6 +30,7 @@ import { GlobalLoaderService } from '@services/global-loader.service';
     WidthWrapperComponent,
     PdfPanelComponent,
     NgIf,
+    GlobalLoaderComponent,
   ],
   templateUrl: './main-page.component.html',
   styleUrl: './main-page.component.scss',
@@ -37,18 +39,16 @@ export class MainPageComponent {
   readonly form!: FormGroup;
   isPdfExporting = false;
   isFormValid = false;
-  isLoading = true;
+  isLoading = false;
 
   constructor(
     private _service: CharacterFormService,
     private _loaderService: GlobalLoaderService
   ) {
     this.form = this._service.form;
-
-    this._loaderService.isLoading.subscribe((value) => {
-      console.log('>>>', value);
-      this.isLoading = value;
-    });
+    this._loaderService.isLoading.subscribe(
+      (value) => (this.isLoading = value)
+    );
   }
 
   onSubmit(e: any) {

@@ -5,7 +5,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class GlobalLoaderService {
-  private _isLoading = new BehaviorSubject<boolean>(false);
+  private _isLoading = new BehaviorSubject(false);
 
   get isLoading() {
     return this._isLoading.asObservable();
