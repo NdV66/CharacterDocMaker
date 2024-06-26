@@ -12,6 +12,7 @@ import { WidthWrapperComponent } from '@elements/width-wrapper/width-wrapper.com
 import { PdfPanelComponent } from '@pages/main-page/pdf-panel/pdf-panel.component';
 import { PdfCreatorService } from '@services/pdf-creator.service';
 import { NgIf } from '@angular/common';
+import { GlobalLoaderService } from '@services/global-loader.service';
 
 @Component({
   selector: 'app-main-page',
@@ -36,16 +37,18 @@ export class MainPageComponent {
   readonly form!: FormGroup;
   isPdfExporting = false;
   isFormValid = false;
+  isLoading = true;
 
   constructor(
     private _service: CharacterFormService,
-    pdfService: PdfCreatorService
+    private _loaderService: GlobalLoaderService
   ) {
     this.form = this._service.form;
 
-    pdfService.isPdfExporting.subscribe(
-      (value) => (this.isPdfExporting = value)
-    );
+    this._loaderService.isLoading.subscribe((value) => {
+      console.log('>>>', value);
+      this.isLoading = value;
+    });
   }
 
   onSubmit(e: any) {
