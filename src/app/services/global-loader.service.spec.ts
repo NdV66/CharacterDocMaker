@@ -12,13 +12,32 @@ describe('GlobalLoaderService', () => {
     });
   });
 
-  it('Should set from default false to true', () => {
+  it('Should isLoading be false on enter', () => {
     testScheduler.run(({ expectObservable }) => {
-      globalLoaderService.setIsLoading(true);
+      // Given
+      // When
+      // Then
+      expectObservable(globalLoaderService.isLoading).toBe('b', { b: false });
+    });
+  });
 
-      expectObservable(globalLoaderService.isLoading).toBe('b', {
-        b: true,
-      });
+  it('Should set isLoading to true', () => {
+    testScheduler.run(({ expectObservable }) => {
+      // Given
+      // When
+      globalLoaderService.setIsLoading(true);
+      // Then
+      expectObservable(globalLoaderService.isLoading).toBe('b', { b: true });
+    });
+  });
+
+  it('Should set isLoading to false', () => {
+    testScheduler.run(({ expectObservable }) => {
+      // Given
+      // When
+      globalLoaderService.setIsLoading(false);
+      // Then
+      expectObservable(globalLoaderService.isLoading).toBe('b', { b: false });
     });
   });
 });
