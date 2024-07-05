@@ -69,7 +69,10 @@ export class CharacterFormService {
   onSubmit(e: any) {
     e.preventDefault();
     this.form.markAllAsTouched();
-    !this.form.invalid && this._pdfCreatorService.exportToPdf();
+    if (!this.form.invalid) {
+      const rawSource = document.getElementById('pdf') as HTMLElement;
+      this._pdfCreatorService.exportToPdf(rawSource);
+    }
   }
 }
 

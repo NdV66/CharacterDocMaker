@@ -13,14 +13,13 @@ const PDF_NAME = 'my-character.pdf';
 export class PdfCreatorService {
   constructor(private _globalLoaderService: GlobalLoaderService) {}
 
-  private async _createContentDataUrl() {
-    const rawSource = document.getElementById('pdf') as HTMLElement;
+  private async _createContentDataUrl(rawSource: HTMLElement) {
     const canvas = await html2canvas(rawSource);
     return canvas.toDataURL('image/png');
   }
 
-  private async _onExportToPdf() {
-    const contentDataUrl = await this._createContentDataUrl();
+  private async _onExportToPdf(rawSource: HTMLElement) {
+    const contentDataUrl = await this._createContentDataUrl(rawSource);
     const doc = new jsPDF({
       orientation: 'portrait',
       unit: 'mm',
@@ -34,9 +33,9 @@ export class PdfCreatorService {
     doc.save(PDF_NAME);
   }
 
-  async exportToPdf() {
+  async exportToPdf(rawSource: HTMLElement) {
     this._globalLoaderService.setIsLoading(true);
-    await this._onExportToPdf();
+    await this._onExportToPdf(rawSource);
     this._globalLoaderService.setIsLoading(false);
   }
 }
