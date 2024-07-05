@@ -1,0 +1,34 @@
+import { TestScheduler } from 'rxjs/testing';
+import { PdfCreatorService } from './pdf-creator.service';
+import { GlobalLoaderService } from './global-loader.service';
+import { Subject } from 'rxjs';
+
+const createGlobalLoaderServiceMock = () =>
+  ({
+    isLoading: new Subject<boolean>().asObservable(),
+    setIsLoading: jest.fn(),
+  } as any as GlobalLoaderService);
+
+describe('PdfCreatorService', () => {
+  let testScheduler: TestScheduler;
+  let globalLoaderServiceMock: GlobalLoaderService;
+  let pdfCreatorService: PdfCreatorService;
+
+  beforeEach(() => {
+    globalLoaderServiceMock = createGlobalLoaderServiceMock();
+    pdfCreatorService = new PdfCreatorService(globalLoaderServiceMock);
+    testScheduler = new TestScheduler((actual, expected) => {
+      expect(actual).toEqual(expected);
+    });
+  });
+
+  it('Should export to pdf', () => {
+    testScheduler.run(({ expectObservable }) => {
+      pdfCreatorService.exportToPdf();
+      expectObservable(globalLoaderServiceMock.isLoading).toBe('ab', {
+        a: true,
+        b: false,
+      });
+    });
+  });
+});
