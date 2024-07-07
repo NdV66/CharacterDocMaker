@@ -2,10 +2,13 @@ import { TestScheduler } from 'rxjs/testing';
 import { PdfCreatorService } from './pdf-creator.service';
 import { GlobalLoaderService } from './global-loader.service';
 import { Subject } from 'rxjs';
+import { imagePngBase64Mock } from './mocks';
+import * as html2canvas from 'html2canvas';
 
-// jest.mock('html2canvas');
-
-// import html2canvas from 'html2canvas';
+jest.mock('html2canvas', () => ({
+  __esModule: true,
+  default: jest.fn(),
+}));
 
 const createGlobalLoaderServiceMock = () =>
   ({
@@ -18,11 +21,6 @@ describe('PdfCreatorService', () => {
   let globalLoaderServiceMock: GlobalLoaderService;
   let pdfCreatorService: PdfCreatorService;
 
-  beforeAll(() => {
-    window.getComputedStyle = jest.fn();
-    HTMLCanvasElement.prototype.getContext = jest.fn();
-  });
-
   beforeEach(() => {
     globalLoaderServiceMock = createGlobalLoaderServiceMock();
     pdfCreatorService = new PdfCreatorService(globalLoaderServiceMock);
@@ -31,19 +29,18 @@ describe('PdfCreatorService', () => {
     });
   });
 
-  //   it('XX', async () => {
-  //     await html2canvas({} as any);
-  //     expect(html2canvas).toHaveBeenCalled();
-  //   });
-
   it('Should export to pdf', () => {
-    testScheduler.run(({ expectObservable }) => {
-      //   (html2canvas as any).mockImplementation(() =>
-      //     document.createElement('canvas')
-      //   );
-      pdfCreatorService.exportToPdf(document.createElement('div'));
+    testScheduler.run(async ({ expectObservable }) => {
+      const canvasMock = {
+        toDataURL: jest.fn().mockReturnValue(imagePngBase64Mock),
+      };
+      const spy = jest.spyOn(html2canvas, 'default');
+      spy.mockReturnValue(canvasMock as any);
 
-      //   expect(html2canvas).toHaveBeenCalled();
+      await pdfCreatorService.exportToPdf(document.createElement('div'));
+
+      expect(canvasMock.toDataURL).toHaveBeenCalledTimes(1);
+      expect(canvasMock.toDataURL).toHaveBeenCalledWith('image/png');
       expectObservable(globalLoaderServiceMock.isLoading).toBe('ab', {
         a: true,
         b: false,
