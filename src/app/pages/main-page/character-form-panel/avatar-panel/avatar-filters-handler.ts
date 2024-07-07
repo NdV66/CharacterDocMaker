@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { CharacterFormService } from '@services/character-form.service';
+import { CharacterFormService } from '@services/index';
 import { Observable } from 'rxjs';
 
 @Injectable()

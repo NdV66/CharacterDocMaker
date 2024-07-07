@@ -3,10 +3,7 @@ import { SliderComponent } from '@elements/slider/slider.component';
 import { TValueChangeEvent } from '@elements/slider/slider.types';
 import { NgFor } from '@angular/common';
 import { TranslationsPipe } from '@translations/translations.pipe';
-import {
-  CharacterFormService,
-  DEFAULT_VALUES,
-} from '@services/character-form.service';
+import { CharacterFormService, DEFAULT_VALUES } from '@services/index';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { TextButtonComponent } from '@elements/text-button/text-button.component';
 

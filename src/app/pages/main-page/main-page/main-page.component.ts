@@ -6,13 +6,11 @@ import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from '@elements/footer/footer.component';
 import { ButtonComponent } from '@elements/button/button.component';
 import { DocumentPanelComponent } from '../document-panel/document-panel.component';
-import { CharacterFormService } from '@services/character-form.service';
+import { CharacterFormService, GlobalLoaderService } from '@services/index';
 import { NavbarComponent } from '@elements/navbar/navbar.component';
 import { WidthWrapperComponent } from '@elements/width-wrapper/width-wrapper.component';
 import { PdfPanelComponent } from '@pages/main-page/pdf-panel/pdf-panel.component';
-import { PdfCreatorService } from '@services/pdf-creator.service';
 import { NgIf } from '@angular/common';
-import { GlobalLoaderService } from '@services/global-loader.service';
 import { GlobalLoaderComponent } from 'app/element/global-loader/global-loader.component';
 
 @Component({

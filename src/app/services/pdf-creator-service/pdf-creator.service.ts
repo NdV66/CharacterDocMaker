@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { jsPDF } from 'jspdf';
 import html2canvas from 'html2canvas';
-import { GlobalLoaderService } from './global-loader.service';
+import { GlobalLoaderService } from '../global-loader-service/global-loader.service';
 
 const A4_FORMAT = [210, 297];
 const PDF_NAME = 'my-character.pdf';

@@ -5,10 +5,7 @@ import { ButtonComponent } from '@elements/button/button.component';
 import { NavbarComponent } from '@elements/navbar/navbar.component';
 import { TextButtonComponent } from '@elements/text-button/text-button.component';
 import { WidthWrapperComponent } from '@elements/width-wrapper/width-wrapper.component';
-import {
-  CharacterFormService,
-  DEFAULT_VALUES,
-} from '@services/character-form.service';
+import { CharacterFormService, DEFAULT_VALUES } from '@services/index';
 import { TranslationsPipe } from '@translations/translations.pipe';
 import { AAvatarFilterHandler } from '../character-form-panel/avatar-panel/avatar-filters-handler';
 import { fromEvent, merge } from 'rxjs';

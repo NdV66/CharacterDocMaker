@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { TranslationsPipe } from '@translations/translations.pipe';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { NgForOf } from '@angular/common';
-import { CharacterFormService } from '@services/character-form.service';
+import { CharacterFormService } from '@services/index';
 import { NoteComponent } from '@elements/note/note.component';
 import { PanelComponent } from '@elements/panel/panel.component';
 import { InputComponent } from '@elements/input/input.component';

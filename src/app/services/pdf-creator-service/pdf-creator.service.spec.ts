@@ -1,20 +1,13 @@
 import { TestScheduler } from 'rxjs/testing';
 import { PdfCreatorService } from './pdf-creator.service';
-import { GlobalLoaderService } from './global-loader.service';
-import { Subject } from 'rxjs';
-import { imagePngBase64Mock } from './mocks';
+import { GlobalLoaderService } from './global-loader-service/global-loader.service';
+import { imagePngBase64Mock, createGlobalLoaderServiceMock } from './mocks';
 import * as html2canvas from 'html2canvas';
 
 jest.mock('html2canvas', () => ({
   __esModule: true,
   default: jest.fn(),
 }));
-
-const createGlobalLoaderServiceMock = () =>
-  ({
-    isLoading: new Subject<boolean>().asObservable(),
-    setIsLoading: jest.fn(),
-  } as any as GlobalLoaderService);
 
 describe('PdfCreatorService', () => {
   let testScheduler: TestScheduler;

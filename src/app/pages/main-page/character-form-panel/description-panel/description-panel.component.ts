@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { TranslationsPipe } from '@translations/translations.pipe';
 import { PanelComponent } from '@elements/panel/panel.component';
 import { FormGroup } from '@angular/forms';
-import { CharacterFormService } from '@services/character-form.service';
+import { CharacterFormService } from '@services/index';
 import { NoteComponent } from '@elements/note/note.component';
 import { TextareaComponent } from '@elements/textarea/textarea.component';
 

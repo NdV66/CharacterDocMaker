@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { PdfCreatorService } from './pdf-creator.service';
+import { PdfCreatorService } from '../pdf-creator-service/pdf-creator.service';
 import { ImageSnippetDto } from '@models/ImageSnippet.dto';
 
 export const DEFAULT_VALUES = {
@@ -49,14 +49,6 @@ export class CharacterFormService {
       ],
       themeOption: [DEFAULT_VALUES.themeOption],
     });
-
-    this._subscribe();
-  }
-
-  private _subscribe() {
-    // this._pdfCreatorService.isPdfExporting.subscribe((value) =>
-    //   value ? this.form.disable() : this.form.enable()
-    // );
   }
 
   uploadAvatar(image: ImageSnippetDto) {
