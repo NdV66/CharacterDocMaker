@@ -1,7 +1,7 @@
 import { TestScheduler } from 'rxjs/testing';
 import { PdfCreatorService } from './pdf-creator.service';
-import { GlobalLoaderService } from './global-loader-service/global-loader.service';
-import { imagePngBase64Mock, createGlobalLoaderServiceMock } from './mocks';
+import { GlobalLoaderService } from '../global-loader-service/global-loader.service';
+import { imagePngBase64Mock, createGlobalLoaderServiceMock } from '../mocks';
 import * as html2canvas from 'html2canvas';
 
 jest.mock('html2canvas', () => ({

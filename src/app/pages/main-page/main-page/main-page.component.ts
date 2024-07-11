@@ -11,7 +11,7 @@ import { NavbarComponent } from '@elements/navbar/navbar.component';
 import { WidthWrapperComponent } from '@elements/width-wrapper/width-wrapper.component';
 import { PdfPanelComponent } from '@pages/main-page/pdf-panel/pdf-panel.component';
 import { NgIf } from '@angular/common';
-import { GlobalLoaderComponent } from 'app/element/global-loader/global-loader.component';
+import { GlobalLoaderComponent } from '@elements/global-loader/global-loader.component';
 
 @Component({
   selector: 'app-main-page',
