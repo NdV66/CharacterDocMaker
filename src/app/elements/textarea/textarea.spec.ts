@@ -1,5 +1,5 @@
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
-import { render, screen } from '@testing-library/angular';
+import { fireEvent, render, screen } from '@testing-library/angular';
 import { TextareaComponent } from './textarea.component';
 import userEvent from '@testing-library/user-event';
 import * as formUtils from '@utils/form';
@@ -11,6 +11,10 @@ const fb = new FormBuilder();
 const formGroupMock = fb.group({
   mockField: ['', [Validators.required]],
 });
+
+const inputTarget = {
+  target: { value: text },
+};
 
 const renderElement = () =>
   render(TextareaComponent, {
@@ -42,8 +46,7 @@ describe('TextArea', () => {
     //Given
     await renderElement();
     //When
-    const element = screen.getByRole('textbox');
-    await userEvent.type(element, text);
+    fireEvent.change(screen.getByRole('textbox'), inputTarget);
     //Then
     expect(screen.getByDisplayValue(text)).toBeVisible();
   });
@@ -52,7 +55,7 @@ describe('TextArea', () => {
     //Given
     await renderElement();
     //When
-    await userEvent.type(screen.getByRole('textbox'), text);
+    fireEvent.change(screen.getByRole('textbox'), inputTarget);
     //Then
     expect(screen.queryByText(TEXTS.form.errors.required)).toBeNull();
   });
@@ -60,12 +63,10 @@ describe('TextArea', () => {
   it('Should render an error', async () => {
     //Given
     jest.spyOn(formUtils, 'isFormControlInvalid').mockReturnValue(true);
-    await renderElement();
     //When
-    const element = screen.getByRole('textbox');
-    await userEvent.type(element, text);
-    await userEvent.clear(element);
+    await renderElement();
     //Then
+    fireEvent.change(screen.getByRole('textbox'), { target: { value: '' } });
     expect(screen.getByText(TEXTS.form.errors.required)).toBeVisible();
   });
 });
