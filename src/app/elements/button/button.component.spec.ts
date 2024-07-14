@@ -1,23 +1,63 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { screen, render } from '@testing-library/angular';
+import userEvent from '@testing-library/user-event';
 import { ButtonComponent } from './button.component';
 
-describe('ButtonComponent', () => {
-  let component: ButtonComponent;
-  let fixture: ComponentFixture<ButtonComponent>;
+const textMock = 'click me!';
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [ButtonComponent]
-    })
-    .compileComponents();
-    
-    fixture = TestBed.createComponent(ButtonComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+describe('ButtonComponent', () => {
+  it('Should create as basic', async () => {
+    // Given
+    // When
+    await render(ButtonComponent, { componentProperties: { text: textMock } });
+    // Then
+    const button = screen.getByText(textMock);
+    expect(button).toBeInTheDocument();
+    expect(button).not.toBeDisabled();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('Should be disabled', async () => {
+    // Given
+    // When
+    await render(ButtonComponent, {
+      componentProperties: { text: textMock, isDisabled: true },
+    });
+    // Then
+    const button = screen.getByText(textMock);
+    expect(button).toBeDisabled();
+  });
+
+  it('Should not be clickable when disabled', async () => {
+    // Given
+    const onClickMock = jest.fn();
+    await render(ButtonComponent, {
+      componentProperties: {
+        text: textMock,
+        isDisabled: true,
+        onClick: onClickMock,
+      },
+    });
+    const button = screen.getByText(textMock);
+    // When
+    await userEvent.click(button);
+    // Then
+    expect(button).toBeDisabled();
+    expect(onClickMock).not.toHaveBeenCalled();
+  });
+
+  it('Should be clickable when not disabled', async () => {
+    // Given
+    const onClickMock = jest.fn();
+    await render(ButtonComponent, {
+      componentProperties: {
+        text: textMock,
+        onClick: onClickMock,
+      },
+    });
+    const button = screen.getByText(textMock);
+    // When
+    await userEvent.click(button);
+    // Then
+    expect(button).not.toBeDisabled();
+    expect(onClickMock).toHaveBeenCalledTimes(1);
   });
 });

@@ -1,0 +1,42 @@
+<div class="pdf-content-wrapper">
+  <div
+    [class]="{
+      'pdf-content': true,
+      'theme-1': themeNumber === 1,
+      'theme-2': themeNumber === 2,
+      'theme-3': themeNumber === 3
+    }"
+    id="pdf"
+  >
+    <div class="basic-wrapper">
+      <canvas id="avatar-canvas" class="avatar" #avatarCanvas></canvas>
+
+      <div class="panel">
+        <div class="name">
+          {{
+            basisInfoForm.get("name")?.value ||
+              ("preview.pdf.noInfo" | getTranslations)
+          }}
+        </div>
+
+        <div *ngFor="let field of basicInfoFieldsNames">
+          <span class="info-title">
+            {{ "preview.pdf." + field | getTranslations }}:
+          </span>
+          <span class="info">
+            {{
+              this.basisInfoForm.get(field)?.value ||
+                ("preview.pdf.noInfo" | getTranslations)
+            }}
+          </span>
+        </div>
+
+        <div class="by-who">{{ "preview.pdf.by" | getTranslations }}</div>
+      </div>
+    </div>
+
+    <div class="bio">
+      {{ description || ("preview.pdf.noInfo" | getTranslations) }}
+    </div>
+  </div>
+</div>

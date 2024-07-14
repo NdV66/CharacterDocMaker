@@ -1,0 +1,36 @@
+<app-global-loader [isLoading]="isLoading"></app-global-loader>
+
+<nav class="nav">
+  <div class="width-wrapper">
+    <app-navbar />
+  </div>
+</nav>
+
+<header class="header">
+  <div class="width-wrapper">
+    <app-jumbotron />
+  </div>
+</header>
+
+<app-width-wrapper>
+  <form (ngSubmit)="onSubmit($event)" [formGroup]="form" autocomplete="off">
+    <app-character-form-panel></app-character-form-panel>
+    <app-document-panel></app-document-panel>
+
+    <div class="submit-wrapper">
+      <app-button
+        type="submit"
+        [text]="'preview.action' | getTranslations"
+        [isDisabled]="form.invalid"
+      ></app-button>
+    </div>
+  </form>
+</app-width-wrapper>
+
+<div class="pdf-content-wrapper">
+  <app-pdf-panel></app-pdf-panel>
+</div>
+
+<footer>
+  <app-footer></app-footer>
+</footer>

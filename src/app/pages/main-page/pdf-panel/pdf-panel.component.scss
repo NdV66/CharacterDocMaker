@@ -1,0 +1,97 @@
+@use "variables";
+@use "colors";
+
+.theme-1 {
+    background-image: url("../../../../assets/images/theme1.png");
+}
+
+.theme-2 {
+    background-image: url("../../../../assets/images/theme2.png");
+}
+
+.theme-3 {
+    background-image: url("../../../../assets/images/theme3.png");
+}
+
+.pdf-content-wrapper {
+    margin-top: variables.$base * 8;
+    border: variables.$base solid colors.$accent-dark;
+}
+
+.pdf-content {
+    $space-top: variables.$base * 12;
+
+    padding: 20mm;
+    width: 210mm;
+    height: 297mm;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    color: colors.$accent;
+    font-size: variables.$basic-font-size;
+
+    .basic-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        background-color: colors.$background-dark;
+        border-radius: variables.$border-radius * 0.5;
+        padding: variables.$base * 8 $space-top;
+        position: relative;
+    }
+
+    .bio {
+        @extend .basic-wrapper;
+        $space: variables.$base * 4;
+        margin-top: $space;
+        height: calc(100% - $space-top * 2 - $space - 230px);
+        overflow: hidden;
+    }
+
+    .by-who {
+        position: absolute;
+        right: 4mm;
+        bottom: 4mm;
+        font-size: variables.$small-font-size * 0.8;
+    }
+
+    .panel {
+        width: 110mm;
+        height: 100%;
+
+        padding-left: 6mm;
+        border-left: 1px solid colors.$accent;
+    }
+
+    .name {
+        margin-bottom: variables.$base * 4;
+        font-family: "Chango";
+        display: inline-block;
+        font-size: variables.$title-font-size;
+    }
+
+    .info {
+        font-weight: 900;
+        font-size: variables.$small-font-size;
+    }
+
+    .info-title {
+        width: 18mm;
+        display: inline-block;
+        font-size: variables.$small-font-size;
+    }
+
+    .avatar {
+        $size: 50mm;
+        width: $size;
+        height: $size;
+        border-radius: 50%;
+        border: variables.$base solid colors.$accent;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}

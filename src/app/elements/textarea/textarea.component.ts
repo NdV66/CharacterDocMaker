@@ -1,13 +1,8 @@
 import { Component, Input } from '@angular/core';
-import { LabelComponent } from '../label/label.component';
-import {
-  FormControl,
-  FormGroup,
-  isFormControl,
-  ReactiveFormsModule,
-} from '@angular/forms';
-import { FieldErrorComponent } from '../field-error/field-error.component';
-import { isFormControlInvalid } from '../../utils';
+import { LabelComponent } from '@elements/label/label.component';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FieldErrorComponent } from '@elements/field-error/field-error.component';
+import { isFormControlInvalid } from '@utils/form';
 
 @Component({
   selector: 'app-textarea',

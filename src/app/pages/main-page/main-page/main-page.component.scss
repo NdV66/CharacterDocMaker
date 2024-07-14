@@ -1,0 +1,25 @@
+@use "variables";
+@use "colors";
+
+.nav {
+    display: flex;
+    justify-content: center;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+}
+
+.submit-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: variables.$base * 20;
+}
+
+.pdf-content-wrapper {
+    display: flex;
+    justify-content: center;
+    // visibility: hidden;
+    // display: none;
+}

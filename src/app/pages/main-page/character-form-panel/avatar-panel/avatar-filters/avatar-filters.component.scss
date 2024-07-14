@@ -1,0 +1,9 @@
+@use "variables";
+@use "colors";
+
+.avatar-filters {
+    .reset {
+        text-align: right;
+        margin-top: variables.$base * 4;
+    }
+}

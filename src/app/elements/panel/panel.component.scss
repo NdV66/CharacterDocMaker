@@ -9,6 +9,6 @@
 
 .panel-bg {
     background-color: colors.$background-dark;
-    border-radius: variables.$border-radius / 2;
+    border-radius: variables.$border-radius * 0.5;
     padding: variables.$base * 4;
 }

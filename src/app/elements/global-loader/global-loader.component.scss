@@ -1,0 +1,52 @@
+@use "colors";
+@use "variables";
+
+.global-loader-wrapper {
+    width: 100vw;
+    height: 100%;
+    background: rgba(colors.$background, 0.5);
+    position: fixed;
+    z-index: 99;
+    margin-left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .loader {
+        width: variables.$base * 20;
+        aspect-ratio: 2;
+        --_g: no-repeat radial-gradient(circle closest-side, #34e7e4 90%, #0000);
+        background:
+            var(--_g) 0% 50%,
+            var(--_g) 50% 50%,
+            var(--_g) 100% 50%;
+        background-size: calc(100% / 3) 50%;
+        animation: l3 1s infinite linear;
+    }
+    @keyframes l3 {
+        20% {
+            background-position:
+                0% 0%,
+                50% 50%,
+                100% 50%;
+        }
+        40% {
+            background-position:
+                0% 100%,
+                50% 0%,
+                100% 50%;
+        }
+        60% {
+            background-position:
+                0% 50%,
+                50% 100%,
+                100% 0%;
+        }
+        80% {
+            background-position:
+                0% 50%,
+                50% 50%,
+                100% 100%;
+        }
+    }
+}

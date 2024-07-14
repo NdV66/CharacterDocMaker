@@ -1,3 +1,4 @@
+import 'jest-preset-angular/setup-jest';
 import { TranslationsPipe } from './translations.pipe';
 import { TEXTS } from './en-EN';
 
@@ -31,7 +32,7 @@ describe('Translations Pipe with default language', () => {
     const okKeyCases = [
       ['appName', TEXTS.appName],
       ['jumbotron.title', TEXTS.jumbotron.title],
-      ['form.avatar.fields.zoom', TEXTS.form.avatar.fields.zoom],
+      ['form.avatar.fields.sepia', TEXTS.form.avatar.fields.sepia],
     ];
 
     okKeyCases.forEach(([key, expectedValue]) => {

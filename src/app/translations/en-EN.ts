@@ -11,8 +11,8 @@ export const TEXTS = {
   form: {
     errors: {
       required: 'This field is required',
-      minlength: 'This field is too short',
-      maxlength: 'This file is too long',
+      minlength: 'This input is too short',
+      maxlength: 'This input is too long',
       pattern: 'Invalid value for this file',
     },
     avatar: {
@@ -24,7 +24,7 @@ export const TEXTS = {
 
       fields: {
         greyScale: 'Grey scale',
-        zoom: 'Zoom',
+        sepia: 'Sepia',
         brightness: 'Brightness',
         reset: 'Reset filters',
       },
@@ -70,7 +70,7 @@ export const TEXTS = {
     theme: {
       title: '4. Select your document theme',
       subtitle: 'Which theme is your favorite one?',
-      note: "Just select the document's theme and download your epic description!",
+      note: 'See below, if your PDF is fine! If you love it, just click and download your document, yay!',
 
       fields: {
         theme1: 'Light life',
@@ -79,13 +79,37 @@ export const TEXTS = {
       },
     },
   },
+  preview: {
+    action: 'Download your PDF!',
+    alert: {
+      title: 'Warning!',
+      text: 'This only a preview. To download PDF, use the button below. Or go back.',
+    },
+    pdf: {
+      by: 'by NdV66, Simple Character PDF, 2024, v1.0',
+      noInfo: 'No info',
+
+      name: 'name',
+      race: 'race',
+      age: 'age',
+      origin: 'origin',
+      nature: 'nature',
+      live: 'live',
+    },
+  },
   download: {
     action: 'Download your PDF!',
+    back: 'I want go back!',
   },
   footer: {
-    repo: 'See my public repositories!',
-    contact: 'Stay in touch!',
-    projects: 'See my other projects!',
-    author: 'NdV66 (Marta Zażlak)',
+    github: {
+      title: 'See my public repositories!',
+      link: 'https://github.com/NdV66',
+    },
+    contact: {
+      title: 'See my other projects!',
+      link: 'https://www.linkedin.com/in/marta-zazlak/',
+    },
+    info: 'created by NdV66 (Marta Zażlak), 2024, v1.0',
   },
 };

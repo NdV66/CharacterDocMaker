@@ -10,6 +10,6 @@ import { Component, Input } from '@angular/core';
 export class ButtonComponent {
   @Input() buttonType = '';
   @Input() text!: string;
-  @Input() onClick?: () => {};
+  @Input() onClick?: () => void;
   @Input() isDisabled = false;
 }
