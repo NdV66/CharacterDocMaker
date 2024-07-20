@@ -35,6 +35,6 @@ jobs:
         server: ${{ secrets.PROD_SERVER }}
         username: ${{ secrets.PROD_USER }}
         password: ${{ secrets.PROD_PASSWORD }}
-        local-dir: ./dist/character-doc-maker/
+        local-dir: ./dist/character-doc-maker/browser/
         server-dir: ${{ secrets.PROD_DIR }}
         dangerous-clean-slate: true
